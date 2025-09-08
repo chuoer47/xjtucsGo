@@ -1,0 +1,604 @@
+/* Glassmorphism 风格 CSS */
+
+/* 基础样式 */
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  --glass-blur: blur(8px);
+  --primary-color: rgba(24, 144, 255, 0.8);
+  --success-color: rgba(82, 196, 26, 0.8);
+  --warning-color: rgba(250, 173, 20, 0.8);
+  --error-color: rgba(245, 34, 45, 0.8);
+  --text-color: rgba(255, 255, 255, 0.9);
+  --text-secondary: rgba(255, 255, 255, 0.6);
+  --border-radius: 16px;
+  --transition: all 0.3s ease;
+}
+
+.dark-mode {
+  --glass-bg: rgba(30, 30, 30, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.05);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+  --text-color: rgba(255, 255, 255, 0.9);
+  --text-secondary: rgba(255, 255, 255, 0.5);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%);
+  color: var(--text-color);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.dark-mode body {
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.8) 0%, rgba(22, 33, 62, 0.8) 100%);
+}
+
+/* 背景形状 */
+.background-shapes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.3;
+  animation: float 15s infinite ease-in-out;
+}
+
+.shape-1 {
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 0, 128, 0.2);
+  top: -100px;
+  left: -100px;
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  width: 250px;
+  height: 250px;
+  background: rgba(0, 128, 255, 0.2);
+  top: 50%;
+  right: -100px;
+  animation-delay: -5s;
+}
+
+.shape-3 {
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 0, 0.2);
+  bottom: -100px;
+  left: 30%;
+  animation-delay: -10s;
+}
+
+.shape-4 {
+  width: 150px;
+  height: 150px;
+  background: rgba(0, 255, 128, 0.2);
+  top: 20%;
+  left: 50%;
+  animation-delay: -7s;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(30px, -50px) rotate(120deg);
+  }
+  66% {
+    transform: translate(-20px, 20px) rotate(240deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+/* 应用容器 */
+.app-container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: var(--transition);
+}
+
+.app-content {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+/* 玻璃卡片 */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--glass-shadow);
+  padding: 24px;
+  transition: var(--transition);
+}
+
+.glass-card-small {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--glass-shadow);
+  transition: var(--transition);
+}
+
+.main-card {
+  margin-bottom: 24px;
+}
+
+/* 卡片标题 */
+.card-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.glass-title {
+  color: var(--text-color);
+  margin-bottom: 8px !important;
+  font-weight: 600 !important;
+}
+
+.glass-subtitle {
+  color: var(--text-secondary);
+  margin-bottom: 24px !important;
+}
+
+/* 表单元素 */
+.glass-form {
+  margin-top: 24px;
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: var(--text-color) !important;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  outline: none !important;
+}
+
+.glass-input:hover {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.glass-input:focus {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05) !important;
+  outline: none !important;
+}
+
+.glass-input::placeholder {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* 暗色模式下的输入框样式 */
+.dark-mode .glass-input {
+  background: rgba(0, 0, 0, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.05) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.dark-mode .glass-input:hover {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark-mode .glass-input:focus {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05) !important;
+}
+
+.dark-mode .glass-input::placeholder {
+  color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* 展示文字的地方 */
+.glass-text {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-color);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.glass-text:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 暗色模式下的展示文字样式 */
+.dark-mode .glass-text {
+  background: rgba(0, 0, 0, 0.1);
+  border-color: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dark-mode .glass-text:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 按钮 */
+.glass-button {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05)) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: var(--text-color) !important;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.glass-button:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1)) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.glass-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.glass-button-secondary {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: var(--text-color) !important;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.glass-button-secondary:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  transform: translateY(-2px);
+}
+
+.glass-button-secondary:active {
+  transform: translateY(0);
+}
+
+/* 暗色模式下的按钮样式 */
+.dark-mode .glass-button {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)) !important;
+  border-color: rgba(255, 255, 255, 0.05) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.dark-mode .glass-button:hover {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark-mode .glass-button-secondary {
+  background: rgba(0, 0, 0, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.05) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.dark-mode .glass-button-secondary:hover {
+  background: rgba(0, 0, 0, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 标签页 */
+.glass-tabs .ant-tabs-nav::before {
+  border-bottom: 1px solid var(--glass-border) !important;
+}
+
+.glass-tabs .ant-tabs-tab {
+  color: var(--text-secondary) !important;
+  transition: var(--transition) !important;
+}
+
+.glass-tabs .ant-tabs-tab:hover {
+  color: var(--primary-color) !important;
+}
+
+.glass-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: var(--primary-color) !important;
+}
+
+.glass-tabs .ant-tabs-ink-bar {
+  background: var(--primary-color) !important;
+}
+
+/* 滑块 */
+.glass-slider .ant-slider-track {
+  background: var(--primary-color) !important;
+}
+
+.glass-slider .ant-slider-handle {
+  border: 2px solid var(--primary-color) !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+.glass-slider .ant-slider-handle:focus {
+  box-shadow: 0 0 0 5px rgba(24, 144, 255, 0.1) !important;
+}
+
+/* 列表项 */
+.glass-list-item {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: var(--transition);
+}
+
+.glass-list-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.glass-tag {
+  background: rgba(24, 144, 255, 0.1) !important;
+  border: none !important;
+  color: var(--primary-color) !important;
+}
+
+/* 模态框 */
+.glass-modal .ant-modal-content {
+  background: var(--glass-bg) !important;
+  backdrop-filter: var(--glass-blur) !important;
+  -webkit-backdrop-filter: var(--glass-blur) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: var(--border-radius) !important;
+  box-shadow: var(--glass-shadow) !important;
+}
+
+.glass-modal .ant-modal-header {
+  background: transparent !important;
+  border-bottom: 1px solid var(--glass-border) !important;
+}
+
+.glass-modal .ant-modal-title {
+  color: var(--text-color) !important;
+}
+
+.glass-modal .ant-modal-close {
+  color: var(--text-color) !important;
+}
+
+.glass-modal .ant-modal-footer {
+  border-top: 1px solid var(--glass-border) !important;
+}
+
+/* 页脚 */
+.glass-footer {
+  text-align: center;
+  margin-top: 24px;
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.copyright {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-top: 4px;
+}
+
+/* 主题切换 */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+/* 头部操作按钮 */
+.header-actions {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  z-index: 1000;
+}
+
+.header-button {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 50% !important;
+  width: 40px !important;
+  height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: var(--text-color) !important;
+  transition: var(--transition) !important;
+}
+
+.header-button:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: var(--primary-color) !important;
+}
+
+/* 操作按钮 */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+/* 统计容器 */
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.last-update-card {
+  margin-top: 16px;
+}
+
+.streak-progress {
+  margin-top: 24px;
+}
+
+/* 清除历史按钮 */
+.clear-history-button {
+  margin-top: 16px;
+}
+
+/* 二维码容器 */
+.qrcode-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.qrcode-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+}
+
+/* 帮助内容 */
+.help-content {
+  color: var(--text-color);
+}
+
+.help-content ol, .help-content ul {
+  padding-left: 20px;
+}
+
+.help-content li {
+  margin-bottom: 8px;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 16px;
+  }
+
+  .glass-card {
+    padding: 16px;
+  }
+
+  .header-actions {
+    top: auto;
+    bottom: 20px;
+    right: 20px;
+    flex-direction: column;
+  }
+
+  .theme-toggle {
+    top: auto;
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+    margin-bottom: 80px; /* 为底部按钮留出空间 */
+  }
+
+  .glass-footer {
+    margin-bottom: 80px; /* 为底部按钮留出空间 */
+  }
+}
+
+/* 输入框全局样式 */
+input {
+  outline: none;
+  background-color: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: var(--text-color) !important;
+}
+
+.input-box {
+  background-color: transparent !important;
+}
+
+/* 覆盖 Ant Design 的输入框样式 */
+.ant-input {
+  background-color: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: var(--text-color) !important;
+}
+
+.ant-input:hover {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.ant-input:focus {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05) !important;
+}
+
+.ant-input::placeholder {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* 暗色模式下的输入框样式 */
+.dark-mode .ant-input {
+  background-color: transparent !important;
+  border-color: rgba(255, 255, 255, 0.05) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.dark-mode .ant-input:hover {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark-mode .ant-input:focus {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05) !important;
+}
+
+.dark-mode .ant-input::placeholder {
+  color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* 输入框自动填充样式 */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+  -webkit-text-fill-color: var(--text-color) !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+}
+
+.dark-mode input:-webkit-autofill,
+.dark-mode input:-webkit-autofill:hover,
+.dark-mode input:-webkit-autofill:focus,
+.dark-mode input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.9) !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+} 
