@@ -11,7 +11,7 @@ def call_zepp_life_js(account, password, steps):
             "node",
             "-e",
             """
-            const zepp = require('./ZeppLifeSteps.js');  // 使用相对路径
+            const zepp = require('./ZeppLifeSteps.js');
             async function run() {
                 try {
                     const { loginToken, userId } = await zepp.login('%s', '%s');

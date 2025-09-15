@@ -1,0 +1,2212 @@
+{
+  "359035": {
+    "list_no": 359035,
+    "professional_level_id": "01",
+    "knowledge_point_id": "76",
+    "question_type_id": "01",
+    "question_no": "207165",
+    "question_stem": "火灾分类中的“A类火灾”是指()",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "液体火灾"
+      },
+      {
+        "choice": "固体火灾"
+      },
+      {
+        "choice": "金属火灾"
+      },
+      {
+        "choice": "气体火灾"
+      }
+    ]
+  },
+  "407782": {
+    "list_no": 407782,
+    "professional_level_id": "02",
+    "knowledge_point_id": "98",
+    "question_type_id": "01",
+    "question_no": "230575",
+    "question_stem": "万用表使用完后，应将切换旋钮放在:",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "电阻档"
+      },
+      {
+        "choice": "直流电压档"
+      },
+      {
+        "choice": "交流电压最高档"
+      },
+      {
+        "choice": "电流量档"
+      }
+    ]
+  },
+  "417210": {
+    "list_no": 417210,
+    "professional_level_id": "02",
+    "knowledge_point_id": "70",
+    "question_type_id": "01",
+    "question_no": "207279",
+    "question_stem": "在BSL-3实验室中必须安装（）。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "II级或II级以上生物安全柜"
+      },
+      {
+        "choice": "III级及以上生物安全柜"
+      },
+      {
+        "choice": "无"
+      },
+      {
+        "choice": "无"
+      }
+    ]
+  },
+  "430012": {
+    "list_no": 430012,
+    "professional_level_id": "01",
+    "knowledge_point_id": "76",
+    "question_type_id": "01",
+    "question_no": "207191",
+    "question_stem": "在室外灭火时应站在什么位置？",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "上风向"
+      },
+      {
+        "choice": "下风向"
+      },
+      {
+        "choice": "侧风向"
+      },
+      {
+        "choice": "顺风口"
+      }
+    ]
+  },
+  "493150": {
+    "list_no": 493150,
+    "professional_level_id": "01",
+    "knowledge_point_id": "71",
+    "question_type_id": "01",
+    "question_no": "207287",
+    "question_stem": "锅炉的三大安全附件分别是安全阀、压力表和（）",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "电表"
+      },
+      {
+        "choice": "温度计"
+      },
+      {
+        "choice": "水位表"
+      },
+      {
+        "choice": "无"
+      }
+    ]
+  },
+  "582512": {
+    "list_no": 582512,
+    "professional_level_id": "01",
+    "knowledge_point_id": "71",
+    "question_type_id": "01",
+    "question_no": "208328",
+    "question_stem": "实验室水泵关闭前,阀门应该：",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "全开"
+      },
+      {
+        "choice": "全关"
+      },
+      {
+        "choice": "半开"
+      },
+      {
+        "choice": "无所谓"
+      }
+    ]
+  },
+  "598170": {
+    "list_no": 598170,
+    "professional_level_id": "01",
+    "knowledge_point_id": "71",
+    "question_type_id": "03",
+    "question_no": "208784",
+    "question_stem": "离开实验室前应检查门、窗、水龙头是否关好，通风设备、饮水设施、计算机、空调等是否已切断电源。（）",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": null
+      }
+    ]
+  },
+  "661373": {
+    "list_no": 661373,
+    "professional_level_id": "01",
+    "knowledge_point_id": "71",
+    "question_type_id": "03",
+    "question_no": "208299",
+    "question_stem": "机床在自动运转过程中，严禁打开机床的防护门，以免发生危险。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": null
+      }
+    ]
+  },
+  "712817": {
+    "list_no": 712817,
+    "professional_level_id": "01",
+    "knowledge_point_id": "80",
+    "question_type_id": "01",
+    "question_no": "207239",
+    "question_stem": "实验室人员发生触电时，下例哪种行为是不正确的？（）",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "应迅速切断电源，将触电者上衣解开，取出口中异物，然后进行人工呼吸"
+      },
+      {
+        "choice": "应迅速注射兴奋剂"
+      },
+      {
+        "choice": "当患者伤势严重时，应立即送医院强救"
+      },
+      {
+        "choice": "无"
+      }
+    ]
+  },
+  "788855": {
+    "list_no": 788855,
+    "professional_level_id": "01",
+    "knowledge_point_id": "71",
+    "question_type_id": "01",
+    "question_no": "208309",
+    "question_stem": "清除工作台面的铁屑，必须使用（）",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "工具清扫"
+      },
+      {
+        "choice": "戴上手套，用手清理"
+      },
+      {
+        "choice": "用嘴大力吹"
+      },
+      {
+        "choice": "用冷却液冲洗"
+      }
+    ]
+  },
+  "803772": {
+    "list_no": 803772,
+    "professional_level_id": "01",
+    "knowledge_point_id": "75",
+    "question_type_id": "01",
+    "question_no": "208334",
+    "question_stem": "特种设备使用单位使用未经定期检验或者检验不合格的特种设备，由特种设备安全监督管理部门责令改正，逾期不改正的处()罚款。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "1000元以上5000元以下"
+      },
+      {
+        "choice": "5000元以上10000元以下"
+      },
+      {
+        "choice": "2000元以上2万元以下"
+      },
+      {
+        "choice": "2万元以上5万元以下"
+      }
+    ]
+  },
+  "831169": {
+    "list_no": 831169,
+    "professional_level_id": "01",
+    "knowledge_point_id": "71",
+    "question_type_id": "03",
+    "question_no": "208295",
+    "question_stem": "加工过程中应时刻注意机床的运动和加工状态是否正常，遇到异常现象。噪音和警报时，应立即停机，保留现场，及时报告老师或设备管理，故障排除后方可继续加工。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": null
+      }
+    ]
+  },
+  "842782": {
+    "list_no": 842782,
+    "professional_level_id": "02",
+    "knowledge_point_id": "77",
+    "question_type_id": "01",
+    "question_no": "209097",
+    "question_stem": "在易燃易爆场所穿（）最危险。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "布鞋"
+      },
+      {
+        "choice": "胶鞋"
+      },
+      {
+        "choice": "带钉鞋"
+      },
+      {
+        "choice": "无"
+      }
+    ]
+  },
+  "843558": {
+    "list_no": 843558,
+    "professional_level_id": "02",
+    "knowledge_point_id": "70",
+    "question_type_id": "01",
+    "question_no": "207244",
+    "question_stem": "涉及生物安全性的动物实验，必须在（）中进行？",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "净化式实验室"
+      },
+      {
+        "choice": "普通实验室"
+      },
+      {
+        "choice": "BSL-1以上生物安全实验室"
+      },
+      {
+        "choice": "正压实验室"
+      }
+    ]
+  },
+  "846744": {
+    "list_no": 846744,
+    "professional_level_id": "01",
+    "knowledge_point_id": "80",
+    "question_type_id": "01",
+    "question_no": "204611",
+    "question_stem": "在体育锻炼时或体育锻炼后即刻，立即测10秒钟的心率和脉搏，就一般体育锻炼者来说，运动后即刻的心率最好不要超过（）/10秒。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "20次"
+      },
+      {
+        "choice": "25次"
+      },
+      {
+        "choice": "30次"
+      },
+      {
+        "choice": "35次"
+      }
+    ]
+  },
+  "857597": {
+    "list_no": 857597,
+    "professional_level_id": "01",
+    "knowledge_point_id": "75",
+    "question_type_id": "01",
+    "question_no": "205260",
+    "question_stem": "压力容器的工作压力是指容器（）在正常工艺操作时的压力",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "顶部"
+      },
+      {
+        "choice": "底部"
+      },
+      {
+        "choice": "内部"
+      },
+      {
+        "choice": "无"
+      }
+    ]
+  },
+  "874232": {
+    "list_no": 874232,
+    "professional_level_id": "02",
+    "knowledge_point_id": "98",
+    "question_type_id": "01",
+    "question_no": "230588",
+    "question_stem": "下列有关使用漏电保护器的说法，哪种是正确的?",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "漏电保护器既可用来保护人身安全，还可用来对低压系统或设备的对地绝缘状况起到监督作用"
+      },
+      {
+        "choice": "漏电保护器安装点以后的线路不可对地绝缘"
+      },
+      {
+        "choice": "漏电保护器在日常使用中不可在通电状态下按动实验按钮来检验其是否可靠"
+      },
+      {
+        "choice": "对两相触电起保护作用"
+      }
+    ]
+  },
+  "895880": {
+    "list_no": 895880,
+    "professional_level_id": "02",
+    "knowledge_point_id": "70",
+    "question_type_id": "01",
+    "question_no": "204384",
+    "question_stem": "干热灭菌是利用热的作用来杀菌，通常在以下哪种设备中进行？",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "微波炉"
+      },
+      {
+        "choice": "烘箱"
+      },
+      {
+        "choice": "高压蒸汽灭菌器"
+      },
+      {
+        "choice": "电阻炉"
+      }
+    ]
+  },
+  "898943": {
+    "list_no": 898943,
+    "professional_level_id": "02",
+    "knowledge_point_id": "77",
+    "question_type_id": "01",
+    "question_no": "209069",
+    "question_stem": "未反应完的活泼金属残余物应如何处理：",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "连同溶剂一起作为废液处理"
+      },
+      {
+        "choice": "缓慢滴加无水乙醇将所有金属反应完毕后，整体作为废液处理"
+      },
+      {
+        "choice": "将金属取出暴露在空气中使其氧化完全"
+      },
+      {
+        "choice": "重新浸泡在煤油或石蜡中"
+      }
+    ]
+  },
+  "917008": {
+    "list_no": 917008,
+    "professional_level_id": "01",
+    "knowledge_point_id": "76",
+    "question_type_id": "01",
+    "question_no": "207134",
+    "question_stem": "消防监督检查人员在对消防安全重点单位进行监督检查时，首先应当填写()。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "《消防安全检查意见书》"
+      },
+      {
+        "choice": "《消防监督检查意见书》"
+      },
+      {
+        "choice": "《消防监督检查记录表》"
+      },
+      {
+        "choice": "《消防安全检查记录表》"
+      }
+    ]
+  },
+  "931719": {
+    "list_no": 931719,
+    "professional_level_id": "02",
+    "knowledge_point_id": "77",
+    "question_type_id": "01",
+    "question_no": "209116",
+    "question_stem": "永久气体气瓶的最高使用温度为()℃。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "20"
+      },
+      {
+        "choice": "40"
+      },
+      {
+        "choice": "60"
+      },
+      {
+        "choice": "80"
+      }
+    ]
+  },
+  "941179": {
+    "list_no": 941179,
+    "professional_level_id": "02",
+    "knowledge_point_id": "70",
+    "question_type_id": "01",
+    "question_no": "207278",
+    "question_stem": "用于科学研究的实验动物，必须来源于具备（）的单位或部门。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "实验动物生产许可证"
+      },
+      {
+        "choice": "实验动物使用许可证"
+      },
+      {
+        "choice": "实验动物环境设施合格证"
+      },
+      {
+        "choice": "动物实验使用许可证"
+      }
+    ]
+  },
+  "957874": {
+    "list_no": 957874,
+    "professional_level_id": "01",
+    "knowledge_point_id": "80",
+    "question_type_id": "01",
+    "question_no": "207209",
+    "question_stem": "从安全角度考虑，设备停电必须有一个明显的（）",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "标示牌"
+      },
+      {
+        "choice": "接地处"
+      },
+      {
+        "choice": "断开点"
+      },
+      {
+        "choice": "无"
+      }
+    ]
+  },
+  "973848": {
+    "list_no": 973848,
+    "professional_level_id": "02",
+    "knowledge_point_id": "98",
+    "question_type_id": "01",
+    "question_no": "230581",
+    "question_stem": "电气设备的外壳应有什么防护措施?",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": " 无"
+      },
+      {
+        "choice": "保护性接地 "
+      },
+      {
+        "choice": "防锈漆"
+      },
+      {
+        "choice": "绝缘"
+      }
+    ]
+  },
+  "986722": {
+    "list_no": 986722,
+    "professional_level_id": "01",
+    "knowledge_point_id": "76",
+    "question_type_id": "01",
+    "question_no": "207158",
+    "question_stem": "用灭火器进行灭火的最佳位置是（）",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "下风位置"
+      },
+      {
+        "choice": "上风或侧风位置"
+      },
+      {
+        "choice": "离起火点10米以上的位置"
+      },
+      {
+        "choice": "离起火点10米以下的位置"
+      }
+    ]
+  },
+  "991444": {
+    "list_no": 991444,
+    "professional_level_id": "02",
+    "knowledge_point_id": "70",
+    "question_type_id": "01",
+    "question_no": "204597",
+    "question_stem": "依据GB14922-2001《实验动物微生物学等级及监测》，犬和猴分为（）二个级别。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "普通和SPF"
+      },
+      {
+        "choice": "普通和清洁"
+      },
+      {
+        "choice": "清洁和SPF"
+      },
+      {
+        "choice": "无菌和悉生"
+      }
+    ]
+  },
+  "1007631": {
+    "list_no": 1007631,
+    "professional_level_id": "02",
+    "knowledge_point_id": "98",
+    "question_type_id": "01",
+    "question_no": "230591",
+    "question_stem": "漏电保护器可防止：",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "触电事故"
+      },
+      {
+        "choice": "电压波动"
+      },
+      {
+        "choice": "电流过大"
+      },
+      {
+        "choice": "双手触电事故"
+      }
+    ]
+  },
+  "1033802": {
+    "list_no": 1033802,
+    "professional_level_id": "01",
+    "knowledge_point_id": "80",
+    "question_type_id": "01",
+    "question_no": "207240",
+    "question_stem": "诱发安全事故的原因是：（）",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "设备的不安全状态和人的不安全行为"
+      },
+      {
+        "choice": "不良的工作环境"
+      },
+      {
+        "choice": "劳动组织管理的缺陷"
+      },
+      {
+        "choice": "以上都是"
+      }
+    ]
+  },
+  "1050011": {
+    "list_no": 1050011,
+    "professional_level_id": "02",
+    "knowledge_point_id": "70",
+    "question_type_id": "01",
+    "question_no": "207264",
+    "question_stem": "生物医学实验室内无污染的死亡动物尸体，组织碎块，应如何处理?（）",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "用塑料袋包装丢入生活垃圾桶中"
+      },
+      {
+        "choice": "自行深埋处理。"
+      },
+      {
+        "choice": "密封在专用塑料袋内，冷冻保存，并交专门机构处理。"
+      },
+      {
+        "choice": "自行焚烧处理。"
+      }
+    ]
+  },
+  "1070028": {
+    "list_no": 1070028,
+    "professional_level_id": "01",
+    "knowledge_point_id": "71",
+    "question_type_id": "03",
+    "question_no": "208277",
+    "question_stem": "机床在通电状态时，操作者千万不要打开和接触机床上示有闪电符号的、装有强电装置的部位，以防被电击伤。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": null
+      }
+    ]
+  },
+  "1079919": {
+    "list_no": 1079919,
+    "professional_level_id": "01",
+    "knowledge_point_id": "71",
+    "question_type_id": "03",
+    "question_no": "207478",
+    "question_stem": "未经指导教师许可，不得搬弄仪器、设备，以及擅自开始实验。实验时，应注意安全，按要求操作，如发现异常立即停止。（）",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": null
+      }
+    ]
+  },
+  "1089998": {
+    "list_no": 1089998,
+    "professional_level_id": "02",
+    "knowledge_point_id": "77",
+    "question_type_id": "01",
+    "question_no": "204604",
+    "question_stem": "以下药品（试剂）哪个应放在防爆冰箱里保存？（）",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "甲基丙烯酸甲酯。"
+      },
+      {
+        "choice": "乙醚。"
+      },
+      {
+        "choice": "苯。"
+      },
+      {
+        "choice": "无"
+      }
+    ]
+  },
+  "1094658": {
+    "list_no": 1094658,
+    "professional_level_id": "01",
+    "knowledge_point_id": "80",
+    "question_type_id": "01",
+    "question_no": "207371",
+    "question_stem": "实验室内。（）",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "使用闸刀开关、木质配电板和花线"
+      },
+      {
+        "choice": "自己随意接、拉电线"
+      },
+      {
+        "choice": "固定电源插座未经允许不得拆装、改线"
+      },
+      {
+        "choice": "无"
+      }
+    ]
+  },
+  "1111444": {
+    "list_no": 1111444,
+    "professional_level_id": "01",
+    "knowledge_point_id": "76",
+    "question_type_id": "01",
+    "question_no": "207131",
+    "question_stem": "泡沫灭火剂灭火的主要机理是()。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "冷却、窒息"
+      },
+      {
+        "choice": "抑制燃烧链式反应"
+      },
+      {
+        "choice": "降低氧浓度"
+      },
+      {
+        "choice": "降低温度"
+      }
+    ]
+  },
+  "1121883": {
+    "list_no": 1121883,
+    "professional_level_id": "01",
+    "knowledge_point_id": "75",
+    "question_type_id": "01",
+    "question_no": "205255",
+    "question_stem": "锅炉的三大安全附件分别是安全阀、压力表和",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "电表"
+      },
+      {
+        "choice": "温度计"
+      },
+      {
+        "choice": "水位表"
+      },
+      {
+        "choice": "无"
+      }
+    ]
+  },
+  "1126400": {
+    "list_no": 1126400,
+    "professional_level_id": "01",
+    "knowledge_point_id": "75",
+    "question_type_id": "01",
+    "question_no": "208336",
+    "question_stem": "特种设备使用单位对在用特种设备应至少()进行一次自行检查，并作出记录。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "每天"
+      },
+      {
+        "choice": "每周"
+      },
+      {
+        "choice": "每月"
+      },
+      {
+        "choice": "半年"
+      }
+    ]
+  },
+  "1129731": {
+    "list_no": 1129731,
+    "professional_level_id": "02",
+    "knowledge_point_id": "77",
+    "question_type_id": "01",
+    "question_no": "209157",
+    "question_stem": "过氧化酸硝酸铵硝酸钾高氯酸及其盐重铬酸及其盐高锰酸及其盐过氧化苯甲酸五氧化二磷等是强氧化剂，使用时应注意：()",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "环境温度不要高于30℃"
+      },
+      {
+        "choice": "通风要良好"
+      },
+      {
+        "choice": "不要加热，不要与有机物或还原性物质共同使用"
+      },
+      {
+        "choice": "以上都是"
+      }
+    ]
+  },
+  "1130288": {
+    "list_no": 1130288,
+    "professional_level_id": "02",
+    "knowledge_point_id": "98",
+    "question_type_id": "01",
+    "question_no": "230571",
+    "question_stem": "使用手持电动工具时，下列哪个措施不正确?",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "使用静电防护毯"
+      },
+      {
+        "choice": "带防护手套"
+      },
+      {
+        "choice": "使用漏电保护器"
+      },
+      {
+        "choice": "穿绝缘鞋"
+      }
+    ]
+  },
+  "1146545": {
+    "list_no": 1146545,
+    "professional_level_id": "01",
+    "knowledge_point_id": "80",
+    "question_type_id": "01",
+    "question_no": "207207",
+    "question_stem": "安全电压是指保证不会对人体产生致命危险的电压值，工业中使用的安全电压是（）以下",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "25V"
+      },
+      {
+        "choice": "36V"
+      },
+      {
+        "choice": "50V"
+      },
+      {
+        "choice": "110V"
+      }
+    ]
+  },
+  "1146566": {
+    "list_no": 1146566,
+    "professional_level_id": "02",
+    "knowledge_point_id": "70",
+    "question_type_id": "01",
+    "question_no": "207271",
+    "question_stem": "依照实验室生物安全国家标准的规定，（）不得从事高致病性病原微生物实验活动。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "一级、二级实验室"
+      },
+      {
+        "choice": "三级实验室"
+      },
+      {
+        "choice": "四级实验室"
+      },
+      {
+        "choice": "无"
+      }
+    ]
+  },
+  "1151339": {
+    "list_no": 1151339,
+    "professional_level_id": "01",
+    "knowledge_point_id": "71",
+    "question_type_id": "03",
+    "question_no": "208296",
+    "question_stem": "加工过程中认真观察切削以及冷却情况，确保机床刀具正常运行及工件质量，并关闭防护门，以免切屑、润滑油、切削液飞出。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": null
+      }
+    ]
+  },
+  "1153866": {
+    "list_no": 1153866,
+    "professional_level_id": "01",
+    "knowledge_point_id": "71",
+    "question_type_id": "03",
+    "question_no": "208284",
+    "question_stem": "机床回零方向为各轴的正向",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": null
+      }
+    ]
+  },
+  "1155364": {
+    "list_no": 1155364,
+    "professional_level_id": "02",
+    "knowledge_point_id": "70",
+    "question_type_id": "01",
+    "question_no": "207361",
+    "question_stem": "发生人畜共患病时，须立即向学校有关机构报告，同时还必须立即向当地什么职能部门报告？（）",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "卫生厅"
+      },
+      {
+        "choice": "农业厅"
+      },
+      {
+        "choice": "卫生防疫部门"
+      },
+      {
+        "choice": "医院"
+      }
+    ]
+  },
+  "1167600": {
+    "list_no": 1167600,
+    "professional_level_id": "01",
+    "knowledge_point_id": "76",
+    "question_type_id": "01",
+    "question_no": "207142",
+    "question_stem": "人员密集的公共场所、观众厅的入场门、太平门不应设置门槛，其宽度不应小于()m。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "1.1"
+      },
+      {
+        "choice": "1.2"
+      },
+      {
+        "choice": "1.4"
+      },
+      {
+        "choice": "1.3"
+      }
+    ]
+  },
+  "1195816": {
+    "list_no": 1195816,
+    "professional_level_id": "02",
+    "knowledge_point_id": "77",
+    "question_type_id": "01",
+    "question_no": "209121",
+    "question_stem": "乙炔瓶的储藏仓库，应该避免阳光直射，与明火距离不得小于（）。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "5米"
+      },
+      {
+        "choice": "10米"
+      },
+      {
+        "choice": "15米"
+      },
+      {
+        "choice": "无"
+      }
+    ]
+  },
+  "1203759": {
+    "list_no": 1203759,
+    "professional_level_id": "01",
+    "knowledge_point_id": "76",
+    "question_type_id": "01",
+    "question_no": "207153",
+    "question_stem": "使用灭火器扑救火灾时要对准火焰的（）喷射。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "上部"
+      },
+      {
+        "choice": "中部"
+      },
+      {
+        "choice": "根部"
+      },
+      {
+        "choice": "无"
+      }
+    ]
+  },
+  "1232149": {
+    "list_no": 1232149,
+    "professional_level_id": "02",
+    "knowledge_point_id": "70",
+    "question_type_id": "01",
+    "question_no": "204308",
+    "question_stem": "生物学实验中常用的放射性同位素3H的半衰期为（）。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "14.8d"
+      },
+      {
+        "choice": "87.13d"
+      },
+      {
+        "choice": "65d"
+      },
+      {
+        "choice": "12.9y"
+      }
+    ]
+  },
+  "1235379": {
+    "list_no": 1235379,
+    "professional_level_id": "01",
+    "knowledge_point_id": "71",
+    "question_type_id": "01",
+    "question_no": "208342",
+    "question_stem": "起重机上，凡是高度不低于（）米的作业点，都应予以防护。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "1"
+      },
+      {
+        "choice": "1.5"
+      },
+      {
+        "choice": "2"
+      },
+      {
+        "choice": "2.5"
+      }
+    ]
+  },
+  "1247896": {
+    "list_no": 1247896,
+    "professional_level_id": "01",
+    "knowledge_point_id": "75",
+    "question_type_id": "01",
+    "question_no": "205264",
+    "question_stem": "实验室常用气瓶保存应（）。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "？放在封闭空间之内"
+      },
+      {
+        "choice": "混放"
+      },
+      {
+        "choice": "按气体特性并保持安全距离"
+      },
+      {
+        "choice": "按气体特性"
+      }
+    ]
+  },
+  "1250741": {
+    "list_no": 1250741,
+    "professional_level_id": "02",
+    "knowledge_point_id": "98",
+    "question_type_id": "01",
+    "question_no": "230567",
+    "question_stem": "长期搁置不用的手持电动工具，在使用前必须测量绝缘电阻，要求手持电动工具带电部分与外壳之间绝缘电阻不低于多少MΩ？",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "2"
+      },
+      {
+        "choice": "0.5"
+      },
+      {
+        "choice": "1"
+      },
+      {
+        "choice": "10"
+      }
+    ]
+  },
+  "1259357": {
+    "list_no": 1259357,
+    "professional_level_id": "01",
+    "knowledge_point_id": "80",
+    "question_type_id": "01",
+    "question_no": "207201",
+    "question_stem": "下列有关使用漏电保护器的说法，哪种正确?",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "漏电保护器既可用来保护人身安全，还可用来对低压系统或设备的对地绝缘状况起到监督作用"
+      },
+      {
+        "choice": "漏电保护器安装点以后的线路不可对地绝缘"
+      },
+      {
+        "choice": "漏电保护器在日常使用中不可在通电状态下按动实验按钮来检验其是否灵敏可靠"
+      },
+      {
+        "choice": "无"
+      }
+    ]
+  },
+  "1260569": {
+    "list_no": 1260569,
+    "professional_level_id": "02",
+    "knowledge_point_id": "77",
+    "question_type_id": "01",
+    "question_no": "209007",
+    "question_stem": "易燃类液体的特点是：",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "闪点在25℃以下的液体，闪点越低，越易燃烧"
+      },
+      {
+        "choice": "极易挥发成气体"
+      },
+      {
+        "choice": "遇明火即燃烧"
+      },
+      {
+        "choice": "以上都是"
+      }
+    ]
+  },
+  "1279795": {
+    "list_no": 1279795,
+    "professional_level_id": "01",
+    "knowledge_point_id": "80",
+    "question_type_id": "01",
+    "question_no": "207200",
+    "question_stem": "为了减少电击（触电）事故对人体的损伤，经常用到电流型漏电保护开关，其保护指标设置为≤30mAS。请从下列选项中选择其正确含义。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "流经人体的电流（以毫安为单位）和时间（以秒为单位）的乘积小于30。例如电流为30mA则持续的时间必须小于1秒。"
+      },
+      {
+        "choice": "流经人体的电流必须小于30毫安。"
+      },
+      {
+        "choice": "流经人体电流的持续时间必须小于1秒。"
+      },
+      {
+        "choice": "无"
+      }
+    ]
+  },
+  "1301906": {
+    "list_no": 1301906,
+    "professional_level_id": "01",
+    "knowledge_point_id": "75",
+    "question_type_id": "01",
+    "question_no": "208338",
+    "question_stem": "特种设备安装、改造、维修施工前，应向()书面告知后，即可施工。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "直辖市或设区的市级特种设备安全监督管理部门"
+      },
+      {
+        "choice": "省级特种设备安全监督管理部门"
+      },
+      {
+        "choice": "国务院特种设备安全监督管理部门"
+      },
+      {
+        "choice": "设计单位的省级主管部门"
+      }
+    ]
+  },
+  "1312862": {
+    "list_no": 1312862,
+    "professional_level_id": "01",
+    "knowledge_point_id": "71",
+    "question_type_id": "01",
+    "question_no": "207333",
+    "question_stem": "恒温培养箱的使用最高温度为：（）",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "60℃"
+      },
+      {
+        "choice": "100℃"
+      },
+      {
+        "choice": "45℃"
+      },
+      {
+        "choice": "80℃"
+      }
+    ]
+  },
+  "1322427": {
+    "list_no": 1322427,
+    "professional_level_id": "01",
+    "knowledge_point_id": "80",
+    "question_type_id": "01",
+    "question_no": "204614",
+    "question_stem": "应如何简单辨认有味的化学类药品？（）",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "用鼻子对着瓶口去辨认气味"
+      },
+      {
+        "choice": "用舌头品尝试剂"
+      },
+      {
+        "choice": "将瓶口远离鼻子，用手在瓶口上方扇动，稍闻其味即可"
+      },
+      {
+        "choice": "取出一点，用鼻子对着闻"
+      }
+    ]
+  },
+  "1324511": {
+    "list_no": 1324511,
+    "professional_level_id": "01",
+    "knowledge_point_id": "71",
+    "question_type_id": "01",
+    "question_no": "207241",
+    "question_stem": "师生进入实验室工作，一定要搞清楚等位置，有异常情况，要关闭相应的总开关。（）",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "日光灯开关、水槽、通风橱"
+      },
+      {
+        "choice": "电源总开关、水源总开关"
+      },
+      {
+        "choice": "通风设备开关、多媒体开关、计算机开关"
+      },
+      {
+        "choice": "无"
+      }
+    ]
+  },
+  "1327107": {
+    "list_no": 1327107,
+    "professional_level_id": "02",
+    "knowledge_point_id": "98",
+    "question_type_id": "01",
+    "question_no": "230570",
+    "question_stem": "停电检修时，在一经合闸即可送电到工作地点的开关或刀闸的操作把手上，应悬挂如下哪种标示牌?",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "在此工作”"
+      },
+      {
+        "choice": "“止步，高压危险”  "
+      },
+      {
+        "choice": "“禁止合闸，有人工作”"
+      },
+      {
+        "choice": "“今日休息”"
+      }
+    ]
+  },
+  "1336972": {
+    "list_no": 1336972,
+    "professional_level_id": "01",
+    "knowledge_point_id": "71",
+    "question_type_id": "01",
+    "question_no": "208339",
+    "question_stem": "安全阀是一种（）装置。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "计量"
+      },
+      {
+        "choice": "联锁"
+      },
+      {
+        "choice": "报警"
+      },
+      {
+        "choice": "泄压"
+      }
+    ]
+  },
+  "1347064": {
+    "list_no": 1347064,
+    "professional_level_id": "01",
+    "knowledge_point_id": "71",
+    "question_type_id": "03",
+    "question_no": "208290",
+    "question_stem": "加工前，必须进行机床空运行。空运行时必须将Z向提高一个安全高度。空运行１０-２０分钟。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": null
+      }
+    ]
+  },
+  "1353277": {
+    "list_no": 1353277,
+    "professional_level_id": "02",
+    "knowledge_point_id": "70",
+    "question_type_id": "01",
+    "question_no": "207261",
+    "question_stem": "涉及病原微生物的实验材料在匀浆或搅拌后，容器应在（）开启。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "实验台上"
+      },
+      {
+        "choice": "生物安全柜内"
+      },
+      {
+        "choice": "无菌室内"
+      },
+      {
+        "choice": "超净工作台"
+      }
+    ]
+  },
+  "1358649": {
+    "list_no": 1358649,
+    "professional_level_id": "02",
+    "knowledge_point_id": "70",
+    "question_type_id": "01",
+    "question_no": "204417",
+    "question_stem": "离心操作时，为防液体溢出，离心管中样品装量不能超过离心管体积的多少？",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "42403"
+      },
+      {
+        "choice": "42738"
+      },
+      {
+        "choice": "42737"
+      },
+      {
+        "choice": "42798"
+      }
+    ]
+  },
+  "1374173": {
+    "list_no": 1374173,
+    "professional_level_id": "02",
+    "knowledge_point_id": "70",
+    "question_type_id": "01",
+    "question_no": "207312",
+    "question_stem": "开展动物实验过程中，以下哪些做法是正确的？（）",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "废弃的动物尸体与器官可作为饲料原料再利用"
+      },
+      {
+        "choice": "废弃的动物尸体与器官可自行焚烧处理"
+      },
+      {
+        "choice": "实验动物排泄物可以作为肥料再利用"
+      },
+      {
+        "choice": "实验动物应从国家指定的具有资质的单位获得"
+      }
+    ]
+  },
+  "1398229": {
+    "list_no": 1398229,
+    "professional_level_id": "01",
+    "knowledge_point_id": "71",
+    "question_type_id": "03",
+    "question_no": "207521",
+    "question_stem": "机器仪表发生故障，或机器及动力装备等遇异状时，应该先关机，然后找有关人员前来检修,并设立警示牌。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": null
+      }
+    ]
+  },
+  "1406543": {
+    "list_no": 1406543,
+    "professional_level_id": "01",
+    "knowledge_point_id": "71",
+    "question_type_id": "01",
+    "question_no": "207313",
+    "question_stem": "实验大楼安全出口的疏散门应：（）",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "自由开启"
+      },
+      {
+        "choice": "向外开启"
+      },
+      {
+        "choice": "向内开启"
+      },
+      {
+        "choice": "关闭，需要时可自行开启"
+      }
+    ]
+  },
+  "1412856": {
+    "list_no": 1412856,
+    "professional_level_id": "01",
+    "knowledge_point_id": "71",
+    "question_type_id": "01",
+    "question_no": "207221",
+    "question_stem": "下列实验操作中，说法正确的是？（）",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "可以对容量瓶、量筒等容器加热。"
+      },
+      {
+        "choice": "在通风橱操作时，可将头伸入通风柜内观察。"
+      },
+      {
+        "choice": "非一次性防护手套脱下前必须冲洗干净，而一次性手套时须从后向前把里面翻出来脱下后再扔掉。"
+      },
+      {
+        "choice": "可以抓住塑料瓶子或玻璃瓶子的盖子搬运瓶子。"
+      }
+    ]
+  },
+  "1450692": {
+    "list_no": 1450692,
+    "professional_level_id": "02",
+    "knowledge_point_id": "77",
+    "question_type_id": "01",
+    "question_no": "209085",
+    "question_stem": "实验室安全管理实行哪种管理？",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "校、（院）系、实验室三级管理"
+      },
+      {
+        "choice": "校、（院）系两级管理"
+      },
+      {
+        "choice": "院（系）、实验室两级管理"
+      },
+      {
+        "choice": "实验室自行管理"
+      }
+    ]
+  },
+  "1462331": {
+    "list_no": 1462331,
+    "professional_level_id": "02",
+    "knowledge_point_id": "98",
+    "question_type_id": "01",
+    "question_no": "230415",
+    "question_stem": "预防电击（触电）的一条重要措施是用电设备的金属外壳要有效接地。请从下列选项中选择可靠的接地点：",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "单相供电的2根线分别称为火线和地线，选择其中的地线接地"
+      },
+      {
+        "choice": " 三相供电中的中性点电压应该为零，可以选择这个中性点来接地"
+      },
+      {
+        "choice": "专门埋设地下、保证接地电阻很小专用地线"
+      },
+      {
+        "choice": "实验室内的自来水管（暖气管）是埋设于地下的金属管相连的，可用来接地"
+      }
+    ]
+  },
+  "1473700": {
+    "list_no": 1473700,
+    "professional_level_id": "01",
+    "knowledge_point_id": "71",
+    "question_type_id": "01",
+    "question_no": "208347",
+    "question_stem": "搬运气瓶时，应该（）。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "戴好瓶帽，轻装轻卸"
+      },
+      {
+        "choice": "随便挪动"
+      },
+      {
+        "choice": "无具体安全规定"
+      },
+      {
+        "choice": "无"
+      }
+    ]
+  },
+  "1486055": {
+    "list_no": 1486055,
+    "professional_level_id": "02",
+    "knowledge_point_id": "77",
+    "question_type_id": "01",
+    "question_no": "209070",
+    "question_stem": "放置时间过长的乙醚在使用前应该做什么预备处理？",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "用碘化钾检测后，加入还原剂如硫酸亚铁水溶液等除去里面可能产生的过氧化物以防爆炸"
+      },
+      {
+        "choice": "重蒸"
+      },
+      {
+        "choice": "干燥除水"
+      },
+      {
+        "choice": "无"
+      }
+    ]
+  },
+  "1487283": {
+    "list_no": 1487283,
+    "professional_level_id": "02",
+    "knowledge_point_id": "77",
+    "question_type_id": "01",
+    "question_no": "209118",
+    "question_stem": "压力容器在正常运行中，其顶部的压力是（）。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "最高工作压力"
+      },
+      {
+        "choice": "工作压力"
+      },
+      {
+        "choice": "设计压力"
+      },
+      {
+        "choice": "最低工作压力"
+      }
+    ]
+  },
+  "1501489": {
+    "list_no": 1501489,
+    "professional_level_id": "01",
+    "knowledge_point_id": "75",
+    "question_type_id": "01",
+    "question_no": "208333",
+    "question_stem": "特种设备生产、使用的（）应当对本单位特种设备的安全全面负责。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "主要负责人"
+      },
+      {
+        "choice": "安全管理员"
+      },
+      {
+        "choice": "部门负责人"
+      },
+      {
+        "choice": "无"
+      }
+    ]
+  },
+  "1510273": {
+    "list_no": 1510273,
+    "professional_level_id": "02",
+    "knowledge_point_id": "77",
+    "question_type_id": "01",
+    "question_no": "209046",
+    "question_stem": "箱式电阻炉（马弗炉）使用过程中，当温度降至多少度以下，才可以打开炉门。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "200℃"
+      },
+      {
+        "choice": "400℃"
+      },
+      {
+        "choice": "550℃"
+      },
+      {
+        "choice": "800℃"
+      }
+    ]
+  },
+  "1519908": {
+    "list_no": 1519908,
+    "professional_level_id": "01",
+    "knowledge_point_id": "71",
+    "question_type_id": "01",
+    "question_no": "207213",
+    "question_stem": "实验中用到很多玻璃器皿，容易破碎，为避免造成割伤应该注意什么？()",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "装配时不可用力过猛，用力处不可远离连接部位"
+      },
+      {
+        "choice": "不能口径不合而勉强连接"
+      },
+      {
+        "choice": "玻璃折断面需烧圆滑，不能有棱角"
+      },
+      {
+        "choice": "以上都是"
+      }
+    ]
+  },
+  "1522123": {
+    "list_no": 1522123,
+    "professional_level_id": "01",
+    "knowledge_point_id": "76",
+    "question_type_id": "01",
+    "question_no": "207174",
+    "question_stem": "金属梯子不适于以下什么工作场所?",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "带电作业的工作场所？"
+      },
+      {
+        "choice": "坑穴或密闭场所"
+      },
+      {
+        "choice": "高空作业"
+      },
+      {
+        "choice": "静电？"
+      }
+    ]
+  },
+  "1529200": {
+    "list_no": 1529200,
+    "professional_level_id": "01",
+    "knowledge_point_id": "75",
+    "question_type_id": "01",
+    "question_no": "205256",
+    "question_stem": "特种作业人员经过()合格取得操作许可证者，方可上岗。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "专业技术培训考试"
+      },
+      {
+        "choice": "文化考试"
+      },
+      {
+        "choice": "体能测试"
+      },
+      {
+        "choice": "无"
+      }
+    ]
+  },
+  "1539410": {
+    "list_no": 1539410,
+    "professional_level_id": "02",
+    "knowledge_point_id": "77",
+    "question_type_id": "01",
+    "question_no": "209014",
+    "question_stem": "一般将闪点在25℃以下的化学试剂列入易燃化学试剂，它们多是极易挥发的液体。以下哪种物质不是易燃化学试剂？",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "乙醚"
+      },
+      {
+        "choice": "苯"
+      },
+      {
+        "choice": "甘油"
+      },
+      {
+        "choice": "汽油"
+      }
+    ]
+  },
+  "1555019": {
+    "list_no": 1555019,
+    "professional_level_id": "01",
+    "knowledge_point_id": "71",
+    "question_type_id": "01",
+    "question_no": "207294",
+    "question_stem": "压力表与压力容器的接管上装设的三通旋塞阀应设在（）管道上（）",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "水平"
+      },
+      {
+        "choice": "垂直"
+      },
+      {
+        "choice": "任意"
+      },
+      {
+        "choice": "无"
+      }
+    ]
+  },
+  "1560987": {
+    "list_no": 1560987,
+    "professional_level_id": "02",
+    "knowledge_point_id": "70",
+    "question_type_id": "01",
+    "question_no": "204259",
+    "question_stem": "根据卫生部规定，人间传染的病原微生物按危害程度可分为四，其中哪危害程度最高？",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "第一"
+      },
+      {
+        "choice": "第二"
+      },
+      {
+        "choice": "第三"
+      },
+      {
+        "choice": "第四"
+      }
+    ]
+  },
+  "1565910": {
+    "list_no": 1565910,
+    "professional_level_id": "01",
+    "knowledge_point_id": "71",
+    "question_type_id": "01",
+    "question_no": "207377",
+    "question_stem": "压力表在刻度盘上刻有的红线表示什么？（）",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "最低工作压力"
+      },
+      {
+        "choice": "最高工作压力"
+      },
+      {
+        "choice": "中间工作压力"
+      },
+      {
+        "choice": "无"
+      }
+    ]
+  },
+  "1597519": {
+    "list_no": 1597519,
+    "professional_level_id": "01",
+    "knowledge_point_id": "71",
+    "question_type_id": "01",
+    "question_no": "208311",
+    "question_stem": "清除钻头上缠绕的长铁屑时（）",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "要停车清除"
+      },
+      {
+        "choice": "用手拉出"
+      },
+      {
+        "choice": "反转钻头"
+      },
+      {
+        "choice": "减慢转速"
+      }
+    ]
+  },
+  "1602348": {
+    "list_no": 1602348,
+    "professional_level_id": "01",
+    "knowledge_point_id": "71",
+    "question_type_id": "01",
+    "question_no": "207212",
+    "question_stem": "对于实验室的微波炉，下列哪种说法是错误的？()",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "微波炉开启后，会产生很强的电磁辐射，操作人员应远离"
+      },
+      {
+        "choice": "严禁将易燃易爆等危险化学品放入微波炉中加热"
+      },
+      {
+        "choice": "实验室的微波炉也可加热食品"
+      },
+      {
+        "choice": "对密闭压力容器使用微波炉加热时应注意严格按照安全规范操作"
+      }
+    ]
+  },
+  "1606264": {
+    "list_no": 1606264,
+    "professional_level_id": "02",
+    "knowledge_point_id": "70",
+    "question_type_id": "01",
+    "question_no": "207253",
+    "question_stem": "过滤除菌操作时,将菌液注入滤器过滤，时间不宜过长，压力控制在（）为宜。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "0～30mmHg"
+      },
+      {
+        "choice": "100～200mmHg"
+      },
+      {
+        "choice": "500～600mmHg"
+      },
+      {
+        "choice": "无"
+      }
+    ]
+  },
+  "1634518": {
+    "list_no": 1634518,
+    "professional_level_id": "02",
+    "knowledge_point_id": "77",
+    "question_type_id": "01",
+    "question_no": "209017",
+    "question_stem": "以下几种气体中，有毒的气体为：",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "氧气"
+      },
+      {
+        "choice": "氮气"
+      },
+      {
+        "choice": "氯气"
+      },
+      {
+        "choice": "二氧化碳"
+      }
+    ]
+  },
+  "1645006": {
+    "list_no": 1645006,
+    "professional_level_id": "02",
+    "knowledge_point_id": "98",
+    "question_type_id": "01",
+    "question_no": "230564",
+    "question_stem": "使用电气设备时，由于维护不及时，当什么进入时可导致短路事故？",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "导电粉尘或纤维"
+      },
+      {
+        "choice": "强光辐射"
+      },
+      {
+        "choice": "高温环境"
+      },
+      {
+        "choice": "潮气"
+      }
+    ]
+  },
+  "1646074": {
+    "list_no": 1646074,
+    "professional_level_id": "01",
+    "knowledge_point_id": "80",
+    "question_type_id": "01",
+    "question_no": "204613",
+    "question_stem": "开启气瓶瓶阀时，操作者应该站在什么位置?（）",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "侧面"
+      },
+      {
+        "choice": "正面"
+      },
+      {
+        "choice": "后面"
+      },
+      {
+        "choice": "无"
+      }
+    ]
+  },
+  "1657221": {
+    "list_no": 1657221,
+    "professional_level_id": "01",
+    "knowledge_point_id": "75",
+    "question_type_id": "01",
+    "question_no": "205261",
+    "question_stem": "压力表在刻度盘上刻有的红线表示什么？",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "最低工作压力"
+      },
+      {
+        "choice": "最高工作压力"
+      },
+      {
+        "choice": "中间工作压力"
+      },
+      {
+        "choice": "无"
+      }
+    ]
+  },
+  "1679406": {
+    "list_no": 1679406,
+    "professional_level_id": "02",
+    "knowledge_point_id": "98",
+    "question_type_id": "01",
+    "question_no": "230587",
+    "question_stem": "安全电压是指保证不会对人体产生致命危险的电压值，工业中使用的安全电压是多少以下？",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "25V"
+      },
+      {
+        "choice": "36V"
+      },
+      {
+        "choice": "50V"
+      },
+      {
+        "choice": "110V"
+      }
+    ]
+  },
+  "1688831": {
+    "list_no": 1688831,
+    "professional_level_id": "02",
+    "knowledge_point_id": "70",
+    "question_type_id": "01",
+    "question_no": "207362",
+    "question_stem": "一旦出现实验动物生物安全性的问题，首先必须向学校哪个机构报告？（）",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "保卫处"
+      },
+      {
+        "choice": "校医院"
+      },
+      {
+        "choice": "校长办公室"
+      },
+      {
+        "choice": "实验动物突发事件应急小组"
+      }
+    ]
+  },
+  "1702363": {
+    "list_no": 1702363,
+    "professional_level_id": "01",
+    "knowledge_point_id": "71",
+    "question_type_id": "01",
+    "question_no": "208306",
+    "question_stem": "操作旋转加工设备时，要求穿着紧身合适的工作服，因为（）",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "工作时衣物容易被机器缠绕"
+      },
+      {
+        "choice": "工作时衣物容易弄脏"
+      },
+      {
+        "choice": "工作的环境温度决定"
+      },
+      {
+        "choice": "无"
+      }
+    ]
+  },
+  "1767840": {
+    "list_no": 1767840,
+    "professional_level_id": "01",
+    "knowledge_point_id": "71",
+    "question_type_id": "03",
+    "question_no": "207522",
+    "question_stem": "声级计长期不用时应取下电池。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": null
+      }
+    ]
+  },
+  "1783012": {
+    "list_no": 1783012,
+    "professional_level_id": "02",
+    "knowledge_point_id": "77",
+    "question_type_id": "01",
+    "question_no": "209117",
+    "question_stem": "使用（）时，操作者的双手、手套及工具等不得沾染油脂。",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "氢气瓶"
+      },
+      {
+        "choice": "氧气瓶"
+      },
+      {
+        "choice": "液化石油气钢瓶"
+      },
+      {
+        "choice": "氮气瓶"
+      }
+    ]
+  },
+  "1790609": {
+    "list_no": 1790609,
+    "professional_level_id": "01",
+    "knowledge_point_id": "71",
+    "question_type_id": "01",
+    "question_no": "207322",
+    "question_stem": "回流和加热时，液体量不能超过烧瓶容量的：（）",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "1/2"
+      },
+      {
+        "choice": "2/3"
+      },
+      {
+        "choice": "3/4"
+      },
+      {
+        "choice": "4/5"
+      }
+    ]
+  },
+  "1873207": {
+    "list_no": 1873207,
+    "professional_level_id": "01",
+    "knowledge_point_id": "76",
+    "question_type_id": "01",
+    "question_no": "207194",
+    "question_stem": "下列哪种灭火器不适于扑灭电器火灾?(",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "二氧化碳灭火器"
+      },
+      {
+        "choice": "干粉灭火器"
+      },
+      {
+        "choice": "泡沫灭火器"
+      },
+      {
+        "choice": "无"
+      }
+    ]
+  },
+  "1878100": {
+    "list_no": 1878100,
+    "professional_level_id": "01",
+    "knowledge_point_id": "75",
+    "question_type_id": "01",
+    "question_no": "205258",
+    "question_stem": "开启气瓶瓶阀时，操作者应该站在什么位置?",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "侧面"
+      },
+      {
+        "choice": "正面"
+      },
+      {
+        "choice": "后面"
+      },
+      {
+        "choice": "无"
+      }
+    ]
+  },
+  "1882785": {
+    "list_no": 1882785,
+    "professional_level_id": "01",
+    "knowledge_point_id": "71",
+    "question_type_id": "01",
+    "question_no": "207237",
+    "question_stem": "在实验室区域内，可以：（）",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "吸烟、烹饪、用膳"
+      },
+      {
+        "choice": "睡觉过夜和进行娱乐活动"
+      },
+      {
+        "choice": "做与学习、工作有关的事情"
+      },
+      {
+        "choice": "无"
+      }
+    ]
+  },
+  "1903925": {
+    "list_no": 1903925,
+    "professional_level_id": "01",
+    "knowledge_point_id": "71",
+    "question_type_id": "01",
+    "question_no": "207330",
+    "question_stem": "往玻璃管上套橡皮管（塞）时，不正确的做法是：（）",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "管端应烧圆滑"
+      },
+      {
+        "choice": "用布裹手或带厚手套，以防割伤手"
+      },
+      {
+        "choice": "可以使用薄壁玻管"
+      },
+      {
+        "choice": "加点水或润滑剂"
+      }
+    ]
+  },
+  "1935989": {
+    "list_no": 1935989,
+    "professional_level_id": "02",
+    "knowledge_point_id": "77",
+    "question_type_id": "01",
+    "question_no": "215238",
+    "question_stem": "如果工作场所潮湿，为避免触电，使用手持电动工具的人应：",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "站在铁板上操作"
+      },
+      {
+        "choice": "站在绝缘胶板上操作"
+      },
+      {
+        "choice": "穿防静电鞋操作"
+      },
+      {
+        "choice": "戴上安全帽"
+      }
+    ]
+  },
+  "2011671": {
+    "list_no": 2011671,
+    "professional_level_id": "01",
+    "knowledge_point_id": "76",
+    "question_type_id": "01",
+    "question_no": "207146",
+    "question_stem": "如果电视机着火了，应()",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "迅速往电视上泼水灭火。"
+      },
+      {
+        "choice": "拔掉电源后，用湿棉被盖住。"
+      },
+      {
+        "choice": "马上拨打火警电话，请消防队来灭火。"
+      },
+      {
+        "choice": "无"
+      }
+    ]
+  },
+  "2015116": {
+    "list_no": 2015116,
+    "professional_level_id": "01",
+    "knowledge_point_id": "71",
+    "question_type_id": "01",
+    "question_no": "208327",
+    "question_stem": "数控车床在车削加工时必须：",
+    "question_score": "1",
+    "XUANXIANG": [
+      {
+        "choice": "关上防护门"
+      },
+      {
+        "choice": "不必关上防护门"
+      },
+      {
+        "choice": "根据需要可关也可开"
+      },
+      {
+        "choice": "关闭电源"
+      }
+    ]
+  }
+}
