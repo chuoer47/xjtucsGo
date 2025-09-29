@@ -4,7 +4,7 @@ const { URLSearchParams } = require('url');
 
 // 配置请求头
 const headers = {
-  'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 9; MI 6 MIUI/20.6.18)',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0',
   'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
 };
 

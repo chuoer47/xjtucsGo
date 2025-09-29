@@ -1,0 +1,10 @@
+{
+  "bark_token": "",
+  "weixin_username": "1125480783@qq.com",
+  "weixin_password": "qwer1234",
+  "steps_min": 8000,
+  "steps_max": 10000,
+  "icon_url": "https://cdnjson.com/images/2024/10/28/wx.th.jpg",
+  "scheduled_time": "22:25",
+  "auto_start": false
+}
