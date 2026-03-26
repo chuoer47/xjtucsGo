@@ -1,0 +1,25 @@
+id,select_type,table,partitions,type,possible_keys,key,key_len,ref,rows,filtered,Extra
+1,SIMPLE,de,NULL,index,"PRIMARY,emp_no,dept_no",emp_no,4,NULL,322889,100.00,"Using index; Using temporary; Using filesort"
+1,SIMPLE,d,NULL,eq_ref,"PRIMARY,dept_name",PRIMARY,16,employees.de.dept_no,1,100.00,NULL
+1,SIMPLE,s,NULL,ref,"PRIMARY,emp_no",PRIMARY,4,employees.de.emp_no,9,100.00,NULL
+
+id,select_type,table,partitions,type,possible_keys,key,key_len,ref,rows,filtered,Extra
+1,SIMPLE,e,NULL,ALL,PRIMARY,NULL,NULL,NULL,299468,100.00,"Using temporary; Using filesort"
+1,SIMPLE,s,NULL,ref,"PRIMARY,emp_no",PRIMARY,4,employees.e.emp_no,9,100.00,NULL
+
+id,select_type,table,partitions,type,possible_keys,key,key_len,ref,rows,filtered,Extra
+1,SIMPLE,t,NULL,index,"PRIMARY,emp_no",emp_no,4,NULL,442486,100.00,"Using index; Using filesort"
+id,select_type,table,partitions,type,possible_keys,key,key_len,ref,rows,filtered,Extra
+1,PRIMARY,e,NULL,ALL,PRIMARY,NULL,NULL,NULL,299468,100.00,NULL
+1,PRIMARY,s,NULL,ref,"PRIMARY,emp_no",PRIMARY,4,employees.e.emp_no,9,100.00,"Using where"
+2,SUBQUERY,salaries,NULL,index,"PRIMARY,emp_no",PRIMARY,7,NULL,2838426,100.00,NULL
+
+id,select_type,table,partitions,type,possible_keys,key,key_len,ref,rows,filtered,Extra
+1,PRIMARY,e,NULL,ALL,PRIMARY,NULL,NULL,NULL,299468,100.00,NULL
+1,PRIMARY,s,NULL,ref,"PRIMARY,emp_no",PRIMARY,4,employees.e.emp_no,9,100.00,"Using where"
+2,SUBQUERY,salaries,NULL,index,"PRIMARY,emp_no",PRIMARY,7,NULL,2838426,100.00,NULL
+
+id,select_type,table,partitions,type,possible_keys,key,key_len,ref,rows,filtered,Extra
+1,PRIMARY,e,NULL,ALL,PRIMARY,NULL,NULL,NULL,299468,100.00,"Using filesort"
+1,PRIMARY,de,NULL,ref,"PRIMARY,emp_no",PRIMARY,4,employees.e.emp_no,1,100.00,"Using index"
+2,SUBQUERY,departments,NULL,index,NULL,dept_name,162,NULL,9,100.00,"Using index"

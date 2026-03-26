@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)https://blog.csdn.net/zhuhai__yizhi/article/details/78284401 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="./mysql 安装employees db的步骤 - CSDN博客_files/cm.js"></script><script type="text/javascript" async="" src="./mysql 安装employees db的步骤 - CSDN博客_files/bcqm"></script><script src="./mysql 安装employees db的步骤 - CSDN博客_files/hm.js"></script><script src="./mysql 安装employees db的步骤 - CSDN博客_files/hm(1).js"></script><script type="text/javascript" async="" src="./mysql 安装employees db的步骤 - CSDN博客_files/bcqm(1)"></script>
+    <link rel="canonical" href="https://blog.csdn.net/zhuhai__yizhi/article/details/78284401"> 
+    <script src="./mysql 安装employees db的步骤 - CSDN博客_files/hm(2).js"></script><script type="text/javascript" charset="utf-8" src="./mysql 安装employees db的步骤 - CSDN博客_files/apiaccept"></script><script src="./mysql 安装employees db的步骤 - CSDN博客_files/hm(2).js"></script><script type="text/javascript">
+        var username = "zhuhai__yizhi";
+        var _blogger = username;
+        var blog_address = "https://blog.csdn.net/zhuhai__yizhi";
+        var static_host = "https://csdnimg.cn/release/phoenix/";
+        var currentUserName = "weixin_38100342"; 
+        var fileName = '78284401';
+        var commentscount = 0;
+        var islock = false;
+        window.quickReplyflag = true;
+        var totalFloor = 0;
+        var isBole = false;
+        var isDigg = false;
+        var isExpert = false;
+        var isAdm = false;
+        var baiduKey = "myemployees.sql";
+        var needInsertBaidu = false;
+        var isShowAds = true;
+    </script>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="referrer" content="always">
+    <script src="./mysql 安装employees db的步骤 - CSDN博客_files/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="./mysql 安装employees db的步骤 - CSDN博客_files/avatar.css">
+                <link rel="stylesheet" href="./mysql 安装employees db的步骤 - CSDN博客_files/main-e6f2ceb3f9.css">
+          <link rel="stylesheet" href="./mysql 安装employees db的步骤 - CSDN博客_files/content_toolbar.css">
+
+    <script src="./mysql 安装employees db的步骤 - CSDN博客_files/main-1.0.5.js"></script>
+    <script type="text/javascript" src="./mysql 安装employees db的步骤 - CSDN博客_files/tracking-1.0.2.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./mysql 安装employees db的步骤 - CSDN博客_files/main-121650ef3c.js"></script>
+
+    <script src="./mysql 安装employees db的步骤 - CSDN博客_files/ds.js"></script>
+    <script type="text/javascript">
+        // Traffic Stats of the entire Web site By baidu
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?6bcd52f51e9b3dce32bec4a3997715ac";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+        // Traffic Stats of the entire Web site By baidu end
+    </script>
+    <meta name="description" content="（转载）http://www.cnblogs.com/chenyucong/p/5734800.html
+
+
+因为准备要开始学习ASP.NET的高级部分，所以今晚想安装一个数据库示例，百度发现原来mysql有个employees db
+但是单纯按照网上的方法，也是没有办法导入的，所以写了这篇博文，作为笔记。
+ 
+本文内容参考了2篇文章：
+http://ari.iteye.com/bl">
+    <meta name="keywords" content="">
+    <meta http-equiv="Cache-Control" content="no-siteapp"><link rel="alternate" media="handheld" href="https://blog.csdn.net/zhuhai__yizhi/article/details/78284401#">
+    <meta name="shenma-site-verification" content="5a59773ab8077d4a62bf469ab966a63b_1497598848">
+    <title>mysql 安装employees db的步骤 - CSDN博客</title>
+    <link href="https://csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON">
+              <script src="./mysql 安装employees db的步骤 - CSDN博客_files/baidu_search-1.1.2.js" type="text/javascript"></script>
+                      <link rel="stylesheet" href="./mysql 安装employees db的步骤 - CSDN博客_files/htmledit_views-1f9cf0a071.css">
+            <style>
+            .MathJax, .MathJax_Message, .MathJax_Preview{
+                display: none
+            }
+      </style>
+<script src="./mysql 安装employees db的步骤 - CSDN博客_files/share.js"></script><link rel="stylesheet" type="text/css" href="./mysql 安装employees db的步骤 - CSDN博客_files/goTop.min.css"><script type="text/javascript" src="./mysql 安装employees db的步骤 - CSDN博客_files/baidu_opensug-1.0.0.js"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+#page{z-index:999}#page .blue{color:#29cee9}#page .red{color:#f22}.ovf-hidden{overflow:hidden;height:100%}.ajax-loading{z-index:2147483647;background-color:#000;position:fixed;width:100%;height:100%;top:0;text-align:center;display:none;opacity:.6;filter:alpha(opacity=60)}.ajax-loading div{margin-top:23%}.ajax-loading img{width:50px;height:50px}ul,li,p,em{list-style-type:none;-webkit-padding-start:0;-webkit-margin-before:0;-webkit-margin-after:0;-webkit-margin-start:0;-webkit-margin-end:0;margin:0;padding:0}div[id^="yht"] *,div[class^="yht"] *{box-sizing:border-box;margin:0;padding:0;text-decoration:inherit}.yht-red{color:#FC4E4E}.yht-panel-right{position:fixed;right:0;bottom:300px;z-index:2147483647}.yht-panel-right .yht-hide{display:none}.yht-panel-right a{position:relative;display:inline-block}.yht-panel-right a .close{position:absolute;right:0;top:-5px;width:11px;height:11px;display:inline-block;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Njk5QUNFNjhGM0U3MTFFNkIyQjVGRDJDQzY2OENDRjgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6Njk5QUNFNjlGM0U3MTFFNkIyQjVGRDJDQzY2OENDRjgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2OTlBQ0U2NkYzRTcxMUU2QjJCNUZEMkNDNjY4Q0NGOCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2OTlBQ0U2N0YzRTcxMUU2QjJCNUZEMkNDNjY4Q0NGOCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pv16ibIAAAEkSURBVHjaVJC/L0NRFMe/97E+NjpIvIGxTYxIMVKNRKT8DxYjEoPRyNJEhMGmwdh2E/EfWCyGiqXmtxE5Pve+1746ud9zz4/vPefc46y2pCCmWdSRnKvhlUAftMEZuQ85ydnGItqtE2yBWKNihnIpxF2MbgQxwbgjEReE0MkX8UZMzBdKItQxmAiEm0ep1sjIdYpdtfIHoePh2OncTBNjMgR/fqX9A2rMS9s8ur2W3t98C3+mxiFND2ds30uVBam6Jj0/SZ2HbKysesmP8TUk1/ek5RXpBWJ1VdpsDIhe+p7cGX7Kt26es6wT7gtpa6f4LNtw7DnBeWWmuEjYaEUvKaFKhOrle0xD+B9nQDTy1ovyZBeUwSX4BN/hNnyzcp7XnwADAO0gVGJsn/VTAAAAAElFTkSuQmCC) no-repeat}.yht-panel-right a .tips{position:absolute;right:14px;bottom:22px;width:10px;height:10px;display:inline-block;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QjlBMTlCNzlGMjhGMTFFNkFGNzJDMUU5QzcyNTM2NzkiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QjlBMTlCN0FGMjhGMTFFNkFGNzJDMUU5QzcyNTM2NzkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpCOUExOUI3N0YyOEYxMUU2QUY3MkMxRTlDNzI1MzY3OSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpCOUExOUI3OEYyOEYxMUU2QUY3MkMxRTlDNzI1MzY3OSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PlPVhYUAAACESURBVHjaYvz//z8DFMgDsS4Qi0L5r4H4EhA/AnEYoQpNgdiQAQGEgfgtlH0eiE8zAQk5JEUgBZlAbIWkCSQnD1KohyTIBcTHGTCBLguSm0DgMRBzYlEoysRAJGCC+o4QeA1SeBlN8DuSj2HgMq7gQQbg4GHEEuBiUP4rqG0PQRyAAAMApbkf/hNU998AAAAASUVORK5CYII=) no-repeat}.yht-panel-right a .tips:hover .tip{display:block}.yht-panel-right a .tip{display:inline-block;vertical-align:middle;margin:5px;width:60px;font:12px "Microsoft YaHei","SimHei","Arial"!important;word-break:break-line;word-wrap:break-word;text-align:center;position:absolute;top:5px;left:-44px;line-height:16px;color:#29cee9;padding-top:9px}.yht-panel-right a .tip .tip-content{position:relative;background:#fff;border-radius:8px;border:1px solid #29cee9}.yht-panel-right a .tip .tip-content:before,.yht-panel-right a .tip .tip-content:after,.yht-panel-right a .tip .tip-content .before,.yht-panel-right a .tip .tip-content .after{position:absolute;top:-13px;right:5px;width:0;height:0;content:'';border-style:solid;border-color:transparent;border-bottom:9px solid #29cee9;border-left-width:9px;border-right-width:10px}.yht-panel-right a .tip .tip-content:after,.yht-panel-right a .tip .tip-content .after{position:absolute;top:-12px;border-bottom-color:#fff}.yht-panel-right a .tip .tip-content{padding:3px}.yht-panel-right a .tip{display:none;z-index:999999}.yht-panel-right a>div{position:absolute;right:20px;top:-35px}.yht-panel-as{position:fixed;bottom:20px;left:0;z-index:2147483647}.yht-panel-as .yht-hide{display:none}.yht-small-panel-bg{position:relative;display:inline-block}.yht-small-panel-bg img{cursor:pointer}.yht-small-panel-bg .yht-small-panel-close{position:absolute;top:0;right:0}.yht-panel-at{position:relative;font-size:14px}.yht-panel-at .yht-red-pack{position:absolute;top:-47px;left:73px}.yht-panel-at .yht-panel-back{position:absolute;top:105px;right:6px}.yht-panel-at .yht-read-inpunt{position:absolute;top:33px;right:240px;font-family:"Microsoft YaHei","SimHei","Arial"!important;display:inline-block;width:250px;text-align:center;color:#de8001}.yht-panel-at .yht-read-inpunt input{line-height:30px;text-indent:10px;font-family:"Microsoft YaHei","SimHei","Arial"!important}.yht-panel-at .yht-read-inpunt input,.yht-panel-at .yht-read-inpunt button{height:30px;display:inline-block;border:none;background:#fff}.yht-panel-at .yht-read-inpunt .yht-mobile,.yht-panel-at .yht-read-inpunt button{width:205px}.yht-panel-at .yht-read-inpunt .yht-mobile{margin-top:10px}.yht-panel-at .yht-read-inpunt .yht-image{width:205px;margin:10px 0}.yht-panel-at .yht-read-inpunt .yht-image a{float:right}.yht-panel-at .yht-read-inpunt .yht-image-code{width:104px;margin-left:6px}.yht-panel-at .yht-read-inpunt img{width:62px;height:28px;display:inline-block}.yht-panel-at .yht-read-inpunt button{background:#de8001;color:#fff;line-height:25px;font:14px "Microsoft YaHei","SimHei","Arial"!important;text-indent:0}.yht-panel-at .yht-read-inpunt button:hover{background:#c57101}.panel-qq-zone{position:fixed;right:0;bottom:20px;z-index:2147483647;box-shadow:3px 3px 3px #E2E2E2,2px 2px 0 #333}.panel-qq-zone .yht-hide{display:none}.panel-qq-zone .close{position:absolute;right:0;top:0;width:22px;height:22px;display:inline-block;z-index:1111;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAVCAYAAABCIB6VAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDg0RjM3MTdGRTIzMTFFNjg5MDFFNzlDOUNGMUQxMDciIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDg0RjM3MThGRTIzMTFFNjg5MDFFNzlDOUNGMUQxMDciPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo0ODRGMzcxNUZFMjMxMUU2ODkwMUU3OUM5Q0YxRDEwNyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo0ODRGMzcxNkZFMjMxMUU2ODkwMUU3OUM5Q0YxRDEwNyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pk/mPTAAAAGpSURBVHjatJXNTsJAEMenFctHKSAQpCj4kagvwAt4N/gsepWjnHkY7voCvoAXD0SjQBERCy2U1tlt0U0ptJI6yTY7s9lfpzv/nXLK4wOg3eK4gXCsgaPOIfgCJy0I12o8Pq4hfLsi4CobSe2fQjwrBybEMgVIl8/c4SoBS2zE0MeQyJcgls77QgVpB8RCGYyp5l6SIu7IuPcM5kwHcfcALPT1obISKsnHMFZeYPL+trQe8dqkffSAUJMI5zjO9hmLSllIykcroSvBFD5EGELFQgVfYqGvBIauBduZd5Fp0sxNYwamOQ8E9QWDc8amMYXU3gn1R69PMB0NfAvLB5GUNZ8zcyOQDH0zXpwpyRTPgupc7bTtGmwKZgu1+Hy120YpVn4L/FdwNIXQ4nKhbClaVOdApdgNDqaZEihelsmg4yFFIj2OZk5U43WJlsDxnAyJXAlUhGoeUFbnVIrFQ9gSYjQJN3jE9gtBTNMs10F/pPjZB35bACGZcS99kX58h5PzkNvmPdFx8x/6cZN3/h6NEKGE1VrcvDqOS/IJRKobwFRnb81hwbcAAwDKH7n8m4BodQAAAABJRU5ErkJggg==) no-repeat}.panel-qq-zone a{position:relative;display:inline-block}.panel-qq-zone a .go{position:absolute;right:40px;bottom:16px;font:20px "Microsoft YaHei","SimHei","Arial"!important;width:164px;height:40px;-webkit-user-select:none;-moz-user-select:none;user-select:none;line-height:40px;text-align:center;background:#ec4241;border-radius:5px;cursor:pointer;border:none;color:#fff}.panel-qq-zone a .go:hover{background-color:#ea2b2a}.panel-qq-zone a .go:active{background-color:#ea2b2a;outline:thin dotted;outline-offset:-2px}body .jd-hide{display:none}.jd-detail-left-recommend{font:13px "Microsoft YaHei","SimHei","Arial"!important;color:#333;position:fixed;top:150px;right:0;background-color:#fff;z-index:2147483647;-webkit-box-shadow:0 0 10px rgba(0,204,204,.5);-ms-box-shadow:0 0 10px rgba(0,204,204,.5);box-shadow:0 0 10px rgba(0,204,204,.5)}.jd-hot-goods{float:left;width:180px}.jd-hot-goods .title{font:600 16px/34px "Microsoft YaHei","SimHei","Arial"!important;width:180px;text-align:left;background-color:#ff8b8b;color:#fff;position:relative}.jd-hot-goods .title:hover .tip{display:block}.jd-hot-goods .title em{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAMCAYAAACulacQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RjlEMzcxNzMwNEFBMTFFN0FBN0JEQkVEM0IxMkIxNzQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RjlEMzcxNzQwNEFBMTFFN0FBN0JEQkVEM0IxMkIxNzQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpGOUQzNzE3MTA0QUExMUU3QUE3QkRCRUQzQjEyQjE3NCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpGOUQzNzE3MjA0QUExMUU3QUE3QkRCRUQzQjEyQjE3NCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PlykkQEAAAB5SURBVHjaYvj//78GEO8GYn4gZkDGIOL4fwg4AsRc6JIqQPwKqmAHELMhS4KwPhB/gCpYDcTMyJIgbAXEX6EK5gAxIwOaI9yA+CdUQS8TAypgQWL/RdZli2TsTGRjjZActBzZQepIXtmK7hVYIBzEFQjbsQUfQIABAPC3AbsL1ASsAAAAAElFTkSuQmCC) no-repeat center;cursor:pointer;display:inline-block;width:7px;height:12px;margin:0 28px 0 10px}.jd-hot-goods .title p{padding-left:20px;cursor:pointer;display:inline-block;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAASCAYAAAC9+TVUAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6N0M2Nzc2MEUwNEE5MTFFNzg0QzRBOEM1MzhCOUI0NDQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6N0M2Nzc2MEYwNEE5MTFFNzg0QzRBOEM1MzhCOUI0NDQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo3QzY3NzYwQzA0QTkxMUU3ODRDNEE4QzUzOEI5QjQ0NCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo3QzY3NzYwRDA0QTkxMUU3ODRDNEE4QzUzOEI5QjQ0NCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PmZuzDoAAALtSURBVHjajJNJaFRBEIb/7vcyZlwyGRNFECEuuOFCFBERPShRoqgIEfGg4iEIgoLoUTx48CCCEkUUUTS4geJCQFDc8OASl0TBuOESxySTzWQyk3nTb+myeoxh1KAWFK+rX33/q1ddDQxgRDSF/TR7G/2wFvbj7BMGykdC6Qi/HJMjsI3dpYEtw74pJ3eM4ZF09SkO1vZtbs8lmtKKqt42UUN36nexzX35aw0vCVjF8coupWdowj7zkp+IpRXOf2mH4qDqdQzxjNtfPW8d7Fa6xHCGFxxQJCQoIFR0ZPRuFfjT19e+k52uh2jIBnkuAstG0tco0D5qFs3SAYknxflyrxS4mnBJSFdTghWFJXCmUDXWh1oeytIvtRgHFwW8OTiUh6ECKHYSmNr8EiL+WEZU41sWuGA4w9tEuJ/2acVgW4R9ldgYjo5GpO4ExqdqsLByC8SwKKijGXcuHwNpDa/8ADhvwyBWYA6Gl7ZEBZcUSyXbuFMa7Z29iMdb0PutA+UTS1BWJFE+bRLyhEZGKTR+bsrmpXpaYTjDC9OozkwQyku8icvAiT6v/wTfUyidX4ZIdDgXLMwxIJ1K4WXtPbieh9kzx4LscJcXmTKqKN9ypRHJLnQmSKZ9qIyDBeVrUFg0EkLarGFln0MKCjF30Qoox0HSAaRW2nC/DJ3z7b3T7gRk/G/GVVNrOiDV87VfQPQNjaTA9YQVkvhvI4OPEkK0ZiHu8pz/Eehqb8mJBHh0lptVFnR8Gs0b/7QHN6/gY0Nddn2t+ghqzh7dVbls1jg7qylwvcvVqRH5cmgu9OHVs19E5pWtRnXVHj7uAM2xRsxbWlFSECm8KH4mtDnBfj7JHSPCEuIfFZ07eRgvbpzRPHwy1tHztL8PI8PWTq7o0NdUoLtdgvfb7/HdQtIjNPVqWrxuy+2M8i+1JXrJtuTxPz7KRzjZD4ITrhZzfeIr9WPWYAnS3PrXtpRbi8PW3U1Lpg0KtC6tvtXw6LsAAwDnbfhm4S/8xQAAAABJRU5ErkJggg==) no-repeat left;background-size:17px 18px}.jd-hot-goods .title .tip{display:inline-block;vertical-align:middle;margin:5px;font:400 12px "Microsoft YaHei","SimHei","Arial"!important;min-width:30px;position:absolute;top:-27px;left:6px;padding-bottom:6px;word-break:break-line;word-wrap:break-word;line-height:16px;color:#29cee9}.jd-hot-goods .title .tip .tip-content{position:relative;background:#fff;border-radius:8px;border:1px solid #29cee9}.jd-hot-goods .title .tip .tip-content:before,.jd-hot-goods .title .tip .tip-content:after,.jd-hot-goods .title .tip .tip-content .before,.jd-hot-goods .title .tip .tip-content .after{position:absolute;right:40px;bottom:-9px;width:0;height:0;content:'';border-style:solid;border-color:transparent;border-top:5px solid #29cee9;border-left-width:5px;border-right-width:6px}.jd-hot-goods .title .tip .tip-content:after,.jd-hot-goods .title .tip .tip-content .after{position:absolute;bottom:-8px;border-top-color:#fff}.jd-hot-goods .title .tip .tip-content{padding:3px 10px}.jd-hot-goods .title .tip{display:none;z-index:999999}.jd-hot-goods span{color:#8C8C8C}.jd-hot-goods .guess-item-img{width:108px;height:80px;display:inline-block;vertical-align:middle;font-size:0;line-height:0;text-align:center}.jd-hot-goods .guess-item-img:before{display:inline-block;vertical-align:middle;content:"";height:100%;font-size:0;line-height:0;width:0}.jd-hot-goods .guess-item-img img{display:inline-block;max-width:100%;max-height:100%;display:inline-block;vertical-align:middle;font-size:1rem;line-height:normal}.jd-hot-goods ul{margin-top:10px}.jd-hot-goods ul li{text-align:center;color:#333;font:13px "Microsoft YaHei","SimHei","Arial"!important}.jd-hot-goods ul li p{overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;width:150px;margin:10px 0 0 15px}.jd-hot-goods ul li.hide{display:none}.jd-hot-goods ul .jd-price,.jd-next-hot{text-align:center;margin-bottom:10px}.jd-next-hot{color:#949395}.jd-next-hot .active{margin-left:7px}.jd-next-hot .total{margin-right:7px}.jd-next-hot em{background-color:#f0f0f0;width:20px;height:20px;display:inline-block;font:600 12px "Microsoft YaHei","SimHei","Arial"!important;color:#fff;border-radius:50%;text-align:center;line-height:15px;cursor:pointer}.jd-hot-goods-close{display:block;width:38px;max-width:38px;font:17px/26px "Microsoft YaHei","SimHei","Arial"!important;color:#ff8b8b;cursor:pointer}.jd-hot-goods-close em{background:#ff8b8b url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAMCAYAAAC5tzfZAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MDUyNzM5RkJGOThGMTFFNkJBMUZCREY1RDAxNDM2MkMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MDUyNzM5RkNGOThGMTFFNkJBMUZCREY1RDAxNDM2MkMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDowNTI3MzlGOUY5OEYxMUU2QkExRkJERjVEMDE0MzYyQyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDowNTI3MzlGQUY5OEYxMUU2QkExRkJERjVEMDE0MzYyQyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PjiqrSoAAAC+SURBVHjajJJbCsIwEEWnugYR0R/xtTIF/RAXoaCgFMHtCNIliIj4qeIu2nhHb+gQInTgNHDaS5LOiHNOAhJwANPAd8AJ9GKBvftVDkb0bXCnz8JQyhcFmNC1wI3+Abo2sDWBGV0TXOmfejT1PrA2gTldA1zoX2DgN9DH0pW1MIEz3dvc7UtNRHIpq861IFr6TSK2mF5V2G1oj+fZVLhXPwwpuyp/UCITkUaaa3uVyZ8x0qkYB16n4qjN/QgwAMlO5mJd2qcFAAAAAElFTkSuQmCC) no-repeat center;display:inline-block;width:38px;height:38px}.jd-hot-goods-close p{padding:0 10px;margin-bottom:8px}.jd-add-qq{position:fixed;right:5px;bottom:10px;font:12px "Microsoft YaHei","SimHei","Arial"!important;-webkit-box-shadow:0 0 10px rgba(0,204,204,.5);-ms-box-shadow:0 0 10px rgba(0,204,204,.5);box-shadow:0 0 10px rgba(0,204,204,.5);-webkit-border-radius:5px;-moz-border-radius:5px;-ms-border-radius:5px;-o-border-radius:5px;border-radius:5px;background-color:#fff;z-index:2147483647}.jd-add-qq .add-qq-header{text-align:right;padding:5px 8px}.jd-add-qq .add-qq-content{display:inline-block;text-align:center;padding:0 20px;margin-bottom:25px;color:#333;text-decoration:none;cursor:auto}.jd-add-qq .qq-warm{font:600 14px "Microsoft YaHei","SimHei","Arial"!important;color:#333;margin-bottom:18px}.jd-add-qq .add-qq-button{margin-top:18px}.jd-add-qq .add-qq-button span{width:145px;height:30px;-webkit-user-select:none;-moz-user-select:none;user-select:none;line-height:30px;text-align:center;background:#ff8b8b;border-radius:15px;cursor:pointer;color:#fff;display:inline-block}.jd-add-qq .add-qq-button span:hover{background-color:#ff7272}.jd-add-qq .add-qq-button span:active{background-color:#ff7272;outline:thin dotted;outline-offset:-2px}.yht-panel-notification{width:360px;z-index:2147483647;background-color:#fff;border:1px solid #eee;box-shadow:0 2px 4px rgba(0,0,0,.12),0 0 6px rgba(0,0,0,.04);transition:opacity .3s,transform .3s,right .3s,top .4s;padding:10px 10px 0;position:fixed;right:0;bottom:10px}.yht-panel-notification .yht-close{display:inline-block;width:8px;height:8px;position:absolute;top:6px;right:5px;background:url("//1pcdn.1haitao.com/explugin/img/panel/icon-close3.png") no-repeat}.yht-panel-notification .goos-item{line-height:0;font-size:12px;text-align:left;border-bottom:1px solid #eee;padding-bottom:10px}.yht-panel-notification .goos-item:before{display:inline-block;vertical-align:middle;content:"";height:100%;font-size:0;line-height:0;width:0}.yht-panel-notification .goos-item>div{display:inline-block;vertical-align:middle;max-width:100%;max-height:100%}.yht-panel-notification .goos-item .img{width:110px;height:80px;display:inline-block;vertical-align:middle;font-size:0;line-height:0;text-align:center}.yht-panel-notification .goos-item .img:before{display:inline-block;vertical-align:middle;content:"";height:100%;font-size:0;line-height:0;width:0}.yht-panel-notification .goos-item .img img{display:inline-block;max-width:100%;max-height:100%;display:inline-block;vertical-align:middle;font-size:1rem;line-height:normal}.yht-panel-notification .goos-item .yht-info{width:220px;height:80px;display:inline-block;color:#999}.yht-panel-notification .goos-item .yht-info .yht-title{font-size:14px;color:#333;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-height:26px}.yht-panel-notification .goos-item .yht-info .yht-subhead{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:5px;height:28px}.yht-panel-notification .yht-bottom{text-align:left;margin-top:5px}.yht-panel-notification .yht-bottom>div{display:inline-block}.yht-panel-notification .yht-bottom .yht-left p{background:url("//1pcdn.1haitao.com/explugin/img/yht-icon-logo.png") no-repeat left;padding-left:25px;color:#29cee9;font-size:14px}.yht-panel-notification .yht-bottom .yht-right{display:inline-block;float:right}.yht-panel-notification .yht-bottom .yht-right p{background:url("//1pcdn.1haitao.com/explugin/img/panel/icon-go.png") no-repeat right;padding-right:18px;color:#333}.yht-inject-price{width:460px;font:12px "Microsoft YaHei","SimHei","Arial"!important;background-color:#fff;margin-left:10px}.yht-inject-price ul{font-size:0;line-height:0;text-align:left;border-top:3px solid #29cee9;border-bottom:1px solid #eee}.yht-inject-price ul:before{display:inline-block;vertical-align:middle;content:"";height:100%;font-size:0;line-height:0;width:0}.yht-inject-price ul li{display:inline-block;vertical-align:middle;max-width:100%;max-height:100%}.yht-inject-price li{display:inline-block;font:600 12px "Microsoft YaHei","SimHei","Arial"!important;padding:3px 8px;color:#29cee9;line-height:24px}.yht-inject-price li a{color:#29cee9}.yht-inject-price li span{padding:0 15px;border-left:2px solid #29cee9;border-right:2px solid #29cee9}.yht-inject-price li .yht-app{background:url("//1pcdn.1haitao.com/explugin/img/icon-qr2.png") no-repeat left 1px;padding-left:20px;position:relative;cursor:pointer}.yht-inject-price li .yht-app:hover .tip{display:block}.yht-inject-price li h2{font:600 15px PingFangSC-Regular,"Droid Sans Regular","Rotobo","Microsoft YaHei";margin:5px 0}.yht-inject-price li .tip{display:inline-block;vertical-align:middle;margin:5px;width:145px;font:12px "Microsoft YaHei","SimHei","Arial"!important;word-break:break-line;word-wrap:break-word;text-align:center;position:absolute;top:10px;left:-44px;line-height:16px;color:#29cee9;padding-top:9px}.yht-inject-price li .tip .tip-content{position:relative;background:#fff;border-radius:8px;border:1px solid #29cee9}.yht-inject-price li .tip .tip-content:before,.yht-inject-price li .tip .tip-content:after,.yht-inject-price li .tip .tip-content .before,.yht-inject-price li .tip .tip-content .after{position:absolute;top:-13px;left:65px;width:0;height:0;content:'';border-style:solid;border-color:transparent;border-bottom:9px solid #29cee9;border-left-width:9px;border-right-width:10px}.yht-inject-price li .tip .tip-content:after,.yht-inject-price li .tip .tip-content .after{position:absolute;top:-12px;border-bottom-color:#fff}.yht-inject-price li .tip .tip-content{padding:3px}.yht-inject-price li .tip p{margin:5px 0}.yht-inject-price li .tip{display:none;z-index:999999}.yht-inject-price .yht-active-item{padding:5px 12px}.yht-inject-price .yht-active-item a:hover{color:#f22}.yht-inject-price .yht-active-item p{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;line-height:24px;padding-right:20px;color:#333}</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css"></style><style type="text/css"></style><style type="text/css"></style><style type="text/css"></style><style type="text/css"></style><style type="text/css"></style><style type="text/css"></style><style type="text/css"></style><style type="text/css"></style><style type="text/css"></style><style type="text/css"></style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><link rel="stylesheet" href="./mysql 安装employees db的步骤 - CSDN博客_files/share_style0_16.css"></head>
+<body><div id="BAIDU_DUP_fp_wrapper" style="position: absolute; left: -1px; bottom: -1px; z-index: 0; width: 0px; height: 0px; overflow: hidden; visibility: hidden; display: none;"><iframe id="BAIDU_DUP_fp_iframe" src="./mysql 安装employees db的步骤 - CSDN博客_files/o.html" style="width: 0px; height: 0px; visibility: hidden; display: none;"></iframe></div><div id="MathJax_Message" style="display: none;"></div><svg aria-hidden="true" style="position: absolute; width: 0px; height: 0px; overflow: hidden;"><symbol id="icon-xiajiantou" viewBox="0 0 1024 1024"><path d="M328.208 346.062h368.494c20.393 0 36.887 16.366 36.887 36.757 0 9.484-3.637 18.056-9.483 24.55L541.873 650.522c-12.211 16.105-35.2 19.484-51.438 7.275-2.859-2.08-5.324-4.547-7.274-7.275L298.853 404.772c-12.08-16.106-8.83-39.225 7.404-51.306 6.626-5.066 14.289-7.404 21.95-7.404z"></path></symbol><symbol id="icon-shouji" viewBox="0 0 1024 1024"><path d="M537.754 795.889c-26.41 0-47.893 21.478-47.893 47.892s21.484 47.893 47.893 47.893 47.892-21.479 47.892-47.893-21.483-47.892-47.892-47.892z"></path><path d="M774.697 42.071H300.815c-39.864 0-72.3 32.43-72.3 72.3v795.264c0 39.869 32.43 72.3 72.3 72.3h473.872c39.87 0 72.3-32.431 72.3-72.3v-795.27c0.004-39.864-32.426-72.294-72.29-72.294zM300.815 90.266h473.872a24.125 24.125 0 0 1 24.1 24.1v595.809H276.72v-595.81a24.125 24.125 0 0 1 24.094-24.1z m473.882 843.463H300.815a24.125 24.125 0 0 1-24.1-24.1V762.501h522.072V909.63a24.115 24.115 0 0 1-24.09 24.1z"></path></symbol><symbol id="icon-tianxie" viewBox="0 0 1024 1024"><path d="M121.905 780.19h780.19v97.524h-780.19V780.19zM823.296 298.496l-68.974-68.974-344.795 344.796-34.475 103.448 103.424-34.475zM875.008 246.76l17.237-17.238-68.949-68.949-17.262 17.237-17.237 17.238 68.974 68.973z"></path></symbol><symbol id="icon-sousuo" viewBox="0 0 1024 1024"><path d="M1023.972002 964.002812l-59.981188 59.981189-271.443276-271.459276c-166.600191 136.489602-412.812649 126.986048-568.309361-28.494664-165.624236-165.624236-165.624236-434.187647 0-599.859881 165.624236-165.592238 434.187647-165.592238 599.827883 0 155.52871 155.52871 164.984266 401.789166 28.462666 568.389356L1023.972002 964.002812zM663.364906 184.007375c-132.585785-132.585785-347.327719-132.761777-479.705514-0.43198-132.329797 132.345796-132.121807 347.119729 0.463978 479.705514s347.375717 132.793775 479.705514 0.41598c132.329797-132.281799 132.169805-347.10373-0.463978-479.689514z"></path></symbol><symbol id="icon-guanbi" viewBox="0 0 1024 1024"><path d="M1002.211316 933.90818c24.46369 24.46369 29.007633 59.583246 10.159871 78.447007-18.863761 18.863761-53.983317 14.303819-78.447007-10.159871L21.807724 90.09486C-2.655966 65.631169-7.199909 30.495614 11.647853 11.647853c18.863761-18.863761 53.983317-14.303819 78.447007 10.159871L1002.211316 933.90818z"></path><path d="M933.92418 21.807724C958.38787-2.655966 993.507426-7.199909 1012.371187 11.647853c18.863761 18.863761 14.303819 53.983317-10.159871 78.447007L90.09486 1002.211316c-24.46369 24.46369-59.583246 29.007633-78.447007 10.159871-18.847761-18.863761-14.303819-53.983317 10.159871-78.463007L933.92418 21.807724z"></path></symbol><symbol id="icon-caidan" viewBox="0 0 1024 1024"><path d="M0 132.8a48.496 48.496 0 0 0 48.496 48.496h927.008a48.496 48.496 0 1 0 0-96.992H48.496A48.496 48.496 0 0 0 0 132.8s0-26.784 0 0zM0 512.016a48.48 48.48 0 0 0 48.48 48.48h927.04a48.48 48.48 0 0 0 0-96.96H48.48A48.48 48.48 0 0 0 0 512.016s0-26.784 0 0zM0 891.2a48.496 48.496 0 0 0 48.496 48.496h927.008a48.496 48.496 0 1 0 0-96.992H48.496A48.496 48.496 0 0 0 0 891.2s0-26.784 0 0z"></path></symbol><symbol id="icon-yonghudenglu" viewBox="0 0 1024 1024"><path d="M1022.26704 962.432c-43.888-157.584-162.16-281.216-312.064-340.144 92.8-61.376 153.92-164.496 153.92-281.168C864.12304 153.04 706.04304 0 511.70704 0 317.35504 0 159.19504 153.04 159.19504 341.136c0 116.704 61.152 219.84 154.064 281.184C164.13904 681.024 46.18704 803.792 1.80304 960.16c-7.344 26.016 8.464 52.864 35.36 60.032a52.016 52.016 0 0 0 38.4-4.608 49.072 49.072 0 0 0 23.712-29.568c50.768-178.96 220.352-303.92 412.448-303.92 193.04 0 362.848 125.712 412.944 305.744 7.296 26.048 34.992 41.456 61.952 34.48 26.912-7.04 42.88-33.824 35.648-59.888zM260.25104 341.136c0-134.256 112.816-243.424 251.472-243.424 138.576 0 251.328 109.184 251.328 243.424 0 133.904-112.768 242.864-251.328 242.864-138.672 0-251.472-108.976-251.472-242.864z m0 0"></path></symbol><symbol id="toolbar-csdnlogo" viewBox="0 0 1024 1024"><path d="M533.941333 419.264c14.709333-1.621333 37.290667-3.264 68.352-3.264 51.872 0 93.802667 9.152 119.776 28.416 23.338667 17.952 38.858667 47.008 34.56 89.130667-3.978667 39.189333-24.042667 66.634667-53.312 83.594666C676.544 633.152 642.837333 640 592.106667 640c-29.888 0-58.421333-1.642667-80.106667-4.896l21.941333-215.84z m42.869334 172.938667c4.981333 0.992 11.562667 1.973333 24.533333 1.973333 51.882667 0 88.469333-25.877333 92.16-62.24 5.333333-52.554667-27.125333-70.944-81.802667-70.624-7.072 0-16.917333 0-22.133333 0.970667L576.8 592.213333h0.010667z m223.498666-164.704c210.954667-39.872 229.162667 31.776 222.645334 95.189333L1010.656 640h-66.944l11.210667-106.986667c2.421333-23.562667 17.504-69.653333-55.338667-67.914666-25.184 0.608-37.706667 4.064-37.706667 4.064s-2.186667 28.469333-4.832 49.514666L844.32 640H778.666667l13.024-119.573333" fill="#231916"></path><path d="M226.634667 632.682667c-12.373333 4.341333-38.037333 7.317333-73.909334 7.317333C49.6 640-6.048 590.933333 0.522667 526.090667 8.416 448.810667 90.858667 405.333333 181.141333 405.333333c34.976 0 55.552 2.858667 74.858667 7.637334l-6.208 52.064c-12.821333-4.384-42.890667-8.405333-67.232-8.405334-53.141333 0-98.250667 16.042667-103.424 66.762667-4.608 45.354667 27.061333 67.04 86.816 67.04 20.8 0 51.477333-3.018667 65.653333-7.370667l-4.992 49.6 0.021334 0.021334z" fill="#C92027"></path><path d="M272.714667 580.021333c19.285333 6.762667 59.488 13.504 92 13.504 35.029333 0 54.528-9.333333 56.096-23.797333 1.418667-13.205333-12.928-14.986667-52.490667-24.010667-54.666667-12.896-89.546667-32.842667-86.133333-64.704C286.176 443.989333 337.685333 416 416.725333 416c38.56 0 75.914667 2.613333 95.274667 8.714667l-6.656 46.666666c-12.565333-4.202667-60.672-10.037333-93.205333-10.037333-32.992 0-50.069333 9.973333-51.253334 20.917333-1.493333 13.845333 15.658667 14.485333 58.528 25.450667 58.026667 14.154667 83.402667 34.090667 80.085334 64.992C495.605333 609.109333 449.258667 640 356.714667 640c-38.528 0-71.744-6.762667-90.048-13.525333l6.048-46.453334z" fill="#231916"></path></symbol><symbol id="icon-morentouxiang" viewBox="0 0 1024 1024"><path d="M512 512m-512 0a512 512 0 1 0 1024 0 512 512 0 1 0-1024 0Z" fill="#A0C3FF"></path><path d="M691.2 887.466667c-55.466667-25.6-123.733333-51.2-123.733333-51.2v-38.4c68.266667-25.6 119.466667-89.6 132.266666-166.4 12.8-4.266667 38.4-17.066667 46.933334-55.466667l8.533333-46.933333s4.266667-59.733333-42.666667-46.933334c4.266667-38.4 4.266667-81.066667 4.266667-115.2-4.266667-64-89.6-98.133333-89.6-98.133333l12.8-17.066667s-42.666667-12.8-59.733333-4.266666l12.8-29.866667s-85.333333 0-132.266667 38.4h-4.266667v-17.066667s-145.066667 21.333333-140.8 243.2c-46.933333-12.8-42.666667 46.933333-42.666666 46.933334l8.533333 46.933333c4.266667 38.4 29.866667 51.2 46.933333 55.466667 12.8 81.066667 64 145.066667 132.266667 166.4v38.4s-68.266667 29.866667-123.733333 51.2c-29.866667 12.8-59.733333 34.133333-81.066667 59.733333 68.266667 51.2 157.866667 76.8 256 76.8s187.733333-25.6 264.533333-72.533333c-21.333333-29.866667-51.2-46.933333-85.333333-64z" fill="#4374E0"></path></symbol><symbol id="icon-icon_boke" viewBox="0 0 1024 1024"><path d="M512 1024C229.248 1024 0 794.752 0 512S229.248 0 512 0s512 229.248 512 512-229.248 512-512 512z m298.667-256H213.333v42.667h597.334V768z m-21.334-448L704 234.667 341.333 597.333l-42.666 128 128-42.666L789.333 320z"></path></symbol><symbol id="icon-icon_gitchatx" viewBox="0 0 1024 1024"><path d="M810.667 533.333v-64h-384v85.334h298.666v128h85.334V533.333zM256 810.667h426.667v-85.334h-384V298.667h426.666V384h85.334V213.333H213.333v597.334H256zM512 1024C229.248 1024 0 794.752 0 512S229.248 0 512 0s512 229.248 512 512-229.248 512-512 512z m213.333-298.667v85.334h85.334v-85.334h-85.334z"></path></symbol><symbol id="icon-guanbi1" viewBox="0 0 1024 1024"><path d="M512 1024A512 512 0 1 1 512 0a512 512 0 0 1 0 1024z m160-768L512 416 352 256l-96 96 160 160-160 160 96 96 160-160 160 160 96-96-160-160 160-160-96-96z"></path></symbol></svg><svg aria-hidden="true" style="position: absolute; width: 0px; height: 0px; overflow: hidden;"><symbol id="icon-read" viewBox="0 0 1024 1024"><path d="M988.16 240.64c0-5.12-2.56-11.52-6.4-15.36-2.56-2.56-51.2-55.04-135.68-81.92-32-10.24-64-15.36-96-15.36-97.28 0-181.76 46.08-235.52 84.48-55.04-39.68-139.52-85.76-236.8-85.76-32 0-65.28 5.12-96 15.36-84.48 26.88-131.84 81.92-134.4 84.48-3.84 3.84-5.12 8.96-5.12 15.36l0 546.56 60.16 71.68c3.84 8.96 12.8 15.36 21.76 15.36 3.84 0 7.68 0 10.24-2.56 19.2-5.12 120.32-29.44 199.68-29.44 37.12 0 64 5.12 79.36 15.36 7.68 5.12 11.52 10.24 12.8 16.64 0 12.8 10.24 23.04 23.04 23.04 1.28 0 8.96 0 21.76 0 24.32 0 61.44 0 98.56-2.56l0 0c1.28 0 3.84 0 5.12 0 10.24 0 20.48-7.68 23.04-17.92 2.56-10.24 7.68-16.64 17.92-23.04 16.64-8.96 42.24-14.08 76.8-14.08 78.08 0 171.52 24.32 198.4 32 3.84 1.28 7.68 2.56 11.52 2.56 0 0 0 0 0 0 8.96 0 17.92-5.12 21.76-14.08l64-72.96L988.16 241.92 988.16 240.64zM88.32 744.96 88.32 250.88c14.08-14.08 52.48-46.08 107.52-64 26.88-8.96 53.76-12.8 81.92-12.8 70.4 0 142.08 26.88 213.76 79.36l0 477.44c-38.4-23.04-88.32-34.56-149.76-34.56-32 0-66.56 3.84-102.4 10.24C179.2 715.52 124.16 733.44 88.32 744.96zM893.44 824.32c-20.48-5.12-61.44-15.36-106.24-23.04-35.84-5.12-66.56-7.68-94.72-7.68-43.52 0-76.8 6.4-101.12 20.48-15.36 8.96-26.88 20.48-33.28 34.56-33.28 1.28-65.28 2.56-87.04 2.56-1.28 0-2.56 0-3.84 0-6.4-12.8-15.36-24.32-29.44-32-23.04-15.36-58.88-21.76-106.24-21.76-76.8 0-165.12 19.2-200.96 28.16l-29.44-35.84c51.2-17.92 148.48-47.36 240.64-47.36 70.4 0 122.88 17.92 153.6 52.48l0 0c2.56 2.56 2.56 2.56 2.56 2.56l1.28 1.28c0 0 1.28 1.28 1.28 1.28 0 0 1.28 1.28 1.28 1.28l1.28 0c0 0 2.56 1.28 2.56 1.28l1.28 0c0 0 1.28 0 1.28 0 0 0 1.28 0 1.28 0l2.56 0c0 0 1.28 0 1.28 0 0 0 2.56 0 2.56 0 0 0 1.28 0 1.28 0 0 0 2.56-1.28 2.56-1.28 0 0 1.28 0 1.28 0 0 0 1.28 0 1.28-1.28 0 0 1.28 0 1.28 0 0 0 1.28 0 1.28-1.28 0 0 1.28 0 1.28 0l2.56-2.56 0 0c30.72-37.12 81.92-56.32 152.32-56.32 39.68 0 122.88 6.4 240.64 49.92L893.44 824.32zM940.8 744.96c-35.84-14.08-90.88-32-152.32-43.52-37.12-6.4-71.68-10.24-103.68-10.24-60.16 0-110.08 12.8-148.48 37.12L536.32 253.44c70.4-51.2 142.08-78.08 212.48-78.08 28.16 0 55.04 3.84 81.92 12.8 56.32 17.92 94.72 49.92 110.08 64L940.8 744.96z"></path></symbol><symbol id="icon-fanhuidingbu" viewBox="0 0 1024 1024"><path d="M527.072 190.496a21.28 21.28 0 0 0-30.176 0l-155.488 155.488a21.376 21.376 0 0 0 30.176 30.176L512 235.744l140.384 140.384a21.28 21.28 0 0 0 30.208 0 21.376 21.376 0 0 0 0-30.176l-155.52-155.456zM114.336 586.176h91.264V819.2h42.688v-233.024h91.264v-42.656H114.336v42.656z m460.576-42.688h-113.056a53.248 53.248 0 0 0-53.344 53.344v168.992a53.248 53.248 0 0 0 53.344 53.344h113.056a53.248 53.248 0 0 0 53.344-53.344v-168.992a53.248 53.248 0 0 0-53.344-53.344z m10.688 222.368a10.464 10.464 0 0 1-3.136 7.552 10.464 10.464 0 0 1-7.552 3.136h-113.056a10.464 10.464 0 0 1-7.552-3.136 10.464 10.464 0 0 1-3.136-7.552v-168.992c0-2.016 0.544-4.96 3.136-7.552a10.464 10.464 0 0 1 7.552-3.136h113.056c2.016 0 4.96 0.544 7.552 3.136a10.464 10.464 0 0 1 3.136 7.552v168.992z m308.448-206.72a53.248 53.248 0 0 0-37.728-15.616h-146.304V819.2h42.656v-120.928h103.648a53.248 53.248 0 0 0 53.344-53.344v-48.096c0-13.632-5.216-27.296-15.616-37.696z m-27.04 85.792a10.464 10.464 0 0 1-3.136 7.552 10.464 10.464 0 0 1-7.552 3.136h-103.648v-69.408h103.648c2.016 0 4.96 0.544 7.552 3.136a10.464 10.464 0 0 1 3.136 7.552v48.032z" fill=""></path><path d="M942.08 51.2c16.928 0 30.72 13.792 30.72 30.72v860.16c0 16.928-13.792 30.72-30.72 30.72H81.92a30.784 30.784 0 0 1-30.72-30.72V81.92c0-16.928 13.792-30.72 30.72-30.72h860.16m0-51.2H81.92A81.92 81.92 0 0 0 0 81.92v860.16A81.92 81.92 0 0 0 81.92 1024h860.16A81.92 81.92 0 0 0 1024 942.08V81.92A81.92 81.92 0 0 0 942.08 0z" fill=""></path></symbol><symbol id="icon-shoucang" viewBox="0 0 1024 1024"><path d="M865.6 1024c-27.2 0-51.2-11.2-68.8-32L520 704 243.2 992c-17.6 20.8-41.6 32-68.8 32-49.6 0-89.6-41.6-89.6-91.2V150.4C84.8 67.2 150.4 0 232 0h576c81.6 0 147.2 67.2 147.2 150.4v782.4c0 49.6-40 91.2-89.6 91.2zM520 611.2l326.4 339.2c4.8 6.4 12.8 9.6 19.2 9.6 14.4 0 25.6-12.8 25.6-27.2V150.4c0-48-36.8-86.4-83.2-86.4h-576c-46.4 0-83.2 38.4-83.2 86.4v782.4c0 14.4 11.2 27.2 25.6 27.2 8 0 14.4-3.2 19.2-9.6l1.6-1.6 324.8-337.6z" fill=""></path></symbol><symbol id="icon-mulu" viewBox="0 0 1024 1024"><path d="M36.416 201.472h57.44c20.128 0 36.448-18.88 36.448-53.664C130.336 112.992 114.016 96 93.856 96H36.416C16.288 96-0.032 112.992-0.032 147.808c0 34.784 16.288 53.664 36.448 53.664z m262.848 0h678.08c25.792 0 46.656-18.88 46.656-53.664C1023.968 112.992 1003.072 96 977.312 96H299.264c-25.792 0-46.656 16.992-46.656 51.808 0 34.784 20.864 53.664 46.656 53.664z m-203.136 255.296H35.552c-18.912 0-34.208 20.8-34.208 51.552 0 30.816 15.328 54.752 34.208 54.752h60.576c18.912 0 39.328-23.936 39.328-54.752-0.032-30.72-20.416-51.552-39.328-51.552z m881.184 0H299.264c-25.76 0-46.656 20.8-46.656 51.552 0 30.816 20.864 54.752 46.656 54.752h678.08c25.792 0 46.656-23.936 46.656-54.752-0.032-30.72-20.896-51.552-46.688-51.552zM97.248 819.712H38.912c-18.304 0-33.088 20.896-33.088 51.648 0 30.752 14.816 56.64 33.088 56.64h58.336c18.304 0 38.176-25.888 38.176-56.64s-19.872-51.648-38.176-51.648z m880.064 0H299.264c-25.76 0-46.656 20.896-46.656 51.648 0 30.752 20.864 55.168 46.656 55.168h678.08c25.792 0 46.656-24.416 46.656-55.168-0.032-30.752-20.896-51.648-46.688-51.648z" fill=""></path></symbol><symbol id="icon-xinlang" viewBox="0 0 1024 1024"><path d="M429.664 928C217.024 928 0 824.896 0 654.624c0-88.864 56.032-191.424 152.608-288.224C281.664 236.896 432 178.432 488.576 235.168c25.152 24.672 27.424 68.192 11.424 119.744-8 26.336 24.608 11.456 24.608 12.032 104.032-44.16 194.848-46.432 228 1.12 17.792 25.216 16 60.736 0 101.984-7.456 18.944 2.336 21.76 16.544 26.336 58.912 18.304 124.032 62.464 124.032 140.416-0.096 129.024-185.312 291.2-463.52 291.2z m-39.424-465.344c-169.696 17.216-297.632 120.928-286.816 232.672 10.816 111.744 157.088 188.512 326.848 171.936 169.696-17.216 297.632-120.864 286.752-232.672-10.816-111.744-157.088-188.512-326.784-171.936z m-69.728 356.448c-81.728-26.336-116.032-107.104-80.544-179.936 35.424-71.04 126.304-111.2 206.848-90.528 84 21.76 126.304 100.896 91.968 177.664-34.304 77.92-133.664 120.288-218.272 92.8z m45.696-153.024c-25.696-10.912-60 0.544-76 25.76-16.544 25.792-8.544 56.192 17.152 68.224 26.24 12.032 61.664 0.544 78.272-25.792 16.064-26.368 7.456-56.704-19.424-68.192z m65.184-26.944a25.152 25.152 0 0 0-28.608 10.912c-5.728 10.304-2.88 21.216 7.456 25.792a24.32 24.32 0 0 0 29.152-10.848c5.696-10.368 2.24-21.856-8-25.856z m579.36-187.392a38.912 38.912 0 0 1-49.12 25.216 39.904 39.904 0 0 1-25.76-49.28 192.736 192.736 0 0 0-40.032-189.152 192.448 192.448 0 0 0-183.424-59.552 39.68 39.68 0 0 1-46.848-30.4 39.136 39.136 0 0 1 30.272-46.432 270.112 270.112 0 0 1 258.304 83.68 272.192 272.192 0 0 1 56.608 265.92z m-132.544-43.008a33.6 33.6 0 1 1-64.032-20.672 65.024 65.024 0 0 0-13.696-63.584 64.128 64.128 0 0 0-61.12-20.032 33.28 33.28 0 0 1-40.032-25.76 33.6 33.6 0 0 1 25.696-40.128 130.4 130.4 0 0 1 125.664 40.704 132.16 132.16 0 0 1 27.52 129.472z" fill="#707070"></path></symbol><symbol id="icon-sousuo" viewBox="0 0 1024 1024"><path d="M944.513789 1024a77.19975 77.19975 0 0 1-55.325422-23.345409l-210.780262-210.204622A431.538289 431.538289 0 0 1 433.185369 866.658339C194.134776 866.658339 0.52778 673.051343 0.52778 434.00075S194.134776 1.343161 433.185369 1.343161c239.082573 0 432.657589 193.606996 432.657589 432.657589 0 87.273454-26.41549 173.299688-76.17639 245.222735l210.780263 210.812243c14.135166 14.167146 22.737789 34.378513 22.737789 55.293441a79.182511 79.182511 0 0 1-78.670831 78.670831zM433.185369 158.652842c-151.777139 0-275.347908 123.538788-275.347907 275.347908s123.538788 275.347908 275.347907 275.347907 275.347908-123.538788 275.347908-275.347907-123.538788-275.347908-275.347908-275.347908z"></path></symbol><symbol id="icon-QQ" viewBox="0 0 1024 1024"><path d="M149.9071 430.705026c0-15.993503 10.299816-41.679068 19.959892-53.674195-0.607753-14.873957 5.693687-45.133664 17.113047-54.889701 0-105.685065 81.662824-238.814981 177.080062-284.428451 58.85609-27.98863 120.495049-37.680692 185.044825-37.680692 50.283572 0 105.109299 11.995127 151.938275 31.379252 134.217474 56.521038 164.541155 161.694312 193.073564 295.911786l0.511792 2.846843c16.601256 25.141786 31.443226 54.889701 31.443226 85.661201 0 15.38575-10.299816 30.86746-10.299815 44.589885 0 1.119545 3.454597 5.693687 3.966388 6.845219 49.100053 72.578515 93.689938 151.426483 93.689939 241.661825 0 19.959891-10.811608 89.72355-42.862587 89.72355-22.294943 0-46.828976-54.281948-54.889701-69.123919-0.511792-0.543779-1.119545-0.543779-1.727299-0.543779l-2.846843 2.239091c-18.328554 47.372755-38.288445 91.96264-75.457346 127.404242 32.594758 31.379252 85.117421 28.532409 94.809484 82.814356-2.846843 6.30144-1.727298 13.146659-6.30144 19.384126-32.594758 49.100053-119.95127 55.401493-172.505919 55.401493-69.667697 0-126.25271-18.328554-191.954019-37.680693-13.754412-3.966389-34.322057-1.727298-49.164027-3.454596-34.833849 38.288445-119.95127 48.556274-169.051323 48.556274-43.374379 0-211.338144-2.846843-211.338144-77.088683 0-31.987005 6.909193-41.135289 29.140162-61.702933 17.720801-3.454597 30.86746-13.146659 51.435104-14.266204 2.846843 0 5.117921-0.607753 8.028739-1.119546 0.543779-0.511792 1.119545-0.511792 1.119545-2.23909l-1.119545-1.727298c-39.407991-9.148284-94.809484-108.563896-103.382001-149.699185l-2.846844-1.663324c-3.966389 0-5.693687 8.572517-6.845219 11.419361-12.538906 29.140162-42.254834 60.583388-75.361384 63.97401H29.923843c-4.574142 0-2.846843-4.574142-6.30144-5.693687a139.399369 139.399369 0 0 1-13.146659-57.128791c0-114.257583 54.889701-198.799238 143.973511-266.195858a77.152657 77.152657 0 0 1-4.542155-29.811889z" fill="#707070"></path></symbol><symbol id="icon-weixin" viewBox="0 0 1024 1024"><path d="M692.992 347.968c-172 0-308.032 128.192-308.032 285.856 0 26.464 4 51.872 11.488 75.808-11.328 0.992-22.688 1.472-34.048 1.472-45.536 0-81.504-8.96-126.976-17.984l-126.496 63.36 36.032-108.768c-90.56-63.328-144.992-145.184-144.992-244.384C-0.032 231.232 162.976 96 362.432 96c178.048 0 334.56 108.224 365.536 253.952a260.992 260.992 0 0 0-34.976-1.984zM244.416 249.728c-27.008 0-54.528 17.984-54.528 45.44 0 26.912 27.456 44.896 54.528 44.896 27.456 0 45.536-17.984 45.536-44.896 0-27.52-18.016-45.44-45.536-45.44z m652.544 588L924.416 928l-99.52-54.368c-36.448 8.96-72.992 18.432-108.96 18.432-172.512 0-308.032-117.728-308.032-262.432s135.488-262.432 308.032-262.432c162.944 0 308.032 117.728 308.032 262.432 0.064 81.44-53.984 153.792-127.008 208.096zM498.464 249.728c-27.456 0-54.528 17.984-54.528 45.44 0 26.912 27.008 44.896 54.528 44.896 27.008 0 45.024-17.984 45.024-44.896-0.032-27.52-18.048-45.44-45.024-45.44z m117.472 262.304c-18.016 0-35.968 17.984-35.968 35.872 0 18.432 18.016 36.48 35.968 36.48 27.456 0 45.536-17.984 45.536-36.48-0.064-17.888-18.016-35.872-45.536-35.872z m199.584 0c-18.016 0-36.032 17.984-36.032 35.872 0 18.432 18.016 36.48 36.032 36.48 26.976 0 45.536-17.984 45.536-36.48-0.128-17.888-18.528-35.872-45.536-35.872z" fill="#707070"></path></symbol><symbol id="icon-fenxiang" viewBox="0 0 1024 1024"><path d="M753.344 615.456a171.84 171.84 0 0 0-145.024 79.648l-184.544-105.536c11.968-23.36 19.264-49.408 19.264-77.568 0-17.344-3.264-33.696-8.096-49.536l191.968-109.728a171.392 171.392 0 0 0 126.368 55.872c95.072 0 172.288-77.152 172.288-172.288S848.384 64 753.312 64a172.256 172.256 0 0 0-172.288 172.288c0 17.344 3.328 33.76 8.032 49.536l-191.968 109.696a171.328 171.328 0 0 0-126.304-55.84 172.288 172.288 0 1 0-0.064 344.576 171.008 171.008 0 0 0 104.064-35.776l-0.672 1.184 208.768 119.328c-0.8 6.112-1.856 12.192-1.856 18.752a172.32 172.32 0 0 0 344.576 0 172.224 172.224 0 0 0-172.256-172.288z m0-482.592a103.52 103.52 0 0 1 103.456 103.392 103.456 103.456 0 0 1-206.912 0 103.456 103.456 0 0 1 103.456-103.392zM270.752 615.456A103.328 103.328 0 0 1 167.424 512a103.36 103.36 0 1 1 206.72 0 103.36 103.36 0 0 1-103.392 103.456z m482.592 275.744a103.456 103.456 0 1 1 0-206.912 103.456 103.456 0 0 1 0 206.912z" fill=""></path></symbol><symbol id="icon-erweima" viewBox="0 0 1024 1024"><path d="M466.112 464.896H1.216V0h464.896v464.896z m0 557.888H1.216V557.888h464.896v464.896zM373.12 371.936V92.992H94.176v278.944h278.944z m0 557.152V650.88H94.176v278.24h278.944zM280.16 278.944H187.168V185.952h92.992v92.992z m0 557.888H187.168v-92.992h92.992v92.992zM1024 464.896H559.104V0H1024v464.896z m0 371.936h-278.944v-92.992h-92.992v278.944h-92.992V557.888h278.944v92.992h92.992v-92.992H1024v278.944z m-92.992-464.896V92.992h-278.944v278.944h278.944z m-92.96-92.992h-92.992V185.952h92.992v92.992z m0 743.84h-92.992v-92.992h92.992v92.992z m185.952 0h-92.992v-92.992H1024v92.992z"></path></symbol><symbol id="icon-daima" viewBox="0 0 1024 1024"><path d="M376.192 683.104a10.592 10.592 0 0 1-15.264 0l-154.656-154.656a10.624 10.624 0 0 1 0-15.264l154.656-154.656c2.016-2.048 4.768-3.232 7.648-3.232s5.632 1.152 7.616 3.232l16.608 16.608a10.624 10.624 0 0 1 0 15.264L262.4 520.832l130.432 130.432a10.752 10.752 0 0 1 3.232 7.648c0 2.88-1.152 5.632-3.232 7.616l-16.64 16.576z m88.96 57.728a10.56 10.56 0 0 1-12.928 7.296l-20.576-5.632a10.752 10.752 0 0 1-7.296-13.28L548.16 300.832a10.56 10.56 0 0 1 12.928-7.328l20.576 5.632c5.632 1.664 8.96 7.648 7.296 13.28l-123.808 428.416z m187.2-57.728a10.624 10.624 0 0 1-15.296 0l-16.576-16.576a10.592 10.592 0 0 1 0-15.264l130.4-130.432L620.48 390.4a10.624 10.624 0 0 1 0-15.264l16.576-16.608a10.624 10.624 0 0 1 15.296 0l154.624 154.656a10.624 10.624 0 0 1 0 15.264l-154.624 154.656z" fill="#707070"></path></symbol><symbol id="icon-pinglun" viewBox="0 0 1025 1024"><path d="M256 364.512c-35.328 0-64 29.76-64 66.496 0 36.736 28.672 66.496 64 66.496 35.36 0 64-29.76 64-66.496 0-36.736-28.64-66.496-64-66.496z m256.032 0c-35.36 0-64 29.76-64 66.496 0 36.736 28.64 66.496 64 66.496 35.328 0 63.968-29.76 63.968-66.496 0-36.736-28.64-66.496-63.968-66.496z m255.968 0c-35.328 0-64 29.76-64 66.496 0 36.736 28.672 66.496 64 66.496s64-29.76 64-66.496c0.032-36.736-28.672-66.496-64-66.496zM896.032 32h-768C57.312 32 0 91.552 0 165.024v498.752c0 73.44 58.56 141.12 130.88 141.12h195.104c33.952 36.288 174.72 182.208 174.72 182.208a15.488 15.488 0 0 0 22.592 0s103.072-116.992 170.176-182.208h199.616c72.32 0 130.88-67.712 130.88-141.12V165.024C1024 91.552 966.688 32 896.032 32zM960 663.776c0 36.704-30.752 75.264-66.88 75.264h-196.32c-23.808 0-45.184 24.48-45.184 24.48l-137.824 143.232-137.824-143.232s-26.208-24.48-48.704-24.48H130.88C94.752 739.008 64 700.48 64 663.776V165.024c0-36.736 28.64-66.496 64-66.496h768c35.328 0 63.968 29.76 63.968 66.496v498.752z m0 0" fill=""></path></symbol><symbol id="icon-xihuan-" viewBox="0 0 1024 1024"><path d="M1020.81017 296c-14.4-85.6-61.6-152.8-141.6-200-45.6-27.2-97.6-41.6-148.8-41.6-66.4 0-128.8 24-176.8 68-15.2 13.6-28 28.8-41.6 43.2-40.8-49.6-81.6-80-129.6-96-84-28-168-17.6-245.6 32C45.61017 158.4-0.78983 240.8 0.01017 345.6c0.8 61.6 20.8 120 62.4 178.4 44.8 62.4 100 126.4 172.8 200.8 49.6 50.4 100.8 100 149.6 148l48 47.2c4 4 8.8 8 12.8 12.8l5.6 4.8c10.4 8.8 32 23.2 60 23.2 23.2 0 45.6-9.6 65.6-28.8 84-79.2 173.6-164.8 258.4-256.8 44-48 94.4-104 136-166.4 44.8-68 61.6-140 49.6-212.8m-92 184c-39.2 59.2-85.6 111.2-130.4 160-84 91.2-172.8 176-256 254.4-10.4 9.6-20.8 14.4-30.4 14.4-12 0-21.6-7.2-25.6-9.6l-4-4c-4-4-8-8-12.8-12l-48-47.2c-49.6-48-100.8-97.6-149.6-148-72-72.8-124-133.6-168-194.4-35.2-49.6-52.8-98.4-52.8-148.8 0-86.4 36.8-152 113.6-200.8 40.8-25.6 83.2-39.2 126.4-39.2 24.8 0 49.6 4 75.2 12.8 40 13.6 74.4 40 110.4 84.8 2.4 3.2 15.2 16.8 36 16.8 8.8 0 22.4-3.2 34.4-16.8l2.4-2.4c13.6-14.4 25.6-28.8 39.2-41.6 38.4-36 88-54.4 141.6-54.4 42.4 0 84.8 12 123.2 34.4 67.2 40 105.6 93.6 116.8 164 9.6 62.4-4 120-41.6 177.6" fill=""></path><path d="M512.01017 957.6c-27.2 0-48-13.6-58.4-22.4l-5.6-4.8c-4-4-8.8-8-12.8-12.8l-51.2-50.4c-48.8-47.2-98.4-96-147.2-144.8-72.8-74.4-128-137.6-172.8-200.8-40.8-57.6-60.8-115.2-61.6-176-0.8-104 44.8-185.6 136-243.2 48.8-30.4 100-46.4 152.8-46.4 29.6 0 60 4.8 90.4 15.2 48 16 88.8 46.4 128.8 95.2l1.6 2.4 1.6-2.4c12-13.6 26.4-28.8 40.8-43.2 48-43.2 110.4-67.2 176-67.2 51.2 0 102.4 14.4 148 41.6 79.2 47.2 126.4 113.6 140 198.4 12 72.8-4 143.2-48.8 210.4-40.8 62.4-91.2 118.4-135.2 166.4-84.8 92-174.4 177.6-258.4 256.8-20 18.4-41.6 28-64 28z m-220.8-855.2c-43.2 0-86.4 13.6-128 39.2-77.6 49.6-114.4 116-114.4 203.2 0 51.2 17.6 100 53.6 149.6 44 61.6 96 121.6 168 195.2 48 48.8 98.4 97.6 147.2 145.6l50.4 49.6 9.6 9.6 7.2 6.4c4 3.2 14.4 10.4 27.2 10.4 10.4 0 21.6-4.8 32-15.2 83.2-78.4 172-164 256-254.4 44.8-48.8 92-100.8 130.4-160 38.4-57.6 52-116 41.6-177.6-12-71.2-50.4-125.6-118.4-166.4-38.4-22.4-81.6-35.2-124-35.2-54.4 0-104 19.2-143.2 55.2-13.6 12.8-25.6 26.4-39.2 40.8l-2.4 3.2c-12 12.8-24 16-32.8 16-19.2 0-31.2-13.6-33.6-16-36-44.8-71.2-72-112-85.6-25.6-8.8-50.4-13.6-75.2-13.6z" fill=""></path></symbol><symbol id="icon-jubao" viewBox="0 0 1024 1024"><path d="M507.2 345.6c-20.8 0-38.4 17.6-38.4 38.4v264c0 22.4 17.6 38.4 38.4 38.4h8c20.8 0 38.4-17.6 38.4-38.4V384c0-22.4-17.6-38.4-38.4-38.4h-8zM454.4 788.8c0 14.4 6.4 30.4 16 40 11.2 11.2 25.6 16 40 16 14.4 0 30.4-6.4 40-16 11.2-11.2 16-25.6 16-40 0-14.4-6.4-30.4-16-40-11.2-11.2-25.6-16-40-16-14.4 0-30.4 6.4-40 16-9.6 11.2-16 25.6-16 40z" fill=""></path><path d="M102.4 966.4C46.4 966.4 0 921.6 0 864c0-17.6 4.8-33.6 12.8-48 0 0 0-1.6 1.6-1.6L422.4 108.8s0-1.6 1.6-1.6c19.2-30.4 52.8-49.6 88-49.6s68.8 19.2 88 49.6c0 0 0 1.6 1.6 1.6l409.6 705.6s0 1.6 1.6 1.6c8 14.4 12.8 32 12.8 48 0 56-46.4 102.4-102.4 102.4H102.4zM64 841.6c-1.6 0-1.6 0 0 0-4.8 8-6.4 16-6.4 24 0 25.6 20.8 44.8 44.8 46.4h817.6c25.6 0 46.4-20.8 46.4-46.4 0-8-1.6-16-6.4-22.4l-408-704s0-1.6-1.6-1.6C544 123.2 528 113.6 512 113.6s-32 8-40 22.4c0 0 0 1.6-1.6 1.6L64 841.6z" fill=""></path></symbol><symbol id="icon-dashang-" viewBox="0 0 1024 1024"><path d="M977.883349 705.071646c0 307.614317-400.867476 318.928354-459.700467 318.928354-4.684967 0-7.202739-0.063741-7.202739-0.063741s-2.517772 0.063741-7.202739 0.063741c-58.832991 0-459.700467-11.314037-459.700467-318.928354 0-331.963399 372.407096-488.638904 372.407097-488.638904S291.679054 172.355805 291.679054 78.847681c0-75.851852 185.582073-78.847681 215.317273-78.847681h7.967632c29.67146 0 215.317274 3.0277 215.317273 78.847681 0 93.508123-124.83685 137.55319-124.83685 137.55319s372.438967 156.707376 372.438967 488.670775zM582.210769 271.983069a60.235294 60.235294 0 0 1 3.314534-112.311734c16.700156-6.08727 77.317896-35.631248 84.074448-73.844009-17.911236-11.569001-75.979334-25.496421-154.572051-25.49642h-8.031373c-78.656458 0-136.660815 13.92742-154.572051 25.49642 6.820293 38.531466 68.202926 68.266667 84.074448 73.844009a60.235294 60.235294 0 0 1 3.314535 112.311734c-3.250794 1.402303-335.501027 145.967009-335.501027 433.152318 0 246.231684 332.855773 258.693059 399.592654 258.69306l5.577342-0.063741H512.733022l5.513601 0.063741c66.736881 0 399.592655-12.461376 399.592655-258.69306C917.775537 416.484034 585.557174 273.385372 582.210769 271.983069z m36.555493 386.971926a24.890881 24.890881 0 0 1 21.512605 37.256645 24.763399 24.763399 0 0 1-21.512605 12.397635h-84.010706v65.238967a24.85901 24.85901 0 1 1-49.65428 0v-65.238967h-79.96315a24.85901 24.85901 0 1 1 0-49.718021h79.96315v-50.737877h-82.002863a24.890881 24.890881 0 0 1-21.512605-37.256645 24.763399 24.763399 0 0 1 21.512605-12.397635h42.579022l-41.049237-41.112978a24.922751 24.922751 0 0 1 17.528789-42.451541c6.533458 0 12.907563 2.645254 17.52879 7.26648l70.178898 70.306381 70.178898-70.306381a24.85901 24.85901 0 0 1 35.057579 35.185061l-41.049238 41.112978h42.579023a24.85901 24.85901 0 1 1 0 49.718021h-81.939122v50.737877h84.074447z"></path></symbol><symbol id="icon-shouqi" viewBox="0 0 1024 1024"><path d="M906.592 828.768a40.288 40.288 0 0 1-57.152 0L512 491.36 174.592 828.768a40.416 40.416 0 0 1-57.216 0L11.936 723.904a40.96 40.96 0 0 1 0-57.792L483.392 195.232a40.288 40.288 0 0 1 57.152 0l471.52 470.88a40.96 40.96 0 0 1 0 57.792l-105.472 104.864z" fill="#707070"></path></symbol><symbol id="icon-youjiantou" viewBox="0 0 1024 1024"><path d="M704 512a22.56 22.56 0 0 0-6.656-15.136l-307.456-307.488a22.72 22.72 0 0 0-15.136-6.56 22.592 22.592 0 0 0-15.136 6.56L326.592 222.4a22.72 22.72 0 0 0-6.56 15.136c0 5.28 2.624 11.232 6.56 15.136L585.888 512l-259.328 259.328a22.72 22.72 0 0 0-6.56 15.136c0 5.952 2.624 11.232 6.56 15.136l33.024 33.024a22.688 22.688 0 0 0 15.136 6.56 22.592 22.592 0 0 0 15.136-6.56l307.488-307.488A22.432 22.432 0 0 0 704 512z" fill="#707070"></path></symbol><symbol id="icon-zuojiantou" viewBox="0 0 1024 1024"><path d="M320 512c0-5.28 2.688-11.232 6.656-15.136l307.456-307.488a22.72 22.72 0 0 1 15.136-6.56c5.28 0 11.232 2.624 15.136 6.56l33.024 33.024a22.72 22.72 0 0 1 6.56 15.136 22.592 22.592 0 0 1-6.56 15.136L438.112 512l259.328 259.328a22.72 22.72 0 0 1 6.56 15.136 21.312 21.312 0 0 1-6.56 15.136l-33.024 33.024a22.688 22.688 0 0 1-15.136 6.56 22.592 22.592 0 0 1-15.136-6.56l-307.488-307.488A22.432 22.432 0 0 1 320 512z" fill="#707070"></path></symbol><symbol id="icon-xiajiantou" viewBox="0 0 1024 1024"><path d="M512 704a22.56 22.56 0 0 0 15.136-6.656l307.488-307.456a22.72 22.72 0 0 0 6.56-15.136 22.592 22.592 0 0 0-6.56-15.136l-33.024-33.024a22.72 22.72 0 0 0-15.136-6.56 22.592 22.592 0 0 0-15.136 6.56L512 585.888l-259.328-259.328A22.72 22.72 0 0 0 237.536 320a21.312 21.312 0 0 0-15.136 6.56l-33.024 33.024a22.688 22.688 0 0 0-6.56 15.136c0 5.28 2.624 11.232 6.56 15.136l307.488 307.488A22.432 22.432 0 0 0 512 704z" fill="#707070"></path></symbol><symbol id="icon-shangjiantou" viewBox="0 0 1024 1024"><path d="M512 320c5.28 0 11.232 2.688 15.136 6.656l307.488 307.456a22.72 22.72 0 0 1 6.56 15.136 22.592 22.592 0 0 1-6.56 15.136l-33.024 33.024a22.72 22.72 0 0 1-15.136 6.56 22.592 22.592 0 0 1-15.136-6.56L512 438.112l-259.328 259.328a22.72 22.72 0 0 1-15.136 6.56 21.312 21.312 0 0 1-15.136-6.56l-33.024-33.024a22.688 22.688 0 0 1-6.56-15.136c0-5.28 2.624-11.232 6.56-15.136l307.488-307.488A22.432 22.432 0 0 1 512 320z" fill="#707070"></path></symbol><symbol id="icon-shanghuadong" viewBox="0 0 1024 1024"><path d="M512 0c282.336 0 512 229.664 512 512s-229.664 512-512 512S0 794.336 0 512 229.664 0 512 0z m0 955.744c244.672 0 443.744-199.072 443.744-443.744S756.672 68.256 512 68.256 68.256 267.328 68.256 512 267.328 955.744 512 955.744z" fill=""></path><path d="M307.2 409.6c8.736 0 17.472 3.36 24.16 9.952L512 600.256l180.64-180.704a34.144 34.144 0 0 1 48.256 48.256l-204.8 204.8a34.144 34.144 0 0 1-48.256 0l-204.8-204.8A34.144 34.144 0 0 1 307.2 409.6z" fill=""></path></symbol><symbol id="icon-xiahuadong" viewBox="0 0 1024 1024"><path d="M512 1024C229.664 1024 0 794.336 0 512S229.664 0 512 0s512 229.664 512 512-229.664 512-512 512z m0-955.744C267.328 68.256 68.256 267.328 68.256 512S267.328 955.744 512 955.744 955.744 756.672 955.744 512 756.672 68.256 512 68.256z" fill=""></path><path d="M716.8 614.4c-8.736 0-17.472-3.36-24.16-9.952L512 423.744l-180.64 180.704a34.144 34.144 0 0 1-48.256-48.256l204.8-204.8a34.144 34.144 0 0 1 48.256 0l204.8 204.8A34.144 34.144 0 0 1 716.8 614.4z" fill=""></path></symbol><symbol id="icon-bokezhuanjia" viewBox="0 0 1024 1024"><path d="M984.544 604.736l38.944-95.168-38.944-92.896V315.904L911.808 243.2l-39.744-94.848-93.248-38.144-71.232-71.264h-102.848L509.568 0l-92.896 38.944H315.904L243.2 111.648 148.352 151.424 110.208 244.672 38.944 315.904v102.816L0 513.888l38.944 92.928v100.768l72.704 72.704 39.776 94.848 93.248 38.144 71.232 71.264h102.848l95.136 38.944 92.928-38.944h100.768l72.704-72.736 94.848-39.744 38.144-93.248 71.264-71.232z" fill="#F0D04D"></path><path d="M685.92 197.888A1280.352 1280.352 0 0 0 228.768 878.176a662.72 662.72 0 0 0 44.96-16.096A1280.544 1280.544 0 0 1 688.032 253.536a649.792 649.792 0 0 0-2.112-55.648z" fill="#B18C25"></path><path d="M569.312 472a448.608 448.608 0 0 0 230.08-68.64 450.24 450.24 0 0 0-28.8-270.016C496.448 223.104 310.848 477.856 305.376 762.464c44.416 5.088 90.304 3.648 136.512-5.216 151.904-29.12 271.264-131.232 328.832-263.04a683.968 683.968 0 0 1-201.408-22.208z" fill="#FFFFFF"></path><path d="M356.512 775.616c-17.408 0-35.008-0.992-52.32-2.976l-9.248-1.056 0.192-9.312A686.4 686.4 0 0 1 767.392 123.648l8.832-2.912 3.712 8.544c13.728 31.552 23.936 64.416 30.336 97.76 11.36 59.36 11.072 119.36-0.864 178.368l-0.864 4.288-3.712 2.336a457.12 457.12 0 0 1-157.824 62.112c-3.296 0.64-6.592 1.216-9.888 1.792 43.872 7.04 88.608 9.76 133.216 8.032l16.288-0.64-6.528 14.944a461.856 461.856 0 0 1-423.584 277.344z m-40.672-22.368a441.632 441.632 0 0 0 438.72-248.384c-3.456 0.064-6.912 0.064-10.368 0.064-59.968 0-119.712-7.744-177.536-23.072l-70.336-18.624 72.736-1.504a436.896 436.896 0 0 0 221.12-64.736c10.592-55.008 10.56-110.88-0.032-166.144a443.392 443.392 0 0 0-25.344-84.8A666.112 666.112 0 0 0 315.84 753.248z" fill="#CFA41E"></path><path d="M375.68 775.616c-17.408 0-35.008-0.992-52.32-2.976l-9.248-1.056 0.192-9.312A686.496 686.496 0 0 1 786.56 123.616l8.832-2.912 3.712 8.544c13.728 31.52 23.936 64.416 30.336 97.76 11.36 59.328 11.072 119.36-0.864 178.368l-0.864 4.288-3.712 2.336a457.12 457.12 0 0 1-157.824 62.112c-3.296 0.64-6.592 1.216-9.888 1.792a682.848 682.848 0 0 0 133.216 8.064l16.288-0.64-6.528 14.944a461.856 461.856 0 0 1-423.584 277.344z m-40.704-22.368a441.632 441.632 0 0 0 438.72-248.384 694.976 694.976 0 0 1-187.872-23.008l-70.336-18.624 72.736-1.504a436.896 436.896 0 0 0 221.12-64.736 437.664 437.664 0 0 0-0.032-166.144 443.392 443.392 0 0 0-25.344-84.8 666.144 666.144 0 0 0-448.992 607.2z" fill="#B18C25"></path><path d="M770.592 133.344a450.24 450.24 0 0 1 28.8 270.016 447.424 447.424 0 0 1-230.08 68.64c30.592 8.096 61.888 14.112 93.696 17.888 35.36 4.224 71.36 5.696 107.712 4.32-57.568 131.776-176.928 233.92-328.832 263.04a450.976 450.976 0 0 1-136.512 5.216c5.472-284.608 191.072-539.36 465.216-629.12" fill="#FFFFFF"></path><path d="M356.512 775.616c-17.408 0-35.008-0.992-52.32-2.976l-9.248-1.056 0.192-9.312A686.4 686.4 0 0 1 767.392 123.648l28-2.912-15.424 8.544c13.728 31.52 23.936 64.416 30.336 97.76 11.36 59.328 11.072 119.36-0.864 178.368l-0.864 4.288-3.712 2.336a457.12 457.12 0 0 1-157.824 62.112c-3.296 0.64-6.592 1.216-9.888 1.792a682.848 682.848 0 0 0 133.216 8.064l16.288-0.64-6.528 14.944a461.856 461.856 0 0 1-423.616 277.312z m-40.672-22.368a441.632 441.632 0 0 0 438.72-248.384 694.976 694.976 0 0 1-187.872-23.008l-70.336-18.624 72.736-1.504a436.896 436.896 0 0 0 221.12-64.736 437.664 437.664 0 0 0-0.032-166.144 443.392 443.392 0 0 0-25.344-84.8A666.08 666.08 0 0 0 315.84 753.248z" fill="#B18C25"></path><path d="M703.648 218.976c-203.68 172.48-361.472 392.832-458.72 653.856l78.624-30.016c75.328-238.688 186.144-416.192 380.64-573.856 0.064-18.432 0.928-31.36-0.544-49.984z" fill="#B18C25"></path><path d="M702.08 192.544A1280.224 1280.224 0 0 0 244.928 872.8a662.72 662.72 0 0 0 44.96-16.096A1280.544 1280.544 0 0 1 704.192 248.16c0.064-18.432-0.64-36.992-2.112-55.616z" fill="#EDEEEE"></path></symbol><symbol id="icon-yonghu" viewBox="0 0 1025 1024"><path d="M1023.664 962.048c-43.952-157.52-162.384-281.104-312.496-340 92.928-61.36 154.128-164.432 154.128-281.056C865.296 152.976 707.008 0 512.4 0 317.776 0 159.408 152.976 159.408 340.992c0 116.656 61.232 219.744 154.272 281.072C164.352 680.752 46.24 803.456 1.808 959.776c-7.36 26 8.48 52.848 35.408 60.016a52.096 52.096 0 0 0 38.448-4.608 49.072 49.072 0 0 0 23.744-29.552c50.848-178.896 220.656-303.808 413.008-303.808 193.312 0 363.344 125.664 413.504 305.616 7.296 26.032 35.04 41.44 62.032 34.464 26.96-7.04 42.944-33.808 35.712-59.856zM260.608 340.992c0-134.208 112.96-243.328 251.808-243.328 138.768 0 251.68 109.136 251.68 243.328 0 133.84-112.912 242.768-251.68 242.768-138.864 0-251.808-108.928-251.808-242.768z m0 0"></path></symbol><symbol id="icon-bianji" viewBox="0 0 1024 1024"><path d="M343.296 559.936c-0.576 0.768-1.184 1.568-1.44 2.528l-45.088 169.44a29.632 29.632 0 0 0 7.2 28 27.84 27.84 0 0 0 27.232 7.296l164.096-45.888c0.256 0 0.384 0.224 0.576 0.224a7.04 7.04 0 0 0 5.152-2.176L939.808 269.568c13.056-13.376 20.192-31.616 20.192-51.456a88.96 88.96 0 0 0-25.568-61.568l-41.44-42.56c-16.256-16.704-38.208-26.24-60.096-26.24a69.44 69.44 0 0 0-50.176 20.672L343.936 558.368c-0.448 0.416-0.32 1.056-0.64 1.568zM896.864 225.504l-43.584 44.64-70.656-73.6L825.6 152.512c6.784-7.008 19.968-5.984 27.744 2.048l41.472 42.56a23.456 23.456 0 0 1 6.784 16.16 17.184 17.184 0 0 1-4.736 12.224zM421.312 566.976l316.64-324.64 70.688 73.632L492.608 640l-71.296-73.024z m-57.696 131.648l22.88-86.112 61.024 62.592-83.904 23.52z m551.968-294.848c-16.608 0-30.24 13.856-30.304 31.104v419.36c0 21.984-17.408 39.872-38.912 39.872H163.488c-21.44 0-38.944-17.856-38.944-39.872V169.728c0-22.016 17.504-39.904 38.944-39.904h445.696a30.688 30.688 0 0 0 30.272-31.04 30.688 30.688 0 0 0-30.272-31.008H158.848C106.56 67.776 64 111.392 64 165.056v693.92c0 53.632 42.56 97.216 94.848 97.216h692.096c52.32 0 94.88-43.584 94.88-97.216v-424.32a30.656 30.656 0 0 0-30.24-30.88z" fill=""></path></symbol><symbol id="icon-shanchu" viewBox="0 0 1024 1024"><path d="M392.176 885.024c29.056 0 43.568-21.936 43.568-43.888v-563.2c0-29.264-21.792-43.888-43.568-43.888-29.056 0-43.584 21.936-43.584 43.888v555.888c0 29.264 21.792 51.2 43.584 51.2zM973.168 95.088H580.992v-51.2C580.992 21.936 559.2 0 530.16 0h-43.568c-29.056 0-50.832 21.936-50.832 43.888v43.888H43.568C21.792 95.088 0 117.024 0 138.976c0 29.264 21.792 43.888 43.568 43.888h72.624v746.064c0 51.2 43.568 95.088 94.416 95.088h602.784c50.832 0 94.416-43.888 94.416-95.088V182.864h72.624c29.056 0 43.584-21.936 43.584-43.888-0.016-21.952-29.072-43.888-50.848-43.888z m-167.04 789.936c0 29.264-21.792 43.888-43.584 43.888H254.192c-29.056 0-43.584-21.936-43.584-43.888V182.864h602.784v702.176h-7.264z m-181.568 0c29.056 0 43.568-21.936 43.568-43.888v-563.2c0-29.264-21.792-43.888-43.568-43.888-29.056 0-43.584 21.936-43.584 43.888v555.888c0.016 29.264 14.544 51.2 43.584 51.2z m0 0"></path></symbol><symbol id="icon-spinner" viewBox="0 0 1024 1024"><path d="M384 149.33333333333334a128 128 0 1 1 256 0 128 128 0 0 1-256 0z m271.52 112.48a128 128 0 1 1 256 0 128 128 0 0 1-256 0zM832 533.3333333333334a64 64 0 1 1 127.968-0.032A64 64 0 0 1 832 533.3333333333334z m-112.48 271.52a64 64 0 1 1 127.968-0.032 64 64 0 0 1-127.968 0.032zM448 917.3333333333334a64 64 0 1 1 128 0 64 64 0 1 1-128 0z m-271.52-112.48a64 64 0 1 1 128 0 64 64 0 1 1-128 0z m-32-543.04a96 96 0 1 1 192 0 96 96 0 1 1-192 0zM56 533.3333333333334a72 72 0 1 1 144 0 72 72 0 0 1-144 0z"></path></symbol><symbol id="icon-weiye" viewBox="0 0 1024 1024"><path d="M612.8 508.8c0-4.8-3.2-9.6-6.4-14.4L324.8 214.4c-4.8-3.2-9.6-6.4-14.4-6.4-4.8 0-9.6 3.2-14.4 6.4l-30.4 30.4c-3.2 3.2-6.4 9.6-6.4 14.4 0 4.8 3.2 9.6 6.4 14.4L504 512 265.6 747.2c-3.2 3.2-6.4 9.6-6.4 14.4 0 4.8 3.2 9.6 6.4 14.4l30.4 30.4c3.2 3.2 9.6 6.4 14.4 6.4 4.8 0 9.6-3.2 14.4-6.4L608 523.2c1.6-1.6 4.8-8 4.8-14.4zM726.4 816c20.8 0 38.4-16 38.4-38.4V246.4c0-20.8-16-38.4-38.4-38.4-20.8 0-38.4 16-38.4 38.4v531.2c0 22.4 17.6 38.4 38.4 38.4z" fill="#707070"></path></symbol><symbol id="icon-shouye" viewBox="0 0 1024 1024"><path d="M411.2 508.8c0 6.4 3.2 11.2 4.8 14.4l283.2 283.2c3.2 3.2 9.6 6.4 14.4 6.4s9.6-3.2 14.4-6.4l30.4-30.4c3.2-3.2 6.4-9.6 6.4-14.4 0-4.8-3.2-9.6-6.4-14.4L520 510.4 758.4 272c3.2-3.2 6.4-9.6 6.4-14.4 0-4.8-3.2-9.6-6.4-14.4l-30.4-30.4c-3.2-3.2-9.6-6.4-14.4-6.4s-9.6 3.2-14.4 6.4L417.6 496c-3.2 3.2-6.4 8-6.4 12.8zM336 777.6V246.4c0-20.8-17.6-38.4-38.4-38.4-20.8 0-38.4 17.6-38.4 38.4v531.2c0 20.8 16 38.4 38.4 38.4 20.8 0 38.4-16 38.4-38.4z" fill="#707070"></path></symbol><symbol id="icon-yixihuan" viewBox="0 0 1024 1024"><path d="M755.26144 82.91328c-68.736 0-137.53856 26.24-190.01856 78.72l-47.45728 47.488h-0.03072l-5.43744 5.47328-5.47328-5.47328h-0.03072l-47.51872-47.488C406.75328 109.15328 337.92 82.91328 269.08672 82.91328c-68.864 0-137.728 26.24-190.23872 78.72-105.088 104.92928-105.088 275.10272 0 380.032l214.016 213.79072h0.03072l166.43072 166.20544c13.08672 13.056 30.17728 19.39456 47.32928 19.39456 1.92 0 3.80928-0.09728 5.72928-0.256 1.88928 0.15872 3.80928 0.256 5.69344 0.256 17.09056 0 34.176-6.33856 47.232-19.39456l166.24128-166.20544 0.22528-0.22528 166.04672-166.04672 47.488-47.488c104.92928-104.99072 104.92928-275.10272 0-380.032-52.51072-52.51072-121.27744-78.75072-190.04928-78.75072z"></path></symbol><symbol id="icon-yidianzan" viewBox="0 0 1024 1024"><path d="M267.296 500.992v469.44h586.88l116.256-515.872h-439.36l109.984-353.952-132.864-47.04z"></path><path d="M508.192 53.568l132.864 47.04-109.984 353.952h439.392l-116.256 515.872H267.296v-469.44l240.896-447.424m0-53.568c-19.232 0-37.6 10.4-47.168 28.16L220.128 475.616c-4.192 7.808-6.4 16.512-6.4 25.376v469.44c0 29.6 24 53.568 53.568 53.568h586.88c25.056 0 46.752-17.344 52.256-41.792l116.256-515.872a53.472 53.472 0 0 0-52.256-65.312H603.776l88.416-284.512a53.536 53.536 0 0 0-33.28-66.368L526.048 3.104A52.736 52.736 0 0 0 508.192 0z"></path><path d="M211.008 512v458.432H56.288V512h154.72m0-53.536H56.288C25.184 458.464 0 482.432 0 512v458.432C0 1000.032 25.184 1024 56.288 1024h154.72c31.072 0 56.288-23.968 56.288-53.568V512c0-29.568-25.216-53.536-56.288-53.536z"></path></symbol><symbol id="icon-dianzan" viewBox="0 0 1024 1024"><path d="M508.192 53.568l132.864 47.04-109.984 353.952h439.392l-116.256 515.872H267.296v-469.44l240.896-447.424m0-53.568c-19.232 0-37.6 10.4-47.168 28.16L220.128 475.616c-4.192 7.808-6.4 16.512-6.4 25.376v469.44c0 29.6 24 53.568 53.568 53.568h586.88c25.056 0 46.752-17.344 52.256-41.792l116.256-515.872a53.472 53.472 0 0 0-52.256-65.312H603.776l88.416-284.512a53.536 53.536 0 0 0-33.28-66.368L526.048 3.104A52.736 52.736 0 0 0 508.192 0z"></path><path d="M211.008 512v458.432H56.288V512h154.72m0-53.536H56.288C25.184 458.464 0 482.432 0 512v458.432C0 1000.032 25.184 1024 56.288 1024h154.72c31.072 0 56.288-23.968 56.288-53.568V512c0-29.568-25.216-53.536-56.288-53.536z"></path></symbol><symbol id="icon-yishoucang" viewBox="0 0 1024 1024"><path d="M865.6 1024c-27.2 0-51.2-11.2-68.8-32L520 704 243.2 992c-17.6 20.8-41.6 32-68.8 32-49.6 0-89.6-41.6-89.6-91.2V150.4C84.8 67.2 150.4 0 232 0h576c81.6 0 147.2 67.2 147.2 150.4v782.4c0 49.6-40 91.2-89.6 91.2z" fill=""></path></symbol><symbol id="icon-fenxianghover" viewBox="0 0 1024 1024"><path d="M787.00544 629.888c-69.504 0-130.36544 36.224-165.248 90.752l-210.304-120.25856c13.63456-26.624 21.95456-56.32 21.95456-88.38144 0-19.77856-3.712-38.4-9.216-56.448l218.752-125.056c35.90144 38.912 86.85056 63.67744 144 63.67744 108.34944 0 196.352-87.936 196.352-196.352S895.29344 1.46944 786.944 1.46944c-108.48256 0-196.352 87.936-196.352 196.352 0 19.77856 3.77344 38.46656 9.14944 56.448L380.98944 379.264C345.088 340.352 294.144 315.648 237.056 315.648 128.57856 315.648 40.64256 403.51744 40.64256 512s87.936 196.352 196.352 196.352c44.8 0 85.56544-15.616 118.59456-40.76544l-0.768 1.34144 237.88544 135.99744c-0.896 6.97856-2.10944 13.89056-2.10944 21.376 0 108.22144 87.86944 196.224 196.352 196.224 108.34944 0 196.352-88.00256 196.352-196.224 0.05632-108.53888-87.94112-196.41344-196.29568-196.41344z"></path></symbol><symbol id="icon-pinglunhover" viewBox="0 0 1024 1024"><path d="M896.54784 32h-768C57.8304 32 0.51712 91.55072 0.51712 165.02272v498.75456c0 73.44128 58.56256 141.11744 130.87744 141.11744H326.5024c33.95072 36.28544 174.72 182.20544 174.72 182.20544a15.488 15.488 0 0 0 22.59456 0s103.07072-116.992 170.17856-182.20544h199.61344c72.32 0 130.87744-67.712 130.87744-141.11744V165.02784c0.03072-73.472-57.28256-133.02784-127.93856-133.02784zM256.50176 497.50528c-35.328 0-64-29.75744-64-66.49344s28.672-66.49856 64-66.49856c35.35872 0 64 29.75744 64 66.49856 0 36.73088-28.64128 66.49344-64 66.49344z m256.03072 0c-35.35872 0-64-29.75744-64-66.49344s28.64128-66.49856 64-66.49856c35.328 0 63.96928 29.75744 63.96928 66.49856 0 36.73088-28.64128 66.49344-63.96928 66.49344z m255.96928 0c-35.328 0-64-29.75744-64-66.49344s28.672-66.49856 64-66.49856 64.03072 29.75744 64 66.49856c0 36.73088-28.672 66.49344-64 66.49344z"></path></symbol><symbol id="icon-shangchuan" viewBox="0 0 1024 1024"><path d="M960 640c-35.2 0-64 28.8-64 64v192H128V704c0-35.2-28.8-64-64-64s-64 28.8-64 64v256c0 35.2 28.8 64 64 64h896c35.2 0 64-28.8 64-64V704c0-35.2-28.8-64-64-64z" fill=""></path><path d="M278.4 388.8L448 219.2V704c0 35.2 28.8 64 64 64s64-28.8 64-64V219.2l169.6 169.6c25.6 25.6 67.2 25.6 91.2 0 25.6-25.6 25.6-65.6 0-91.2l-272-272-6.4-6.4C547.2 8 529.6 0 512 0c-17.6 0-35.2 8-46.4 19.2-1.6 1.6-4.8 3.2-6.4 6.4l-272 272c-25.6 25.6-25.6 65.6 0 91.2 24 25.6 65.6 25.6 91.2 0z" fill=""></path></symbol><symbol id="icon-guanbi" viewBox="0 0 1024 1024"><path d="M896 0L512 384 128 0 0 128l384 384L0 896l128 128 384-384 384 384 128-128-384-384 384-384z"></path></symbol><symbol id="icon-tianjiazhuanji" viewBox="0 0 1024 1024"><path d="M896 64c35.2 0 64 28.8 64 64v768c0 35.2-28.8 64-64 64H128c-35.2 0-64-28.8-64-64V128c0-35.2 28.8-64 64-64h768m0-64H128C57.6 0 0 57.6 0 128v768c0 70.4 57.6 128 128 128h768c70.4 0 128-57.6 128-128V128c0-70.4-57.6-128-128-128z"></path><path d="M803.2 480H220.8c-16 0-28.8 12.8-28.8 28.8v6.4c0 16 12.8 28.8 28.8 28.8h582.4c16 0 28.8-12.8 28.8-28.8v-6.4c0-16-12.8-28.8-28.8-28.8z"></path><path d="M512 192c-17.6 0-32 14.4-32 32v576c0 17.6 14.4 32 32 32s32-14.4 32-32V224c0-17.6-14.4-32-32-32z"></path></symbol><symbol id="icon-call" viewBox="0 0 1027 1024"><path d="M1001.6 910.4c-16 35.2-56 59.2-88 76.8-43.2 24-86.4 36.8-136 36.8-67.2 0-128-27.2-190.4-49.6-44.8-16-88-35.2-128-60.8C336 836.8 187.2 688 110.4 564.8c-24-40-44.8-83.2-60.8-128C27.2 376 0 313.6 0 246.4c0-48 14.4-92.8 36.8-136 17.6-32 41.6-73.6 76.8-88C137.6 11.2 188.8 0 216 0c4.8 0 9.6 0 16 1.6 16 4.8 32 40 38.4 56 24 41.6 46.4 83.2 70.4 124.8 11.2 19.2 33.6 41.6 33.6 64 0 44.8-131.2 108.8-131.2 148.8 0 19.2 17.6 44.8 28.8 62.4 73.6 132.8 164.8 224 297.6 297.6 17.6 9.6 43.2 28.8 62.4 28.8 40 0 104-131.2 148.8-131.2 22.4 0 46.4 22.4 64 33.6 40 24 83.2 46.4 124.8 70.4 14.4 8 49.6 24 56 38.4 1.6 4.8 1.6 9.6 1.6 16-3.2 24-14.4 75.2-25.6 99.2z"></path></symbol><symbol id="icon-mail" viewBox="0 0 1027 1024"><path d="M926.4 358.4c-89.6 62.4-179.2 123.2-267.2 185.6-36.8 25.6-100.8 78.4-145.6 78.4-46.4 0-108.8-52.8-145.6-78.4-88-62.4-177.6-124.8-267.2-185.6-40-27.2-97.6-92.8-97.6-144 0-56 30.4-104 91.2-104h841.6c49.6 0 91.2 41.6 91.2 91.2-3.2 64-51.2 121.6-100.8 156.8z m97.6 464c0 49.6-41.6 91.2-91.2 91.2H91.2c-49.6 0-91.2-41.6-91.2-91.2V369.6c17.6 19.2 36.8 35.2 57.6 49.6 94.4 64 190.4 129.6 283.2 196.8 48 35.2 107.2 78.4 169.6 78.4 62.4 0 121.6-43.2 169.6-78.4 92.8-67.2 188.8-132.8 284.8-196.8 20.8-14.4 40-30.4 57.6-49.6v452.8z"></path></symbol></svg><div class="csdn-toolbar csdn-toolbar tb_disnone  csdn-toolbar-skin-black ">        <div class="container row center-block ">          <ul class="pull-left left-menu clearfix">            <li>              <a href="https://www.csdn.net/" title="CSDN首页" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#toolbar-csdnlogo"></use></svg></a>            </li>            <li><a href="https://blog.csdn.net/" class="toolbar_to_feed" title="博客" target="_blank">博客</a></li>            <li><a href="https://edu.csdn.net/" title="学院" target="_blank">学院</a></li>            <li><a href="https://download.csdn.net/" title="下载" target="_blank">下载</a></li>            <li><a href="http://gitbook.cn/?ref=csdn" title="GitChat" target="_blank">GitChat</a></li>            <li class="tb_is1090hide"><a href="https://bbs.csdn.net/" title="论坛" target="_blank">论坛</a></li>            <li class="tb_is1150hide"><a href="https://ask.csdn.net/" title="问答" target="_blank">问答</a></li>            <li class="tb_is1210hide"><a href="https://mall.csdn.net/" title="商城" target="_blank">商城</a></li>            <li class="tb_is1270hide"><a href="https://download.csdn.net/vip_code" title="下载VIP" target="_blank">VIP</a></li>            <li class="tb_is1330hide"><a href="https://huiyi.csdn.net/" title="活动" target="_blank">活动</a></li>            <li class="tb_is1400hide"><a href="http://job.csdn.net/" title="招聘" target="_blank">招聘</a></li>            <li class="tb_is1452hide"><a href="http://www.iteye.com/" title="ITeye" target="_blank">ITeye</a></li>            <li class="tb_is1513hide"><a href="https://www.gitee.com/" title="码云" target="_blank">码云</a></li>            <li class="tb_is1513hide"><a href="http://www.csto.com/" title="CSTO" target="_blank">CSTO</a></li>            <li class="show-more">            <a href="javascript:;" class="show-more-a"><svg width="22" height="4" xmlns="http://www.w3.org/2000/svg"><path d="M2 4a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm9 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm9 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" fill="#4F4F4F" fill-rule="evenodd"></path></svg></a>              <div class="more">                <div class="tb_is1090show"><a href="https://bbs.csdn.net/" target="_blank">论坛</a></div>                <div class="tb_is1150show"><a href="https://ask.csdn.net/" target="_blank">问答</a></div>                <div class="tb_is1210show"><a href="https://mall.csdn.net/" target="_blank">商城</a></div>                <div class="tb_is1270show"><a href="https://download.csdn.net/vip_code" target="_blank">下载VIP</a></div>                <div class="tb_is1330show"><a href="https://huiyi.csdn.net/" target="_blank">活动</a></div>                <div class="tb_is1400show"><a href="http://job.csdn.net/" target="_blank">招聘</a></div>                <div class="tb_is1452show"><a href="http://www.iteye.com/" target="_blank">ITeye</a></div>                <div class="tb_is1513show"><a href="https://www.gitee.com/" target="_blank">码云</a></div>                <div class="tb_is1513show"><a href="http://www.csto.com/" target="_blank">CSTO</a></div>              </div>            </li>          </ul>          <div class="pull-right login-wrap ">            <ul class="btns">            <li class="toolbar-tracking csdn-tracking-statistics tracking-click" data-mod="popu_369"><a href="https://blog.csdn.net/zhuhai__yizhi/article/details/78284401#" style="padding:0" target="_blank"></a></li>              <li>                <div class="search_bar csdn-tracking-statistics tracking-click" data-mod="popu_366">                  <input type="text" class="input_search" name="" id="toolber-keyword" autocomplete="off">                  <a href="https://so.csdn.net/so/" target="_blank" class="btn-nobg-noborder btn-search"><i class="iconfont-toolbar toolbar-sousuo"></i></a>                </div>              </li>              <li class="write-bolg-btn csdn-tracking-statistics tracking-click" data-mod="popu_370"><a class="" href="https://mp.csdn.net/postedit" target="_blank"><i class="iconfont-toolbar toolbar-icon_boke"></i><span>写博客</span></a></li>              <li class="gitChat"><a class="" href="http://gitbook.cn/new/gitchat/activity?utm_source=csdnblog1" target="_blank"><i class="iconfont-toolbar toolbar-icon_gitchatx"></i><span>发Chat</span></a></li>              <li class="userinfo"><a href="https://passport.csdn.net/account/login">登录</a><span></span><a href="https://passport.csdn.net/account/mobileregister?action=mobileRegister">注册</a></li>              <li class="userLogin">                <div class="loginCenter"><a href="https://my.csdn.net/" target="_blank"><img class="login_img" src="./mysql 安装employees db的步骤 - CSDN博客_files/2_weixin_38100342.jpg"><div class="toolbar-circle" style="display: block;"></div></a></div>                <div class="userControl" style="display: none;">                  <div><a href="https://blog.csdn.net/weixin_38100342" target="_blank">我的博客</a></div>                  <div><a class="xiaoxi" href="http://msg.csdn.net/" target="_blank">消息<span class="toolbar-newsL" style="margin-left: 4px; display: inline;">(1)</span></a></div>                  <div><a href="https://my.csdn.net/my/account/changepwd" target="_blank">帐号设置</a></div>                  <div><a href="https://bbs.csdn.net/forums/Service" target="_blank">反馈</a></div>                  <div><a href="http://oldblog.csdn.net/home/help.html" target="_blank">帮助</a></div>                  <div><a href="https://passport.csdn.net/account/logout">退出</a></div>                </div>              </li>            </ul>          </div>        </div>    </div><script class="toolbar-s" type="text/javascript" src="./mysql 安装employees db的步骤 - CSDN博客_files/iconfont.js"></script>
+<script id="toolbar-tpl-scriptId" prod="download" skin="black" src="./mysql 安装employees db的步骤 - CSDN博客_files/content_toolbar.js" type="text/javascript" domain="https://blog.csdn.net/"></script>
+<div class="container clearfix">
+  <main>
+    <div style="display:none;">
+      <img src="https://blog.csdn.net/zhuhai__yizhi/article/details/78284401" onerror="setTimeout(function(){if(!/(csdn.net|iteye.com|baiducontent.com|googleusercontent.com|360webcache.com|sogoucdn.com|bingj.com|baidu.com)$/.test(window.location.hostname)){window.location.href=&quot;\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x63\x73\x64\x6e\x2e\x6e\x65\x74&quot;}},3000);">
+    </div>
+    <article>
+        <h1 class="csdn_top">mysql 安装employees db的步骤</h1>
+        <div class="article_bar clearfix">
+            <div class="artical_tag">
+                <span class="original">
+                转载                </span>
+                <span class="time">2017年10月19日 14:24:00</span>
+            </div>
+
+            <ul class="article_tags clearfix csdn-tracking-statistics tracking-click" data-mod="popu_377" style="display: none;">
+                <li class="tit">标签：</li>
+
+<!--          [startarticletags]-->
+                <!--          [endarticletags]-->
+            </ul>
+            <ul class="right_bar">
+                <li><button class="btn-noborder"><i class="icon iconfont icon-read"></i><span class="txt">154</span></button></li>
+                <li class="edit" style="display: none;">
+                    <a class="btn-noborder" href="https://mp.csdn.net/postedit/78284401">
+                        <i class="icon iconfont icon-bianji"></i><span class="txt">编辑</span>
+                    </a>
+                </li>
+                <li class="del" style="display: none;">
+                    <a class="btn-noborder" onclick="javascript:deleteArticle(fileName);return false;">
+                        <i class="icon iconfont icon-shanchu"></i><span class="txt">删除</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="article_content" class="article_content csdn-tracking-statistics tracking-click" data-mod="popu_519" data-dsm="post">
+                            <div class="htmledit_views">
+                        
+<p>（转载）<a href="http://www.cnblogs.com/chenyucong/p/5734800.html" target="_blank">http://www.cnblogs.com/chenyucong/p/5734800.html</a></p>
+<p></p>
+<div id="cnblogs_post_body" style="margin:0px 0px 20px;padding:0px;font-family:Verdana, Arial, Helvetica, sans-serif;" deep="5">
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;"><span style="margin:0px;padding:0px;font-size:14px;">因为准备要开始学习ASP.NET的高级部分，所以今晚想安装一个数据库示例，百度发现原来mysql有个employees db</span></p>
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;"><span style="margin:0px;padding:0px;font-size:14px;">但是单纯按照网上的方法，也是没有办法导入的，所以写了这篇博文，作为笔记。</span></p>
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;">&nbsp;</p>
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;"><span style="margin:0px;padding:0px;font-size:14px;">本文内容参考了2篇文章：</span></p>
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;"><span style="margin:0px;padding:0px;font-size:14px;color:rgb(255,102,0);"><a href="http://ari.iteye.com/blog/1066690" style="margin:0px;padding:0px;color:rgb(0,0,0);" target="_blank"><span style="margin:0px;padding:0px;color:rgb(255,102,0);">http://ari.iteye.com/blog/1066690</span></a></span></p>
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;"><span style="margin:0px;padding:0px;font-size:14px;color:rgb(255,102,0);"><a href="http://blog.csdn.net/xiaoshuai1127/article/details/50545181" style="margin:0px;padding:0px;color:rgb(0,0,0);" target="_blank"><span style="margin:0px;padding:0px;color:rgb(255,102,0);">http://blog.csdn.net/xiaoshuai1127/article/details/50545181</span></a></span></p>
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;"><span style="margin:0px;padding:0px;font-size:14px;">在此对两位作者，表示感谢。</span></p>
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;">&nbsp;</p>
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;"><span style="margin:0px;padding:0px;font-size:14px;">步骤如下：</span></p>
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;"><span style="margin:0px;padding:0px;font-size:14px;">一、下载</span></p>
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;"><span style="margin:0px;padding:0px;font-size:14px;">地址：<span style="margin:0px;padding:0px;color:rgb(255,102,0);"><a href="https://launchpad.net/test-db/employees-db-1/1.0.6" style="margin:0px;padding:0px;color:rgb(0,0,0);" target="_blank"><span style="margin:0px;padding:0px;color:rgb(255,102,0);">https://launchpad.net/test-db/employees-db-1/1.0.6</span></a></span></span></p>
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;"><span style="margin:0px;padding:0px;font-size:14px;"><img src="./mysql 安装employees db的步骤 - CSDN博客_files/997030-20160803220146872-1528286009.png" alt="" width="830" height="195" style="margin:0px;padding:0px;border:0px;"></span></p>
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;">&nbsp;</p>
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;"><span style="margin:0px;padding:0px;font-size:14px;">二、解压</span></p>
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;"><span style="margin:0px;padding:0px;font-size:14px;">解压所下载的文件，存放在任意目录，但为了方便，建议放在路径较短地方，我的是放在：E:\employees_db</span></p>
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;"><span style="margin:0px;padding:0px;font-size:14px;"><img src="./mysql 安装employees db的步骤 - CSDN博客_files/997030-20160803220442450-1630916363.png" alt="" width="834" height="178" style="margin:0px;padding:0px;border:0px;"></span></p>
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;">&nbsp;</p>
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;"><span style="margin:0px;padding:0px;font-size:14px;">三、修改导入文件内容</span></p>
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;"><span style="margin:0px;padding:0px;font-size:14px;">使用写字板，打开上一步文件夹中的employees.sql，里面的内容，从第38行开始如下：</span></p>
+<div class="cnblogs_code" style="margin:5px 0px;padding:5px;background-color:rgb(245,245,245);border:1px solid rgb(204,204,204);overflow:auto;font-family:&#39;Courier New&#39; !important;">
+<div class="cnblogs_code_toolbar" style="margin:5px 0px 0px;padding:0px;"><span class="cnblogs_code_copy" style="margin:0px;padding:0px 5px 0px 0px;line-height:1.5 !important;"><a title="复制代码" style="margin:0px;padding:0px;border:none !important;" target="_blank"><img src="./mysql 安装employees db的步骤 - CSDN博客_files/copycode.gif" alt="复制代码" style="margin:0px;padding:0px;border:none !important;"></a></span></div>
+<pre style="margin-top:0px;margin-bottom:0px;padding:0px;white-space:pre-wrap;font-family:&#39;Courier New&#39; !important;"><span style="margin:0px;padding:0px;font-size:14px;line-height:1.5 !important;">   set storage_engine = INNODB;
+-- set storage_engine = MyISAM;
+-- set storage_engine = Falcon;
+-- set storage_engine = PBXT;
+-- set storage_engine = Maria;
+
+select CONCAT('storage engine: ', @@storage_engine) as INFO;</span></pre>
+<div class="cnblogs_code_toolbar" style="margin:5px 0px 0px;padding:0px;"><span class="cnblogs_code_copy" style="margin:0px;padding:0px 5px 0px 0px;line-height:1.5 !important;"><a title="复制代码" style="margin:0px;padding:0px;border:none !important;" target="_blank"><img src="./mysql 安装employees db的步骤 - CSDN博客_files/copycode.gif" alt="复制代码" style="margin:0px;padding:0px;border:none !important;"></a></span></div>
+</div>
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;"><span style="margin:0px;padding:0px;font-size:14px;">如果没有这一步操作，在下一步导入的时候，会提示storage_engine错误，具体的原因我不清楚，但是我知道我的mysql根目录下的my.ini的文件，设置了default-storage-engine=INNODB，这一句代表创建新表时将使用的默认存储引擎，可以看到employees.sql中的语句，是表示有5个storage_engine的选项，默认为INNODB，与我设置的一样，但是仍然提示没有找到，估计是版本的问题，因为这个employees_db是比较旧的，</span></p>
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;"><span style="margin:0px;padding:0px;font-size:14px;">通过百度到的结果，正如里面所说，mysql默认使用的就是INNODB，所以就把这行也注释掉就行了，顺便也把下面的查询语句注释掉，代码如下：</span></p>
+<div class="cnblogs_code" style="margin:5px 0px;padding:5px;background-color:rgb(245,245,245);border:1px solid rgb(204,204,204);overflow:auto;font-family:&#39;Courier New&#39; !important;">
+<div class="cnblogs_code_toolbar" style="margin:5px 0px 0px;padding:0px;"><span class="cnblogs_code_copy" style="margin:0px;padding:0px 5px 0px 0px;line-height:1.5 !important;"><a title="复制代码" style="margin:0px;padding:0px;border:none !important;" target="_blank"><img src="./mysql 安装employees db的步骤 - CSDN博客_files/copycode.gif" alt="复制代码" style="margin:0px;padding:0px;border:none !important;"></a></span></div>
+<pre style="margin-top:0px;margin-bottom:0px;padding:0px;white-space:pre-wrap;font-family:&#39;Courier New&#39; !important;"><span style="margin:0px;padding:0px;font-size:14px;line-height:1.5 !important;">-- set storage_engine = INNODB;
+-- set storage_engine = MyISAM;
+-- set storage_engine = Falcon;
+-- set storage_engine = PBXT;
+-- set storage_engine = Maria;
+
+-- select CONCAT('storage engine: ', @@storage_engine) as INFO;</span></pre>
+<div class="cnblogs_code_toolbar" style="margin:5px 0px 0px;padding:0px;"><span class="cnblogs_code_copy" style="margin:0px;padding:0px 5px 0px 0px;line-height:1.5 !important;"><a title="复制代码" style="margin:0px;padding:0px;border:none !important;" target="_blank"><img src="./mysql 安装employees db的步骤 - CSDN博客_files/copycode.gif" alt="复制代码" style="margin:0px;padding:0px;border:none !important;"></a></span></div>
+</div>
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;">&nbsp;</p>
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;"><span style="margin:0px;padding:0px;font-size:14px;">四、导入</span></p>
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;"><span style="margin:0px;padding:0px;font-size:14px;">win + R，输入cmd打开命令行，输入以下命令：</span></p>
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;"><span style="margin:0px;padding:0px;font-size:14px;color:rgb(0,0,255);">e:</span></p>
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;"><span style="margin:0px;padding:0px;font-size:14px;color:rgb(0,0,255);">cd employees_db</span></p>
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;"><span style="margin:0px;padding:0px;font-size:14px;color:rgb(0,0,255);">mysql&nbsp;-t&nbsp;-u&nbsp;root&nbsp;-p&nbsp;&lt;&nbsp;employees.sql</span></p>
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;"><span style="margin:0px;padding:0px;font-size:14px;">输入密码</span></p>
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;">&nbsp;</p>
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;"><span style="margin:0px;padding:0px;font-size:14px;">完成，可以使用了。</span></p>
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;">下面的关系图也是非常有用的：</p>
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;"><img src="./mysql 安装employees db的步骤 - CSDN博客_files/997030-20160803222340434-1548604795.png" alt="" width="753" height="592" style="margin:0px;padding:0px;border:0px;"></p>
+<p style="margin:10px auto;padding-top:0px;padding-bottom:0px;">&nbsp;</p>
+</div>
+<p></p>
+                </div>
+                    </div>
+        <script>
+        $(".MathJax").remove();
+        </script>
+    </article>
+      <div class="readall_box csdn-tracking-statistics tracking-click readall_box_nobg" data-mod="popu_376" style="display: none;">
+          <div class="read_more_mask"></div>
+          <a class="btn btn-large btn-gray-fred read_more_btn" target="_self">阅读全文</a>
+      </div>
+      <div class="article_copyright">
+         
+              </div>
+      <ul class="article_collect clearfix csdn-tracking-statistics tracking-click" data-mod="popu_378" style="display: none;">
+          <li class="tit">本文已收录于以下专栏：</li>
+<!--          [startarticlecolumns]-->
+                                <!--          [endarticlecolumns]-->
+      </ul>
+      <div class="comment_box clearfix" id="comments">
+          <div id="comment_form">
+              <div id="commentsbmitarear">
+                                  <div class="comment_area clearfix">
+                      <div class="userimg">
+                        <a href="https://my.csdn.net/weixin_38100342">
+                          <img src="./mysql 安装employees db的步骤 - CSDN博客_files/3_weixin_38100342.jpg">
+                        </a>
+                      </div>
+                  
+                      <form action="https://blog.csdn.net/zhuhai__yizhi/phoenix/comment/submit?id=78284401" method="post" onsubmit="return subform(this);" id="commentform">
+                          <textarea class="comment_content" name="comment_content" id="comment_content" placeholder="写下你的评论…"></textarea>
+                          <div class="bot_bar clearfix">
+                              <div id="ubbtools" class="add_code">
+                                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/details/78284401#insertcode" code="code" target="_self"><i class="icon iconfont icon-daima"></i></a>
+                              </div>
+
+                              <input type="hidden" id="comment_replyId" name="comment_replyId">
+                              <input type="hidden" id="comment_userId" name="comment_userId" value="">
+                              <input type="hidden" id="commentId" name="commentId" value="">
+                              <input type="submit" class="btn btn-redborder" value="发表评论">
+                              <span id="tip_comment" class="tip">
+                              <div style="display: none;" class="csdn-tracking-statistics tracking-click" data-mod="popu_384"><a href="https://blog.csdn.net/zhuhai__yizhi/article/details/78284401#" target="_blank" class="comment_area_btn">发表评论</a></div>
+
+                              <div id="lang_list" code="code">
+                                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/details/78284401#html" style="width:95px;" class="long_name" target="_self">HTML/XML</a>
+                                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/details/78284401#objc" style="width:95px;" class="long_name" target="_self">objective-c</a>
+                                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/details/78284401#delphi" style="width:58px;" class="zhong_name" target="_self">Delphi</a>
+                                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/details/78284401#ruby" class="zhong_name" target="_self">Ruby</a>
+                                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/details/78284401#php" target="_self">PHP</a>
+                                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/details/78284401#csharp" class="duan_name" target="_self">C#</a>
+                                  <a style=" border-right: none;" href="https://blog.csdn.net/zhuhai__yizhi/article/details/78284401#cpp" class="duan_name" target="_self">C++</a>
+                                  <a style=" border-bottom:none;width:95px;" href="https://blog.csdn.net/zhuhai__yizhi/article/details/78284401#javascript" class="long_name" target="_self">JavaScript</a>
+                                  <a style=" border-bottom:none;width:95px;" href="https://blog.csdn.net/zhuhai__yizhi/article/details/78284401#vb" class="long_name" target="_self">Visual Basic</a>
+                                  <a style=" border-bottom:none;" href="https://blog.csdn.net/zhuhai__yizhi/article/details/78284401#python" class="zhong_name" target="_self">Python</a>
+                                  <a style=" border-bottom:none;" href="https://blog.csdn.net/zhuhai__yizhi/article/details/78284401#java" class="zhong_name" target="_self">Java</a>
+                                  <a style="border-bottom:none;" href="https://blog.csdn.net/zhuhai__yizhi/article/details/78284401#css" class="duan_name" target="_self">CSS</a>
+                                  <a style="border-bottom:none;" href="https://blog.csdn.net/zhuhai__yizhi/article/details/78284401#sql" class="duan_name" target="_self">SQL</a>
+                                  <a style="border:none; " href="https://blog.csdn.net/zhuhai__yizhi/article/details/78284401#plain" class="duan_name" target="_self">其它</a>
+                                  <span class="arrb"></span>
+                              </div>
+                          </span></div>
+                      </form>
+                  </div>
+                              </div>
+          </div>
+      </div>
+      <div class="comment_li_outbox"></div>
+
+      <div class="more_comment" style="display: none;">
+          <div id="comment_bar" class="trackgin-ad" data-mod="popu_385"></div>
+      </div>
+
+      <!-- <h3 class="recommend_tit" id="related">相关文章推荐</h3> -->
+      <div class="recommend_list clearfix" id="rasss">
+                                          <dl class="clearfix csdn-tracking-statistics downloadElement" data-mod="popu_387" data-poputype="feed" data-feed-show="true" data-dsm="post">
+                <a class="clearfix" href="https://download.csdn.net/download/wn084/10206900" target="_blank" strategy="BlogCommendFromBaidu_0">
+                    <dd class="floatL">
+                        <div class="summary">
+                            <h2>尚硅谷2017最新MySQL核心技术 178讲</h2>
+                            <div class="summary">
+                                <ul>
+                                    <li class="time">2018年01月15日 20:16</li>
+                                    <li class="visited_num fileSize">55B</li>
+                                    <li class="download_btn">下载</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="floatR"><img class="maxwidth" src="./mysql 安装employees db的步骤 - CSDN博客_files/txt.svg" alt="" title=""></dt>
+                </a>
+            </dl>
+                                                    <dl class="clearfix csdn-tracking-statistics downloadElement" data-mod="popu_387" data-poputype="feed" data-feed-show="true" data-dsm="post">
+                <a class="clearfix" href="https://download.csdn.net/download/w1025508785/7598321" target="_blank" strategy="BlogCommendFromBaidu_1">
+                    <dd class="floatL">
+                        <div class="summary">
+                            <h2>尚硅谷]_宋红康_常用sql操作总结</h2>
+                            <div class="summary">
+                                <ul>
+                                    <li class="time">2014年07月06日 00:27</li>
+                                    <li class="visited_num fileSize">358KB</li>
+                                    <li class="download_btn">下载</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="floatR"><img class="maxwidth" src="./mysql 安装employees db的步骤 - CSDN博客_files/pdf.svg" alt="" title=""></dt>
+                </a>
+            </dl>
+                                          <dl class="">
+            <script>
+            (function() {
+              var s = "_" + Math.random().toString(36).slice(2);
+              document.write('<div id="' + s + '"></div>');
+              (window.slotbydup=window.slotbydup || []).push({
+                id: '4765209',
+                container: s,
+                size: '808,120',
+                display: 'inlay-fix'
+              });
+            })();
+            </script><div id="_0d2zdr6waiekklydwdo7wah5mi"></div><script charset="utf-8" src="./mysql 安装employees db的步骤 - CSDN博客_files/bcqm(2)"></script><iframe scrolling="no" style="width: 100%; height: 90px; border: 0px;" src="./mysql 安装employees db的步骤 - CSDN博客_files/saved_resource.html"></iframe>
+
+<div style="float:left;margin-left: 12px;font-size: 12px;margin-top: -20px;color:rgb(142, 149, 154);">
+广告
+</div>
+
+<style>
+.ad-text {padding:0px;}
+</style>
+          </dl>
+                                        <dl class="clearfix csdn-tracking-statistics downloadElement" data-mod="popu_387" data-poputype="feed" data-feed-show="true" data-dsm="post">
+                <a class="clearfix" href="https://download.csdn.net/download/a_baobo/6751277" target="_blank" strategy="BlogCommendFromBaidu_2">
+                    <dd class="floatL">
+                        <div class="summary">
+                            <h2>employees_db-full-1.0.6.tar.bz2</h2>
+                            <div class="summary">
+                                <ul>
+                                    <li class="time">2013年12月21日 21:51</li>
+                                    <li class="visited_num fileSize">25.48MB</li>
+                                    <li class="download_btn">下载</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="floatR"><img class="maxwidth" src="./mysql 安装employees db的步骤 - CSDN博客_files/unkonw.svg" alt="" title=""></dt>
+                </a>
+            </dl>
+                                                    <dl class="clearfix csdn-tracking-statistics recommend_article recommend_article_out" data-mod="popu_387" data-poputype="feed" data-feed-show="false" data-dsm="post">
+                <a href="https://blog.csdn.net/lichangzai/article/details/18734553" target="_blank" strategy="BlogCommendFromBaidu_3">
+                    <dd>
+                        <h2 style="margin-bottom: 0px;">mysql示例employees数据库</h2>
+                        <ul class="floatR">
+                            <li class="avatar_img"><img src="./mysql 安装employees db的步骤 - CSDN博客_files/3_lichangzai.jpg" alt="lichangzai" title="lichangzai"></li>
+                            <li class="user_name">lichangzai</li>
+                            <li class="time">2014-01-24 14:49:59</li>
+                            <li class="visited_num"><i class="icon iconfont icon-read"></i><span>2155</span></li>
+                        </ul><div class="summary">
+                            ORACLE安装是附带安装employees数据，供练习sql使用。MySQL同样提供了employees数据库，但并未随数据库一起安装，其下载链接也极其隐蔽，可能导致许多人没注意到。&nbsp;
+&nbsp; 下载地址...                        </div>
+
+                        
+                    </dd>
+                </a>
+            </dl>
+                                                    <dl id="_c8kib3ii6sl5wdz19ef5vobt9"><div id="_lh7luup8uqzkd7c9hs56x0f6r" style="width: 100%;"><iframe id="iframeu3394176_1" name="iframeu3394176_1" src="./mysql 安装employees db的步骤 - CSDN博客_files/bcqm.html" width="800" height="100" align="center,center" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" style="border:0;vertical-align:bottom;margin:0;width:800px;height:100px" allowtransparency="true"></iframe></div><script type="text/javascript" src="./mysql 安装employees db的步骤 - CSDN博客_files/lgyyocphf.js"></script><span style="display: none">ie</span>
+
+
+</dl><dl class="clearfix csdn-tracking-statistics recommend_article recommend_article_out" data-mod="popu_387" data-poputype="feed" data-feed-show="false" data-dsm="post">
+                <a href="https://blog.csdn.net/pengdandezhi/article/details/77916561" target="_blank" strategy="BlogCommendFromBaidu_4">
+                    <dd>
+                        <h2 style="margin-bottom: 0px;">mysql 导入 employees_db-full-1.0.6</h2>
+                        <ul class="floatR">
+                            <li class="avatar_img"><img src="./mysql 安装employees db的步骤 - CSDN博客_files/3_pengdandezhi.jpg" alt="pengdandezhi" title="pengdandezhi"></li>
+                            <li class="user_name">pengdandezhi</li>
+                            <li class="time">2017-09-09 17:24:44</li>
+                            <li class="visited_num"><i class="icon iconfont icon-read"></i><span>197</span></li>
+                        </ul><div class="summary">
+                            mysql导入示例employees数据库步骤： 
+1.官网下载测试数据库employees数据库下载链接。下载employees_db-full-1.0.6文件。 
+2.解压压缩文件，进入emplo...                        </div>
+
+                        
+                    </dd>
+                </a>
+            </dl>
+                                                    <dl class="clearfix csdn-tracking-statistics downloadElement" data-mod="popu_387" data-poputype="feed" data-feed-show="false" data-dsm="post">
+                <a class="clearfix" href="https://download.csdn.net/download/loneleaf1/9271903" target="_blank" strategy="BlogCommendFromBaidu_5">
+                    <dd class="floatL">
+                        <div class="summary">
+                            <h2>MySQL示例数据库employees</h2>
+                            <div class="summary">
+                                <ul>
+                                    <li class="time">2015年11月16日 10:24</li>
+                                    <li class="visited_num fileSize">28.23MB</li>
+                                    <li class="download_btn">下载</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="floatR"><img class="maxwidth" src="./mysql 安装employees db的步骤 - CSDN博客_files/rar.svg" alt="" title=""></dt>
+                </a>
+            </dl>
+                                                    <dl class="clearfix csdn-tracking-statistics recommend_article recommend_article_out" data-mod="popu_387" data-poputype="feed" data-feed-show="false" data-dsm="post">
+                <a href="https://blog.csdn.net/lilinhua0819/article/details/78442908" target="_blank" strategy="searchFromBaidu_6">
+                    <dd>
+                        <h2 style="margin-bottom: 0px;">mysql数据导入到数据库</h2>
+                        <ul class="floatR">
+                            <li class="avatar_img"><img src="./mysql 安装employees db的步骤 - CSDN博客_files/3_lilinhua0819.jpg" alt="lilinhua0819" title="lilinhua0819"></li>
+                            <li class="user_name">lilinhua0819</li>
+                            <li class="time">2017-11-04 13:04:49</li>
+                            <li class="visited_num"><i class="icon iconfont icon-read"></i><span>165</span></li>
+                        </ul><div class="summary">
+                            mysql数据导入数据库                        </div>
+
+                        
+                    </dd>
+                </a>
+            </dl>
+                                                    <dl class="clearfix csdn-tracking-statistics recommend_article recommend_article_out" data-mod="popu_387" data-poputype="feed" data-feed-show="false" data-dsm="post">
+                <a href="https://blog.csdn.net/younger_z/article/details/37039767" target="_blank" strategy="BlogCommendFromBaidu_7">
+                    <dd>
+                        <h2 style="margin-bottom: 0px;">SQL并非洪水猛兽 十步助你完全理解SQL</h2>
+                        <ul class="floatR">
+                            <li class="avatar_img"><img src="./mysql 安装employees db的步骤 - CSDN博客_files/3_younger_z.jpg" alt="younger_z" title="younger_z"></li>
+                            <li class="user_name">younger_z</li>
+                            <li class="time">2014-07-05 10:53:12</li>
+                            <li class="visited_num"><i class="icon iconfont icon-read"></i><span>461</span></li>
+                        </ul><div class="summary">
+                            很多程序员视 SQL 为洪水猛兽。SQL 是一种为数不多的声明性语言，它的运行方式完全不同于我们所熟知的命令行语言、面向对象的程序语言、甚至是函数语言(尽管有些人认为 SQL 语言也是一种函数式语言)...                        </div>
+
+                        
+                    </dd>
+                </a>
+            </dl>
+                                                    <dl class="clearfix csdn-tracking-statistics recommend_article recommend_article_out" data-mod="popu_387" data-poputype="feed" data-feed-show="false" data-dsm="post">
+                <a href="https://download.csdn.net/download/shuishanglingfeng/9370465" target="_blank" strategy="searchFromBaidu_8">
+                    <dd>
+                        <h2 style="margin-bottom: 0px;">MySQL &lt;em&gt;employees</h2>
+                        <ul class="floatR">
+                            <li class="time">2018年03月19日 00:00</li>
+                        </ul><div class="summary">
+                            MySQL 官方 &lt;em&gt;employees&lt;/em&gt; &lt;em&gt;db&lt;/em&gt; &lt;em&gt;full&lt;/em&gt; &lt;em&gt;1.0.6&lt;/em&gt; 综合评分:0(0位用户评分) 收藏评论举报 所需: 3 积分/C币 下载个数: 538 开通VIP C币充值 立即下载 ...                        </div>
+
+                        
+                    </dd>
+                </a>
+            </dl>
+                                                    <dl class="clearfix csdn-tracking-statistics recommend_article recommend_article_out" data-mod="popu_387" data-poputype="feed" data-feed-show="false" data-dsm="post">
+                <a href="https://blog.csdn.net/appleyuchi/article/details/79439387" target="_blank" strategy="searchFromBaidu_9">
+                    <dd>
+                        <h2 style="margin-bottom: 0px;">mysql练习用的数据集下载</h2>
+                        <ul class="floatR">
+                            <li class="avatar_img"><img src="./mysql 安装employees db的步骤 - CSDN博客_files/3_appleyuchi.jpg" alt="appleyuchi" title="appleyuchi"></li>
+                            <li class="user_name">appleyuchi</li>
+                            <li class="time">2018-03-04 20:32:30</li>
+                            <li class="visited_num"><i class="icon iconfont icon-read"></i><span>64</span></li>
+                        </ul><div class="summary">
+                            https://launchpad.net/test-db/employees-db-1/1.0.6中下载employees_db-full-1.0.6.tar.bz2cd employees_db-...                        </div>
+
+                        
+                    </dd>
+                </a>
+            </dl><dl id="yd_a_d_feed_11" class="yd_a_d_feed_cla" style="height:124px;overflow: hidden;"><iframe scrolling="no" style="width: 100%; height: 90px; border: 0px;" src="./mysql 安装employees db的步骤 - CSDN博客_files/saved_resource(1).html"></iframe></dl>
+                                                                  <dl class="clearfix csdn-tracking-statistics recommend_article recommend_article_out" data-mod="popu_387" data-poputype="feed" data-feed-show="false" data-dsm="post">
+                <a href="https://blog.csdn.net/moqiang02/article/details/38031535" target="_blank" strategy="BlogCommendFromQuerySearch_10">
+                    <dd>
+                        <h2 style="margin-bottom: 0px;">导入 Mysql 示例数据库 employees</h2>
+                        <ul class="floatR">
+                            <li class="avatar_img"><img src="./mysql 安装employees db的步骤 - CSDN博客_files/3_moqiang02.jpg" alt="moqiang02" title="moqiang02"></li>
+                            <li class="user_name">moqiang02</li>
+                            <li class="time">2014-07-22 06:35:52</li>
+                            <li class="visited_num"><i class="icon iconfont icon-read"></i><span>2109</span></li>
+                        </ul><div class="summary">
+                            Mysql也有跟Oracle的scott与employees相似的数据库，这样就免除了每次都要自己建表并插入数据了。
+
+Mysql提供的供练习使用的数据库employees，下面地址：https://...                        </div>
+
+                        
+                    </dd>
+                </a>
+            </dl>
+                                                    <dl class="clearfix csdn-tracking-statistics recommend_article recommend_article_out" data-mod="popu_387" data-poputype="feed" data-feed-show="false" data-dsm="post">
+                <a href="https://blog.csdn.net/razorluo/article/details/39665653" target="_blank" strategy="BlogCommendFromQuerySearch_11">
+                    <dd>
+                        <h2 style="margin-bottom: 0px;">mysql sample databases样本数据库搭建</h2>
+                        <ul class="floatR">
+                            <li class="avatar_img"><img src="./mysql 安装employees db的步骤 - CSDN博客_files/3_razorluo.jpg" alt="razorluo" title="razorluo"></li>
+                            <li class="user_name">razorluo</li>
+                            <li class="time">2014-09-29 09:37:19</li>
+                            <li class="visited_num"><i class="icon iconfont icon-read"></i><span>3690</span></li>
+                        </ul><div class="summary">
+                            官方的样本数据库：http://dev.mysql.com/doc/index-other.html                        </div>
+
+                        
+                    </dd>
+                </a>
+            </dl>
+                                                    <dl class="clearfix csdn-tracking-statistics recommend_article recommend_article_out" data-mod="popu_387" data-poputype="feed" data-feed-show="false" data-dsm="post">
+                <a href="https://blog.csdn.net/xinjianwuhen1991/article/details/51004325" target="_blank" strategy="BlogCommendFromQuerySearch_12">
+                    <dd>
+                        <h2 style="margin-bottom: 0px;">Mysql导入官方示例employees问题解决记录</h2>
+                        <ul class="floatR">
+                            <li class="avatar_img"><img src="./mysql 安装employees db的步骤 - CSDN博客_files/3_xinjianwuhen1991.jpg" alt="xinjianwuhen1991" title="xinjianwuhen1991"></li>
+                            <li class="user_name">xinjianwuhen1991</li>
+                            <li class="time">2016-03-29 11:20:44</li>
+                            <li class="visited_num"><i class="icon iconfont icon-read"></i><span>1898</span></li>
+                        </ul><div class="summary">
+                            前期准备
+导入报错
+报错处理
+导入成功
+前期准备下载相关文件并解压缩 
+导入报错：
+  linux下很简单，在window下要注意的这个路径问题
+报错处理
+修改路径为绝对路径 
+参考文章
+处理 
+重新...                        </div>
+
+                        
+                    </dd>
+                </a>
+            </dl>
+                                                    <dl class="clearfix csdn-tracking-statistics recommend_article recommend_article_out" data-mod="popu_387" data-poputype="feed" data-feed-show="false" data-dsm="post">
+                <a href="https://blog.csdn.net/sfqn_pgs/article/details/50876395" target="_blank" strategy="BlogCommendFromQuerySearch_13">
+                    <dd>
+                        <h2 style="margin-bottom: 0px;">在windows导入mysql的示例employees数据库</h2>
+                        <ul class="floatR">
+                            <li class="avatar_img"><img src="./mysql 安装employees db的步骤 - CSDN博客_files/3_sfqn_pgs.jpg" alt="sfqn_pgs" title="sfqn_pgs"></li>
+                            <li class="user_name">sfqn_pgs</li>
+                            <li class="time">2016-03-13 11:25:11</li>
+                            <li class="visited_num"><i class="icon iconfont icon-read"></i><span>1452</span></li>
+                        </ul><div class="summary">
+                            今天博主在学习mysql索引的时候，需要用到employees数据库，下载的话网上有很多途径，博主在导入数据库的时候遇到了一点问题： 
+首先我是采用mysql的图形化界面Mysql Workbeach...                        </div>
+
+                        
+                    </dd>
+                </a>
+            </dl>
+                                                    <dl class="clearfix csdn-tracking-statistics recommend_article recommend_article_out" data-mod="popu_387" data-poputype="feed" data-feed-show="false" data-dsm="post">
+                <a href="https://blog.csdn.net/wepe12/article/details/53024400" target="_blank" strategy="BlogCommendFromQuerySearch_14">
+                    <dd>
+                        <h2 style="margin-bottom: 0px;">mysql测试数据库employees一些sql语句</h2>
+                        <ul class="floatR">
+                            <li class="avatar_img"><img src="./mysql 安装employees db的步骤 - CSDN博客_files/3_wepe12.jpg" alt="wepe12" title="wepe12"></li>
+                            <li class="user_name">wepe12</li>
+                            <li class="time">2016-11-03 19:01:14</li>
+                            <li class="visited_num"><i class="icon iconfont icon-read"></i><span>1087</span></li>
+                        </ul><div class="summary">
+                            一套SQL笔试题
+1、查找整个职员表的所有内容。
+select *
+from employees
+2、查看雇员名字(last_name)。
+select last_name
+from em...                        </div>
+
+                        
+                    </dd>
+                </a>
+            </dl>
+                                                    <dl id="_q6gyhz8fxwkxljc934qz7iudi"><iframe id="iframeu3394176_0" name="iframeu3394176_0" src="./mysql 安装employees db的步骤 - CSDN博客_files/bcqm(3).html" width="800" height="100" align="center,center" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" style="border:0;vertical-align:bottom;margin:0;width:800px;height:100px" allowtransparency="true"></iframe></dl><dl class="clearfix csdn-tracking-statistics recommend_article recommend_article_out" data-mod="popu_387" data-poputype="feed" data-feed-show="false" data-dsm="post">
+                <a href="https://blog.csdn.net/on_the_way_to_travel/article/details/71799233" target="_blank" strategy="BlogCommendFromQuerySearch_15">
+                    <dd>
+                        <h2 style="margin-bottom: 0px;">mysql  单表查询练习</h2>
+                        <ul class="floatR">
+                            <li class="avatar_img"><img src="./mysql 安装employees db的步骤 - CSDN博客_files/3_on_the_way_to_travel.jpg" alt="on_the_way_to_travel" title="on_the_way_to_travel"></li>
+                            <li class="user_name">on_the_way_to_travel</li>
+                            <li class="time">2017-05-13 21:59:51</li>
+                            <li class="visited_num"><i class="icon iconfont icon-read"></i><span>467</span></li>
+                        </ul><div class="summary">
+                            原文地址sql语句练习的答案统一放在在文章底部employees表结构如下：
+在 employees表中 使用别名 “First Name”, “Last Name” 展示 (first_name, ...                        </div>
+
+                        
+                    </dd>
+                </a>
+            </dl>
+                                                    <dl class="clearfix csdn-tracking-statistics recommend_article recommend_article_out" data-mod="popu_387" data-poputype="feed" data-feed-show="false" data-dsm="post">
+                <a href="https://blog.csdn.net/peanutwzk/article/details/79247263" target="_blank" strategy="BlogCommendFromQuerySearch_16">
+                    <dd>
+                        <h2 style="margin-bottom: 0px;">mysql面试题及其解题思路（一）</h2>
+                        <ul class="floatR">
+                            <li class="avatar_img"><img src="./mysql 安装employees db的步骤 - CSDN博客_files/3_peanutwzk.jpg" alt="peanutwzk" title="peanutwzk"></li>
+                            <li class="user_name">peanutwzk</li>
+                            <li class="time">2018-02-03 15:27:26</li>
+                            <li class="visited_num"><i class="icon iconfont icon-read"></i><span>44</span></li>
+                        </ul><div class="summary">
+                            首先创建数据库表：1.员工信息表
+
+
+
+CREATE TABLE `employees` (
+`emp_no` int(11) NOT NULL,
+`birth_date` date NOT NULL...                        </div>
+
+                        
+                    </dd>
+                </a>
+            </dl>
+                                                    <dl class="clearfix csdn-tracking-statistics downloadElement" data-mod="popu_387" data-poputype="feed" data-feed-show="false" data-dsm="post">
+                <a class="clearfix" href="https://download.csdn.net/download/waterring/9901391" target="_blank" strategy="BlogCommendFromQuerySearch_18">
+                    <dd class="floatL">
+                        <div class="summary">
+                            <h2>数据库测试DB，mysql官方测试数据库文件，employee</h2>
+                            <div class="summary">
+                                <ul>
+                                    <li class="time">2017年07月17日 16:42</li>
+                                    <li class="visited_num fileSize">34.99MB</li>
+                                    <li class="download_btn">下载</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="floatR"><img class="maxwidth" src="./mysql 安装employees db的步骤 - CSDN博客_files/zip.svg" alt="" title=""></dt>
+                </a>
+            </dl>
+                                                    <dl class="clearfix csdn-tracking-statistics downloadElement" data-mod="popu_387" data-poputype="feed" data-feed-show="false" data-dsm="post">
+                <a class="clearfix" href="https://download.csdn.net/download/u010250294/5489723" target="_blank" strategy="BlogCommendFromQuerySearch_19">
+                    <dd class="floatL">
+                        <div class="summary">
+                            <h2>CentOS安装MySQL步骤.</h2>
+                            <div class="summary">
+                                <ul>
+                                    <li class="time">2013年05月31日 16:02</li>
+                                    <li class="visited_num fileSize">20KB</li>
+                                    <li class="download_btn">下载</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="floatR"><img class="maxwidth" src="./mysql 安装employees db的步骤 - CSDN博客_files/docx.svg" alt="" title=""></dt>
+                </a>
+            </dl>
+                                                    <dl class="clearfix csdn-tracking-statistics downloadElement" data-mod="popu_387" data-poputype="feed" data-feed-show="false" data-dsm="post">
+                <a class="clearfix" href="https://download.csdn.net/download/baidu_17146019/7585245" target="_blank" strategy="BlogCommendFromQuerySearch_20">
+                    <dd class="floatL">
+                        <div class="summary">
+                            <h2>db转mysql数据库转换</h2>
+                            <div class="summary">
+                                <ul>
+                                    <li class="time">2014年07月03日 09:15</li>
+                                    <li class="visited_num fileSize">86KB</li>
+                                    <li class="download_btn">下载</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="floatR"><img class="maxwidth" src="./mysql 安装employees db的步骤 - CSDN博客_files/zip.svg" alt="" title=""></dt>
+                </a>
+            </dl>
+                        </div>
+  </main>
+<aside>
+    <div class="right_box user_info">
+    <dl class="inf_bar clearfix">
+        <dt class="csdn-tracking-statistics tracking-click" data-mod="popu_381">
+                <a href="https://blog.csdn.net/zhuhai__yizhi" target="_blank">
+                    <img src="./mysql 安装employees db的步骤 - CSDN博客_files/3_zhuhai__yizhi.jpg" class="avatar_pic">
+        </a>
+      </dt><dd>
+            <h3 class="csdn-tracking-statistics tracking-click" data-mod="popu_380"><a href="https://blog.csdn.net/zhuhai__yizhi" target="_blank" id="uid">zhuhai__yizhi</a></h3>
+            <div class="medals" title="">
+                      </div>
+                        <span class="csdn-tracking-statistics tracking-click" data-mod="popu_379"><a class="btn btn-redborder-small " id="span_add_follow" target="_self">关注</a></span>
+                    </dd>
+    </dl>
+    <div class="inf_number_box clearfix">
+        <dl title="323">
+            <dt>原创</dt>
+            <dd>323</dd>
+        </dl>
+        <dl title="53">
+            <dt>粉丝</dt>
+            <dd id="fan">53</dd>
+        </dl>
+        <dl title="69">
+            <dt>喜欢</dt>
+            <dd>69</dd>
+        </dl>
+        <dl title="57">
+          <dt>评论</dt>
+          <dd>57</dd>
+        </dl>
+    </div>
+
+</div>
+<div class="interflow clearfix">
+      <div class="badge gradeAndbadge">
+        <div>
+                                    <img src="./mysql 安装employees db的步骤 - CSDN博客_files/chizhiyiheng.png" alt="持之以恒">
+                                            </div>
+    </div>
+      <div class="grade gradeAndbadge gradewidths">
+      <span>等级：</span>
+      <div>
+        <a href="https://blog.csdn.net/home/help.html#level" title="7级,点击查看等级说明" target="_blank">
+          <img class="grade-img" src="./mysql 安装employees db的步骤 - CSDN博客_files/blog7.png" alt="7级,点击查看等级说明">
+        </a>
+      </div>
+    </div>
+    <div class="gradeAndbadge gradewidths" title="880884">
+        <span>访问量：</span>
+        <span class="num odd-overhidden">88万+</span>
+    </div>
+
+    <div class="gradeAndbadge gradewidths" title="12272">
+      <span>积分：</span>
+      <span class="num odd-overhidden">1万+</span>
+    </div>
+    <div class="gradeAndbadge gradewidths" title="1471">
+        <span>排名：</span>
+        <span class="num odd-overhidden">1471</span>
+    </div>
+
+</div>
+<script type="text/javascript">
+  // 判断并设置用户名位置，没有博客专家与关注按钮时，用户名居中
+  $medals_children = $('.medals').children().length;
+  $span_add_follow = $('#span_add_follow').length;
+  if($medals_children === 0 && $span_add_follow === 0){
+    $('.inf_bar dd').css('vertical-align','10px')
+  }
+</script>          <div class="extension_other csdn-tracking-statistics tracking-click" data-mod="popu_389" style="position: relative;">
+          <!--u3032528-->
+        <div class="flashrecommend">
+                        <script type="text/javascript" src="./mysql 安装employees db的步骤 - CSDN博客_files/bwocoltly.js"></script>
+                    </div>
+      <img class="append_mark_img" style="display:block;position:absolute;left:0;bottom:0;width:30px;height:16px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAQCAYAAAABOs/SAAAABGdBTUEAALGPC/xhBQAAAhpJREFUOBHFVU2L2lAUHU0nExNHbRq1BkSrSFH8QBdu3QnuxYUr3bj2f/gHRPwrdmVdCLqxIK0KighqWz+mNVPaavtuhgtqnpnposyD5N53z7k57yX33RhKpdK7q2cYxmfQVCUfFU6n06/z+fwbvQWaTCYml8t5gBOJRKzZbFb19XJenIPhcNgaj8dfYZxlWSYWizkZhjFgDGyr1VqMRqMd+JlMRrbZbDd2u/3G4XBwTqeTBx8wGLvd7reiKPuH2cNdI+zz+W4FQbjudrtfkNjr9Vboo91sNr/A9/v9QjKZlFer1X2xWHxLclnIBx+5nU5n0Wg0FjgHqxGG4Hw+V9rt9lfw9YbRaDQUCoVgtVr9MB6P1d2TRYjRaFSq1+uf9HKpwnoJx5jL5eKazebM4/EIcAHmdrvNkiSZUqmU45g7HA6/zWaze4xphDmOY7bb7U8k6FmLxXItiiJ3zNnv938mk8mdLMvqQhBbLpc/dIXNZjM7nU6/Y4Ke7ff7d3AFAoFbUoQnxYd5h8PhCjg4R6vZMQiTQnnSjvEhpAmFB4OBpgABD4VCUrlcfo9ctBphcgx4eC1IeKqt1WofadxKpSLS4ifC5Ltw5Bsd1uu1elRoCZdiiUTiJQ2DyqfFT4SDwaCVnNnPNOJjMdKxqDs7bzz4HMP5T4Lneea8yyD5kvV6vTw5xwoNv4RpevW/ioLYJVE9TCNMW/X/iP0FJ9WyNfNE5tcAAAAASUVORK5CYII="></div>
+            <div class="writings">
+      <div class="public_signal clearfix">
+        <h3>他的最新文章</h3>
+        <a href="https://blog.csdn.net/zhuhai__yizhi" target="_blank" class="more"><span>更多文章</span></a>
+      </div>
+        <ul class="inf_list clearfix csdn-tracking-statistics tracking-click" data-mod="popu_382">
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/zhuhai__yizhi/article/details/79708493" target="_blank">如何安装 macOS</a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/zhuhai__yizhi/article/details/79684521" target="_blank">Android ConstraintLayout实现简单的效果实战</a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/zhuhai__yizhi/article/details/79684510" target="_blank">Android ConstraintLayout布局详解</a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/zhuhai__yizhi/article/details/79670599" target="_blank">查看app的签名之后的md5值或者sha1值</a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/zhuhai__yizhi/article/details/79667631" target="_blank">Android基础之布局ConstraintLayout</a>
+            </li>
+                    </ul>
+    </div>
+                <div class="user-hotArticle sort ClassSort">
+            <h3>文章分类</h3>
+            <ul class="hotArticle-list sort-list ClassSort-list" style="height: 190px; overflow-y: hidden;">
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/2383893" class="odd-overhidden floatL">源码阅读</a>
+                        <div class="read list-left floatR"><span>10篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/2399985" class="odd-overhidden floatL">eclipse操作</a>
+                        <div class="read list-left floatR"><span>9篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/2659151" class="odd-overhidden floatL">Objective-C学习</a>
+                        <div class="read list-left floatR"><span>28篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/2661345" class="odd-overhidden floatL">Android学习</a>
+                        <div class="read list-left floatR"><span>504篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/2661363" class="odd-overhidden floatL">Swift学习</a>
+                        <div class="read list-left floatR"><span>2篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/2712543" class="odd-overhidden floatL">工具使用</a>
+                        <div class="read list-left floatR"><span>2篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/2714017" class="odd-overhidden floatL">Java学习</a>
+                        <div class="read list-left floatR"><span>111篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/5749257" class="odd-overhidden floatL">Java8学习</a>
+                        <div class="read list-left floatR"><span>2篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/2739273" class="odd-overhidden floatL">IOS学习</a>
+                        <div class="read list-left floatR"><span>81篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/2739275" class="odd-overhidden floatL">Xcode操作</a>
+                        <div class="read list-left floatR"><span>6篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/2739279" class="odd-overhidden floatL">生活工作感悟</a>
+                        <div class="read list-left floatR"><span>7篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/2761705" class="odd-overhidden floatL">Mac操作</a>
+                        <div class="read list-left floatR"><span>3篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/3105265" class="odd-overhidden floatL">算法与数据结构</a>
+                        <div class="read list-left floatR"><span>20篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/3173217" class="odd-overhidden floatL">JavaScript学习</a>
+                        <div class="read list-left floatR"><span>40篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/5704333" class="odd-overhidden floatL">Android Studio</a>
+                        <div class="read list-left floatR"><span>5篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/5704335" class="odd-overhidden floatL">设计模式</a>
+                        <div class="read list-left floatR"><span>13篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/5739001" class="odd-overhidden floatL">shell学习</a>
+                        <div class="read list-left floatR"><span>9篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/5761375" class="odd-overhidden floatL">Mysql学习</a>
+                        <div class="read list-left floatR"><span>11篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/5961679" class="odd-overhidden floatL">vim</a>
+                        <div class="read list-left floatR"><span>2篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/6064482" class="odd-overhidden floatL">android的学习博客</a>
+                        <div class="read list-left floatR"><span>1篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/6083385" class="odd-overhidden floatL">Java正则学习</a>
+                        <div class="read list-left floatR"><span>4篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/6095556" class="odd-overhidden floatL">函数式编程</a>
+                        <div class="read list-left floatR"><span>1篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/6096645" class="odd-overhidden floatL">Android开源项目学习</a>
+                        <div class="read list-left floatR"><span>1篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/6098010" class="odd-overhidden floatL">Android新控件、特性等</a>
+                        <div class="read list-left floatR"><span>12篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/6099317" class="odd-overhidden floatL">代码提升</a>
+                        <div class="read list-left floatR"><span>5篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/6100000" class="odd-overhidden floatL">技术小黑屋-博客学习</a>
+                        <div class="read list-left floatR"><span>3篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/6105856" class="odd-overhidden floatL">Java并发编程</a>
+                        <div class="read list-left floatR"><span>9篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/6106892" class="odd-overhidden floatL">加密解密</a>
+                        <div class="read list-left floatR"><span>2篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/6109023" class="odd-overhidden floatL">android高级学习</a>
+                        <div class="read list-left floatR"><span>49篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/6124285" class="odd-overhidden floatL">git操作</a>
+                        <div class="read list-left floatR"><span>4篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/6156425" class="odd-overhidden floatL">android中的IntentService</a>
+                        <div class="read list-left floatR"><span>4篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/6157239" class="odd-overhidden floatL">android中的AIDL</a>
+                        <div class="read list-left floatR"><span>4篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/6169093" class="odd-overhidden floatL">android中的jni</a>
+                        <div class="read list-left floatR"><span>2篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/6347922" class="odd-overhidden floatL">android中的databinding</a>
+                        <div class="read list-left floatR"><span>12篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/6357529" class="odd-overhidden floatL">android中的dagger2</a>
+                        <div class="read list-left floatR"><span>3篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/6095557" class="odd-overhidden floatL">Rxjava和Rxandroid学习</a>
+                        <div class="read list-left floatR"><span>9篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/6380687" class="odd-overhidden floatL">Spring学习</a>
+                        <div class="read list-left floatR"><span>16篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/6380269" class="odd-overhidden floatL">SpringMVC学习</a>
+                        <div class="read list-left floatR"><span>2篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/6645019" class="odd-overhidden floatL">读书</a>
+                        <div class="read list-left floatR"><span>8篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/6645020" class="odd-overhidden floatL">运动与健康</a>
+                        <div class="read list-left floatR"><span>1篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/6940373" class="odd-overhidden floatL">Kotlin与android开发</a>
+                        <div class="read list-left floatR"><span>21篇</span></div>
+                    </li>
+                                    <li class="clearfix">
+                        <a href="https://blog.csdn.net/zhuhai__yizhi/article/category/7131938" class="odd-overhidden floatL">python学习</a>
+                        <div class="read list-left floatR"><span>34篇</span></div>
+                    </li>
+                            </ul>
+            <div class="unfold-btn">
+              <span>展开</span><i class="icon iconfont icon-xiajiantou"></i>
+            </div>
+        </div>
+    <!--    [StartShowSelfColumn]-->
+    <!--    [EndShowSelfColumn]-->
+            <div class="user-hotArticle sort timeSort">
+          <h3>文章存档</h3>
+          <ul class="hotArticle-list timeSort-list" style="height: 190px; overflow-y: hidden;">
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2018/03" class="odd-overhidden floatL">2018年3月</a>
+                  <div class="read list-left floatR"><span>27篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2018/02" class="odd-overhidden floatL">2018年2月</a>
+                  <div class="read list-left floatR"><span>2篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2017/12" class="odd-overhidden floatL">2017年12月</a>
+                  <div class="read list-left floatR"><span>10篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2017/11" class="odd-overhidden floatL">2017年11月</a>
+                  <div class="read list-left floatR"><span>11篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2017/10" class="odd-overhidden floatL">2017年10月</a>
+                  <div class="read list-left floatR"><span>15篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2017/09" class="odd-overhidden floatL">2017年9月</a>
+                  <div class="read list-left floatR"><span>46篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2017/08" class="odd-overhidden floatL">2017年8月</a>
+                  <div class="read list-left floatR"><span>92篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2017/07" class="odd-overhidden floatL">2017年7月</a>
+                  <div class="read list-left floatR"><span>38篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2017/05" class="odd-overhidden floatL">2017年5月</a>
+                  <div class="read list-left floatR"><span>3篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2017/03" class="odd-overhidden floatL">2017年3月</a>
+                  <div class="read list-left floatR"><span>3篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2017/01" class="odd-overhidden floatL">2017年1月</a>
+                  <div class="read list-left floatR"><span>1篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2016/12" class="odd-overhidden floatL">2016年12月</a>
+                  <div class="read list-left floatR"><span>24篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2016/11" class="odd-overhidden floatL">2016年11月</a>
+                  <div class="read list-left floatR"><span>7篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2016/10" class="odd-overhidden floatL">2016年10月</a>
+                  <div class="read list-left floatR"><span>15篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2016/09" class="odd-overhidden floatL">2016年9月</a>
+                  <div class="read list-left floatR"><span>7篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2016/08" class="odd-overhidden floatL">2016年8月</a>
+                  <div class="read list-left floatR"><span>27篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2016/07" class="odd-overhidden floatL">2016年7月</a>
+                  <div class="read list-left floatR"><span>8篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2016/06" class="odd-overhidden floatL">2016年6月</a>
+                  <div class="read list-left floatR"><span>8篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2016/05" class="odd-overhidden floatL">2016年5月</a>
+                  <div class="read list-left floatR"><span>15篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2016/04" class="odd-overhidden floatL">2016年4月</a>
+                  <div class="read list-left floatR"><span>18篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2016/03" class="odd-overhidden floatL">2016年3月</a>
+                  <div class="read list-left floatR"><span>60篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2016/02" class="odd-overhidden floatL">2016年2月</a>
+                  <div class="read list-left floatR"><span>60篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2016/01" class="odd-overhidden floatL">2016年1月</a>
+                  <div class="read list-left floatR"><span>12篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2015/12" class="odd-overhidden floatL">2015年12月</a>
+                  <div class="read list-left floatR"><span>24篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2015/11" class="odd-overhidden floatL">2015年11月</a>
+                  <div class="read list-left floatR"><span>45篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2015/10" class="odd-overhidden floatL">2015年10月</a>
+                  <div class="read list-left floatR"><span>11篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2015/09" class="odd-overhidden floatL">2015年9月</a>
+                  <div class="read list-left floatR"><span>20篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2015/08" class="odd-overhidden floatL">2015年8月</a>
+                  <div class="read list-left floatR"><span>49篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2015/07" class="odd-overhidden floatL">2015年7月</a>
+                  <div class="read list-left floatR"><span>35篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2015/06" class="odd-overhidden floatL">2015年6月</a>
+                  <div class="read list-left floatR"><span>12篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2015/05" class="odd-overhidden floatL">2015年5月</a>
+                  <div class="read list-left floatR"><span>38篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2015/04" class="odd-overhidden floatL">2015年4月</a>
+                  <div class="read list-left floatR"><span>57篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2015/03" class="odd-overhidden floatL">2015年3月</a>
+                  <div class="read list-left floatR"><span>46篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2015/02" class="odd-overhidden floatL">2015年2月</a>
+                  <div class="read list-left floatR"><span>21篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2015/01" class="odd-overhidden floatL">2015年1月</a>
+                  <div class="read list-left floatR"><span>61篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2014/12" class="odd-overhidden floatL">2014年12月</a>
+                  <div class="read list-left floatR"><span>89篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2014/11" class="odd-overhidden floatL">2014年11月</a>
+                  <div class="read list-left floatR"><span>81篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2014/10" class="odd-overhidden floatL">2014年10月</a>
+                  <div class="read list-left floatR"><span>23篇</span></div>
+                </li>
+                            <li class="clearfix">
+                  <a href="https://blog.csdn.net/zhuhai__yizhi/article/month/2014/07" class="odd-overhidden floatL">2014年7月</a>
+                  <div class="read list-left floatR"><span>8篇</span></div>
+                </li>
+                      </ul>
+          <div class="unfold-btn">
+            <span>展开</span><i class="icon iconfont icon-xiajiantou"></i>
+          </div>
+        </div>
+            <div class="user-hotArticle">
+        <h3>他的热门文章</h3>
+        <ul class="hotArticle-list csdn-tracking-statistics tracking-click" data-mod="popu_521">
+<!--        [StartHotArticles]-->
+                            <li>
+                    <a href="https://blog.csdn.net/zhuhai__yizhi/article/details/41249155" target="_blank" class="overflow-hide overflow-hide-hotArticle-height">Gson解析出现类似错误，com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_AR</a>
+                    <div class="read list-left"><i class="icon iconfont icon-read"></i><span>66002</span></div>
+                </li>
+                            <li>
+                    <a href="https://blog.csdn.net/zhuhai__yizhi/article/details/44017609" target="_blank">android studio 真正的设置背景颜色方法</a>
+                    <div class="read list-left"><i class="icon iconfont icon-read"></i><span>26345</span></div>
+                </li>
+                            <li>
+                    <a href="https://blog.csdn.net/zhuhai__yizhi/article/details/37883253" target="_blank">eclipse恢复默认界面设置和恢复默认快捷键设置</a>
+                    <div class="read list-left"><i class="icon iconfont icon-read"></i><span>12754</span></div>
+                </li>
+                            <li>
+                    <a href="https://blog.csdn.net/zhuhai__yizhi/article/details/40857101" target="_blank" class="overflow-hide overflow-hide-hotArticle-height">Eclipse删除出错：exception has been caught while processing the refactoring 'Rename package'</a>
+                    <div class="read list-left"><i class="icon iconfont icon-read"></i><span>12224</span></div>
+                </li>
+                            <li>
+                    <a href="https://blog.csdn.net/zhuhai__yizhi/article/details/78095650" target="_blank">Python 中的关键字with详解</a>
+                    <div class="read list-left"><i class="icon iconfont icon-read"></i><span>11919</span></div>
+                </li>
+                            <li>
+                    <a href="https://blog.csdn.net/zhuhai__yizhi/article/details/52956719" target="_blank">Retrofit添加header参数的几种方法。</a>
+                    <div class="read list-left"><i class="icon iconfont icon-read"></i><span>11713</span></div>
+                </li>
+                            <li>
+                    <a href="https://blog.csdn.net/zhuhai__yizhi/article/details/48492063" target="_blank">android RotateAnimation设置中心点旋转动画</a>
+                    <div class="read list-left"><i class="icon iconfont icon-read"></i><span>11451</span></div>
+                </li>
+                            <li>
+                    <a href="https://blog.csdn.net/zhuhai__yizhi/article/details/48003095" target="_blank">adb获取android手机系统版本，已对应的api版本和硬件相关信息</a>
+                    <div class="read list-left"><i class="icon iconfont icon-read"></i><span>10691</span></div>
+                </li>
+                            <li>
+                    <a href="https://blog.csdn.net/zhuhai__yizhi/article/details/47419451" target="_blank">Activity的onRestart()方法调用时机</a>
+                    <div class="read list-left"><i class="icon iconfont icon-read"></i><span>8390</span></div>
+                </li>
+                            <li>
+                    <a href="https://blog.csdn.net/zhuhai__yizhi/article/details/45196589" target="_blank">android中ToolBar设置setNavigationOnClickListener()方法不起作用</a>
+                    <div class="read list-left"><i class="icon iconfont icon-read"></i><span>7898</span></div>
+                </li>
+            <!--        [EndHotArticles]-->
+        </ul>
+    </div>
+    
+<!--    [startcustom]-->
+    <!--    [endcustom]-->
+  <div class="fixRight_box" style="height:256px">
+    <div class="fixRight" style="position: fixed; top: 0px; z-index: 1;">
+                    <!--u3163270-->
+                        <script type="text/javascript" src="./mysql 安装employees db的步骤 - CSDN博客_files/avneunkwb.js"></script>
+                          <div class="persion_article"><div class="right_box footer_box csdn-tracking-statistics" data-mod="popu_475" data-dsm="post">        <h3 class="feed_new_tit"><span class="line"></span><span class="txt">联系我们</span></h3>        <div class="contact-box">        <div class="img-box"><img src="./mysql 安装employees db的步骤 - CSDN博客_files/csdn_cs_qr.png" alt="客服"></div>        <div class="contact-info">        <h4>请扫描二维码联系客服</h4>        <p><svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M2.167 2h11.666C14.478 2 15 2.576 15 3.286v9.428c0 .71-.522 1.286-1.167 1.286H2.167C1.522 14 1 13.424 1 12.714V3.286C1 2.576 1.522 2 2.167 2zm-.164 3v1L8 10l6-4V5L8 9 2.003 5z" fill="#B3B3B3" fill-rule="evenodd"></path></svg><a href="mailto:webmaster@csdn.net" target="_blank"><span class="txt">webmaster@csdn.net</span></a></p><p><svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M14.999 13.355a.603.603 0 0 1-.609.645H1.61a.603.603 0 0 1-.609-.645l.139-1.47c.021-.355.25-.845.51-1.088 0 0 3.107-2.827 3.343-2.909 0 0-.029-2.46 1.2-2.46h3.635c1.112 0 1.202 2.469 1.202 2.469l3.32 2.9c.26.243.489.733.51 1.088l.139 1.47zM7 10a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2H7zm7.806-5.674c.105.135.191.384.19.554l-.003 2.811c0 .17-.133.26-.295.2l-2.462-.999a.478.478 0 0 1-.296-.416V5.445c0-2.07-7.878-2.225-7.878 0v1.21c0 .17-.135.352-.3.404L1.3 7.904c-.165.052-.3-.044-.3-.213V4.88c0-.17.086-.42.191-.554C1.191 4.326 2.131 2 8 2s6.807 2.326 6.807 2.326z" fill="#B3B3B3"></path></svg><span class="txt"> 400-660-0108</span></p>        <p><svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M14.496 10.35c-.301-1.705-1.565-2.822-1.565-2.822.18-1.548-.481-1.823-.481-1.823C12.31.915 8.089.998 8 1 7.91.998 3.689.915 3.55 5.705c0 0-.662.275-.481 1.823 0 0-1.264 1.117-1.565 2.822 0 0-.16 2.882 1.445.353 0 0 .36.96 1.022 1.823 0 0-1.183.392-1.083 1.412 0 0-.04 1.136 2.527 1.058 0 0 1.805-.137 2.347-.882h.476c.542.745 2.347.882 2.347.882 2.566.078 2.527-1.058 2.527-1.058.1-1.02-1.083-1.412-1.083-1.412a7.986 7.986 0 0 0 1.022-1.823c1.604 2.529 1.445-.353 1.445-.353z" fill="#B3B3B3" fill-rule="evenodd"></path></svg><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=2431299880&amp;site=qq&amp;menu=yes" target="_blank"><span class="txt">QQ客服</span></a>        <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M7.325 13.965a6.5 6.5 0 1 1 7.175-6.4C14.467 11.677 11.346 15 7.5 15c-.514 0-1.015-.06-1.498-.172.488-.178.922-.48 1.323-.863zM4 7.5a4 4 0 1 0 8 0 .5.5 0 1 0-1 0 3 3 0 1 1-6 0 .5.5 0 0 0-1 0z" fill="#B3B3B3" fill-rule="evenodd"></path></svg><a href="http://bbs.csdn.net/forums/Service" target="_blank"><span class="txt">客服论坛</span></a>        </p>        </div></div>        <div class="bg-gray">        <div class="feed_copyright">        <p><a class="right-dotte" href="https://www.csdn.net/company/about.html" target="_blank">关于</a><a href="https://www.csdn.net/company/recruit.html" target="_blank" class="right-dotte">招聘</a><a href="https://www.csdn.net/company/marketing.html" target="_blank" class="right-dotte">广告服务</a>        <a href="https://zn.baidu.com/" target="_blank" class="footer_baidu">        <svg width="13" height="14" xmlns="http://www.w3.org/2000/svg"><path d="M8.392 7.013c1.014 1.454 2.753 2.8 2.753 2.8s1.303 1.017.47 2.98c-.833 1.962-3.876.942-3.876.942s-1.122-.36-2.424-.072c-1.303.291-2.426.181-2.426.181s-1.523.037-1.957-1.888c-.434-1.927 1.52-2.982 1.666-3.161.145-.183 1.159-.873 1.81-1.963.653-1.09 2.608-1.962 3.984.181zm1.23 5.706V9.346H8.64v2.534h-.937s-.3-.044-.356-.285V9.33l-.925.015v2.518s.042.627.925.855h2.277zm-3.685.013V7.951l-.896-.014v1.295H3.987s-1.054.086-1.422 1.28c-.129.798.114 1.266.156 1.368.043.099.383.682 1.238.852h1.978zm-2.433-1.45c-.087-.286.013-.613.057-.741.042-.128.228-.427.61-.54h.855v1.948h-.797s-.555-.029-.725-.668zm6.877-8.775c-.143.909-.865 2.108-1.99 1.962-1.121-.144-1.375-1.16-1.267-2.179C7.214 1.458 8.21.18 9.007.364c.796.18 1.52 1.235 1.374 2.143zm-4.09-.345c0 1.197-.68 2.164-1.52 2.164S3.25 3.36 3.25 2.162C3.25.967 3.932 0 4.77 0c.842 0 1.52.967 1.52 2.162zm4.854 2.09c1.34 0 1.701 1.309 1.701 1.743 0 .438.182 2.29-1.485 2.326-1.667.037-1.737-1.126-1.737-1.96 0-.874.179-2.11 1.52-2.11zm-7.93.581c.045.398.253 2.217-1.27 2.544C.427 7.704-.14 5.947.028 5.124c0 0 .18-1.78 1.412-1.89.98-.085 1.7.986 1.774 1.6z" fill="#999" fill-rule="evenodd"></path></svg>        <em> 百度</em></a></p>        <p class="fz12">©1999-2018 CSDN版权所有</p>        <p class="fz12"><a href="http://www.miibeian.gov.cn/" target="_blank" class="ml14">京ICP证09002463号</a></p>        </div>        <div class="allow-info-box">        <p><a href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202001032100010" target="_blank"><span>经营性网站备案信息</span></a></p>        <p><a href="http://www.cyberpolice.cn/" target="_blank"><span>网络110报警服务</span></a></p>        <p><a href="http://www.12377.cn/" target="_blank"><span>中国互联网举报中心</span></a></p>        <p><a href="http://www.bjjubao.org/" target="_blank"><span>北京互联网违法和不良信息举报中心</span></a></p>        </div>        </div>        </div></div>
+    </div>
+  </div>
+</aside>
+</div><div class="__read-mode-title-entry-container__ __read-mode-title-entry-3__" style="display: none; left: 25.6667px; top: 128px;"><iframe class="__read-mode-title-entry-main__ __read-mode-title-entry-3__" frameborder="0" scrolling="no" src="./mysql 安装employees db的步骤 - CSDN博客_files/title_entry_3.html"></iframe></div>
+
+<div class="left_fixed" style="left: 0px;">
+    <div class="left_show_button">
+        <span>
+          <i class="icon iconfont icon-youjiantou"></i>
+        </span>
+    </div>
+    <ul class="left_menu" id="share_box">
+        <li>
+            <button class="left-fixed-btn btn-like csdn-tracking-statistics tracking-click" data-mod="popu_373" target="_self" title="点赞">
+                <a href="javascript:void(0);" class="iconbox border_red" target="_blank"><i class="icon iconfont icon-dianzan"></i></a>
+                <a class="txt" href="javascript:void(0);" target="_blank">0</a>
+            </button>
+        </li>
+        <li id="blog_artical_directory" style="display: none;">
+            <button class="left-fixed-btn left_menu_btn csdn-tracking-statistics tracking-click" data-mod="popu_372" target="_self" title="目录">
+                <a href="javascript:void(0);" class="iconbox border_black" target="_blank"><i class="icon iconfont icon-mulu"></i></a>
+            </button>
+        </li>
+        <li class="menu_con" style="display: none;">
+            <div class="list_father">
+                <div class="arr_box">
+                    <button class="btn-noborder arr-btn scroll-down  left_scroll_down"><i class="icon iconfont icon-xiajiantou"></i></button>
+                    <button class="btn-noborder arr-btn scroll-up left_scroll_top"><i class="icon iconfont icon-shangjiantou"></i></button>
+                </div>
+                <div class="arr"></div>
+                <div id="csdnBlogDir"></div>
+            </div>
+        </li>
+        <!--        <li>-->
+        <!--            <button class="left-fixed-btn btn-like tracking-ad" data-mod="popu_373" target="_self">-->
+        <!--                <span class="iconbox border_red"><i class="icon iconfont icon-xihuan-"></i></span>-->
+        <!--                <span class="txt">喜欢</span>-->
+        <!--                <span class="untxt">取消喜欢</span>-->
+        <!--            </button>-->
+        <!--        </li>-->
+        <li>
+            <button class="left-fixed-btn csdn-tracking-statistics tracking-click" data-mod="popu_374" id="com-quick-collect" target="_self" title="收藏">
+                <a href="javascript:void(0);" class="iconbox border_purple" target="_blank"><i class="icon iconfont icon-shoucang"></i></a>
+            </button>
+        </li>
+        <li>
+            <button class="left-fixed-btn btn-pinglun csdn-tracking-statistics tracking-click" data-mod="popu_544" title="评论">
+                <a href="javascript:void(0);" class="iconbox border_purple" target="_blank"><i class="icon iconfont icon-pinglun"></i></a>
+            </button>
+        </li>
+        <li class="bdsharebuttonbox csdn-tracking-statistics tracking-click bdshare-button-style0-16" data-mod="popu_172" data-bd-bind="1522338339940">
+            <a class="bds_tsina outside left-fixed-btn" data-cmd="tsina" title="分享到新浪微博" target="_blank"></a>
+            <span class="iconbox border_red2"><i class="icon iconfont icon-xinlang"></i></span>
+        </li>
+        <li class="bdsharebuttonbox csdn-tracking-statistics tracking-click bdshare-button-style0-16" data-mod="popu_172" data-bd-bind="1522338339940">
+            <a class="bds_weixin outside left-fixed-btn" data-cmd="weixin" title="分享到微信" target="_blank"></a>
+            <span class="iconbox border_green"><i class="icon iconfont icon-weixin"></i></span>
+        </li>
+        <li class="bdsharebuttonbox csdn-tracking-statistics tracking-click bdshare-button-style0-16" data-mod="popu_172" data-bd-bind="1522338339940">
+            <a class="bds_qzone outside left-fixed-btn" data-cmd="qzone" title="分享到QQ空间" target="_blank"></a>
+            <span class="iconbox border_blue"><i class="icon iconfont icon-QQ"></i></span>
+        </li>
+        <li id="share_box">
+            
+            <div class="bdsharebuttonbox csdn-tracking-statistics tracking-click bdshare-button-style0-16" data-mod="popu_172" data-bd-bind="1522338339940">
+                
+                
+                
+            </div>
+        </li>
+    </ul>
+</div>
+<div id="pop_win"></div>
+<div id="popup_mask"></div>
+<div class="pop_CA_cover"></div>
+<div class="pop pop_CA">
+    <div class="CA_header">
+        收藏助手
+        <span class="cancel_icon" id="fapancle"></span>
+    </div>
+    <iframe src="./mysql 安装employees db的步骤 - CSDN博客_files/saved_resource(2).html" id="collectIframe" frameborder="0" width="100%" height="360" scrolling="no"></iframe>
+</div>
+<!--举报-->
+<div id="report_dialog" style="top: 250px; left: 343.5px;"><div id="panel_report">
+    <div class="panel_head">不良信息举报</div>
+    <form method="post" id="frmReport" class="panel_body">
+        <table border="0" cellpadding="0" cellspacing="4" class="pop_table">
+            <tbody><tr><td colspan="2">您举报文章：<a href="https://blog.csdn.net/zhuhai__yizhi/article/details/78284401" target="_blank">mysql 安装employees db的步骤</a></td></tr>
+            <tr>
+                <th style="width:60px;">举报原因：</th>
+                <td id="panel_reporttype">
+                    <label><input type="radio" class="report_type" id="report_sex" name="report_type" value="1">色情</label>
+                    <label><input type="radio" class="report_type" id="report_Politics" name="report_type" value="2">政治</label>
+                    <label><input type="radio" class="report_type" id="report_copy" name="report_type" value="3">抄袭</label>
+                    <label><input type="radio" class="report_type" id="report_ad" name="report_type" value="4">广告</label>
+                    <label><input type="radio" class="report_type" id="report_want" name="report_type" value="5">招聘</label>
+                    <label><input type="radio" class="report_type" id="report_call" name="report_type" value="6">骂人</label>
+                    <br>
+                    <label><input type="radio" class="report_type" id="report_other" name="report_type" value="7">其他</label>
+                    <input type="text" name="report_other_content" id="report_other_content" maxlength="30" style="display: none;">
+                </td>
+            </tr>
+            <tr id="panel_originalurl" style="display: none;">
+                <th>原文地址：</th>
+                <td>
+                    <input id="originalurl" value="http://" name="originalurl" type="text" style="width: 90%;">
+                </td>
+            </tr>
+            <tr>
+                <th id="sp_reason">原因补充：</th>
+                <td>
+                    <textarea id="report_description" style="width: 300px;" rows="3" name="report_description"></textarea>
+                    <p id="sp_n" style="color:#999;margin:0px;padding:0px;">(最多只允许输入30个字)</p>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input id="btnSubmitReport" name="submit" type="image" align="middle" class="btn_1" src="./mysql 安装employees db的步骤 - CSDN博客_files/btn_submit.jpg">
+                    <span style="padding-left:20px;"></span>
+                    <img id="btnCloseReportDialog" src="./mysql 安装employees db的步骤 - CSDN博客_files/btn_cancel.jpg" align="middle">
+                    <div id="error" style="color: Red">
+                    </div>
+                </td>
+            </tr>
+            </tbody></table>
+    </form>
+</div>
+    <script language="javascript" type="text/javascript">
+        var isComment=0;
+        //显示隐藏地址
+        $(function () {
+          console.log("version:phoenix");
+            if(isComment){
+                $("#report_description").attr("disabled",true);
+                $("#sp_n").hide();
+                $("#sp_reason").html("评论内容：");
+            }
+            $(".report_type").click(function () {
+                $("#panel_originalurl,#report_other_content").hide();
+                switch ($(this).val()) {
+                    case '3':
+                        $("#panel_originalurl").show();
+                        $("#originalurl").focus();
+                        break;
+                    case '7':
+                        if(isComment){
+                            $("#report_other_content").show().focus();
+                        }
+                        break;
+                }
+
+            });
+
+            $("#frmReport").submit(function () {
+                if (!currentUserName) {
+
+                    if (confirm("您的操作必须登录，是否登录？")) {
+                        location.href = "https://passport.csdn.net/account/login?from=" + encodeURIComponent(location.href);
+                        return false;
+                    }
+                    return false;
+                }
+
+                var reportType = $("input[name=report_type]:checked").val();
+                if(!reportType){
+                    alert("请选择举报原因！");
+                    return false;
+                }
+                var otherInfo = "";
+                switch (reportType) {
+                    case '3':
+                        otherInfo = $("#originalurl").val();
+                        if (otherInfo == ""||otherInfo=="http://") {
+                            alert("举报抄袭必须提供原创文章地址！");
+                            $("#originalurl").focus();
+                            return false;
+                        } else if(!checkeURL(otherInfo)) {
+                            alert("请输入正确的原创文章地址！");
+                            $("#originalurl").focus();
+                            return false;
+                        }
+                        break;
+                    case '7':
+                        otherInfo = $("#report_other_content").val();
+                        if (isComment && !otherInfo) {
+                            alert("请填写举报的具体原因！");
+                            $("#report_other_content").focus();
+                            return false;
+                        }
+                        if(!isComment){
+                            if(!$("#report_description").val()){
+                                alert("请填写举报的具体原因！");
+                                $("#report_description").focus();
+                                return false;
+                            }
+                        }
+                        break;
+                }
+                if(!isComment){
+                    if($("#report_description").val().length>30){
+                        alert("举报原因最多只允许输入30个字！");
+                        return false;
+                    }
+                }
+	            nowTime = {
+		            year: new Date().getFullYear(),
+		            month: parseInt(new Date().getMonth())+1,
+		            day: new Date().getDate(),
+		            hours: parseInt(new Date().getHours())+1,
+		            minutes: parseInt(new Date().getMinutes())+1,
+		            seconds: parseInt(new Date().getSeconds())+1
+	            };
+	            var data = {
+		            articleId: fileName,
+		            commentId: 0,
+		            reportType: reportType,
+		            originalurl: $("#originalurl").val(),
+		            report_other_content: $("#report_other_content").val(),
+		            report_description: $("#report_description").val(),
+		            currentUserName: currentUserName,
+		            updatetime: nowTime.year+'/'+nowTime.month+'/'+nowTime.day+' '+ nowTime.hours+':'+nowTime.minutes+':'+seconds,
+		            blogUser: username
+	            };
+	            if(!isComment){//如果是举报文章
+		            data.report_other_content = data.report_description;
+		            // data.report_description = "1. 神经网络这是一个常见的神经网络的图：这是一个常见的三层神经网络的基本构成，Layer L1是输入层，Layer L2是隐含层";
+	            }
+
+	            $.post(blog_address + "/common/report?id="+fileName+"&t=2", data, function (data) {
+		            if (data.result == 1){
+			            SetError("感谢您的举报，我们会尽快审核！");
+		            }else{
+			            if (data.content) alert(data.content);
+		            }
+
+	            });
+                return false;
+            });
+
+            $("#btnCloseReportDialog").click(function () {
+                CloseDiv();
+            });
+
+        });
+
+        //提示后关闭方法
+        function SetError(error) {
+            $("#btnCloseReportDialog").trigger("click");
+            alert(error);
+            CloseDiv();
+        }
+
+        //关闭方法
+        function CloseDiv() {
+
+            $.removeMask();
+            $("#report_dialog").hide();
+            return false;
+        }
+
+        //验证url
+        function checkeURL(url){
+            return /^http(s)?:\/\/([\w-]+\.)+[\w-]+/i.test(url);
+        }
+    </script>
+</div>
+<!--  fixme 后期清理掉  -->
+<div id="a52b5334d" style="width: 1px; height: 1px; display: none;">
+    <script id="adJs52b5334" src="./mysql 安装employees db的步骤 - CSDN博客_files/52b5334.js"></script>
+    <script>document.getElementById("adJs52b5334").src = "https://ads.csdn.net/js/opt/52b5334.js?t=" + Math.random();</script>
+</div>
+<script type="text/javascript" src="./mysql 安装employees db的步骤 - CSDN博客_files/MathJax.js"></script>
+<script type="text/x-mathjax-config;executed=true"> 
+    MathJax.Hub.Config({ 
+        "HTML-CSS": { 
+            linebreaks: { automatic: true, width: "94%container" },
+            imageFont: null
+        }
+    });
+</script>
+<!-- <script type="text/javascript" src="https://passport.csdn.net/content/loginbox/login.js"></script> -->
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'https://csdnimg.cn/static/api/js/share.js?v=89860594'];</script>
+<script type="text/javascript">
+    if($(".article_collect li").length==1){$(".article_collect").hide();}
+    if($(".article_tags li").length==1){$(".article_tags").hide();}
+    $(".edit a").attr("href","https://mp.csdn.net/postedit/"+fileName);
+    $.each($(".edu_li a"),function(){$(this).attr("href",$(this).attr("href").replace("blog7","blog9"))});
+    new CNick('#uid').showNickname();
+
+    if($("#fan").html()=="")
+    {
+	    $("#fan").html(0);
+    }
+</script>
+<script src="./mysql 安装employees db的步骤 - CSDN博客_files/appendMark.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    appendMark($('.recommend_list').children('a').find('dt'),$('.extension_other'),$('.yd_a_d_feed_cla'))
+</script>
+<script src="./mysql 安装employees db的步骤 - CSDN博客_files/publib_footer-1.0.3.js" data-isfootertrack="false"></script><link rel="stylesheet" type="text/css" href="./mysql 安装employees db的步骤 - CSDN博客_files/pub_footer_1.0.3.css">
+<script src="./mysql 安装employees db的步骤 - CSDN博客_files/goTop-v1.0.min.js"></script>
+<script>
+    GoTop({
+        right: 8,
+        hasReport: true,
+        reportFun: function() {
+            $.createMask();
+            var r = blog_address + "/common/report?id=" + fileName + "&t=" + 2;
+            if (3 == 2) {
+                var s = n.parentNode.parentNode.parentNode.getAttribute("floor");
+                r += "&floor=" + s
+            }
+            var i = (document.documentElement.clientHeight - 400) / 2 + (document.documentElement.scrollTop || document.body.scrollTop),
+                a = (document.documentElement.clientWidth - 400) / 2;
+
+            $("#report_dialog").load(r).css({
+                //top: i + "px",
+                top: '20%',
+                left: a
+            }).show()
+        }
+    })
+</script><div class="meau-gotop-box" style="right: 8px; bottom: 40px; z-index: 110;">    <a href="https://blog.csdn.net/zhuhai__yizhi/article/details/78284401#" id="backtop" class="btn-meau" title="返回顶部" style="display: flex;">      <svg xmlns="http://www.w3.org/2000/svg" width="19" height="12">        <path d="M9.314 0l9.313 9.314-2.12 2.121-7.193-7.192-7.193 7.192L0 9.314z" fill="#FFF" fill-rule="evenodd"></path>      </svg>    </a>  <a href="https://blog.csdn.net/zhuhai__yizhi/article/details/78284401#" id="reportContent" class="btn-meau" title="举报">                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="22"><path d="M0 13.028V3.365L9 0l9 3.365v9.663C18 17.983 13.97 22 9 22s-9-4.017-9-8.972zm2-8.282v8.282c0 3.854 3.134 6.978 7 6.978s7-3.124 7-6.978V4.746L9 2.13 2 4.746zm6 10.276h2v1.993H8v-1.993zm0-8.973h2v6.979H8V6.049z" fill="#FFF" fill-rule="nonzero"></path></svg>                          </a></div>
+<script src="./mysql 安装employees db的步骤 - CSDN博客_files/os.js"></script>
+
+<div id="loginWrap"></div>
+<div id="dlMask"></div>
+
+<div style="position:fixed; top:0; left:0; overflow:hidden;"><input style="position:absolute; left:-300px;" type="text" value="" id="focus_retriever" readonly="true"></div><div class="imgViewDom disnone" style="display: none;"><img src="https://blog.csdn.net/zhuhai__yizhi/article/details/78284401"></div><style>.imgViewDom{display:none;position:fixed;top:0;left:0;height:100%;width:100%;z-index:99999999;background: rgba(255, 255, 255,0.8);overflow: auto;display:-webkit-box;-webkit-box-align:center;-webkit-box-pack:center;display:-moz-box;-moz-box-align:center;-moz-box-pack:center;display:-o-box;-o-box-align:center;-o-box-pack:center;display:-ms-box;-ms-box-align:center;-ms-box-pack:center; display:box;box-align:center;box-pack:center;}.imgViewDom img{cursor: zoom-out;}</style><object id="yhaitaoplugin" type="application/x-npHaitaoPlugin" style="position:absolute;left:-9000px;top:-9000px;" width="0" height="0"></object><iframe class="bdSug_sd" style="display: none; position: absolute; border-width: 0px;" src="./mysql 安装employees db的步骤 - CSDN博客_files/saved_resource(3).html"></iframe><div id="bdSug_1522338339156" class="bdSug_wpr" style="display: none;"></div><a data-cltversion="2.4.25" data-cltsource="10011" data-cltuuid="74d3d8128bef114e1f6adf91823887d0" data-cltats="4" href="javascript:" id="yht-info-explugin" style="display: none;"></a><a data-cltversion="1.0.6" data-cltsource="410011" data-cltuuid="74d3d8128bef114e1f6adf91823887d0" data-cltats="4" href="javascript:" id="tools-nav-explugin" style="display: none;"></a></body></html>

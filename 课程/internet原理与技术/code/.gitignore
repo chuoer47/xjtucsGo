@@ -1,0 +1,16 @@
+# Build artifacts
+*.o
+rawtcp_server
+tcp_client
+
+# Generated test outputs
+/tests/data/*.bin
+/tests/data/*.txt
+/tmp/rawtcp_*.out
+/downloaded_*.bin
+/*.bin
+
+# Editor / OS
+*.swp
+*.swo
+.DS_Store

@@ -1,0 +1,790 @@
+任务：在MySQL样本数据库上完成下列查询：
+1. 查询每个部门(departments)的编号(dept_no),名称(dept_name),在该部门工作过的雇员(employees)人数,最低工资(salary),平均工资,最高工资及工资总额；
+
+dept_no	dept_name	emp_count	min_salary	avg_salary	max_salary	total_salary
+d001	Marketing	9406	39127	71888.0910	143644	6414861908
+d002	Finance	8179	38812	70301.6137	140742	5442188517
+d003	Human Resources	8477	38735	55375.3124	128308	4452784249
+d004	Production	34527	38836	59595.4748	132552	19575921566
+d005	Development	40480	38850	59501.3423	144434	22839530744
+d006	Quality Management	9510	38928	57274.9795	122376	5131551784
+d007	Sales	24508	39237	80675.6013	158220	18754899066
+d008	Research	9904	38851	59855.4554	124181	5668251772
+d009	Customer Service	11137	38836	58795.7179	144866	6194658042
+
+2. 查询每个部门(departments)的编号(dept_no),名称(dept_name),及各个时间段(from_date,end_data)担任该部门经理(dept_manager)的雇员的编号(emp_no)和姓名(first_name+last_name)，并按时间段先后显式；
+
+dept_no	dept_name	emp_no	manager_name	from_date	end_date
+d001	Marketing	110022	Margareta Markovitch	1985-01-01	1991-10-01
+d001	Marketing	110039	Vishwani Minakawa	1991-10-01	9999-01-01
+d002	Finance	110085	Ebru Alpin	1985-01-01	1989-12-17
+d002	Finance	110114	Isamu Legleitner	1989-12-17	9999-01-01
+d003	Human Resources	110183	Shirish Ossenbruggen	1985-01-01	1992-03-21
+d003	Human Resources	110228	Karsten Sigstam	1992-03-21	9999-01-01
+d004	Production	110303	Krassimir Wegerle	1985-01-01	1988-09-09
+d004	Production	110344	Rosine Cools	1988-09-09	1992-08-02
+d004	Production	110386	Shem Kieras	1992-08-02	1996-08-30
+d004	Production	110420	Oscar Ghazalie	1996-08-30	9999-01-01
+d005	Development	110511	DeForest Hagimont	1985-01-01	1992-04-25
+d005	Development	110567	Leon DasSarma	1992-04-25	9999-01-01
+d006	Quality Management	110725	Peternela Onuegbe	1985-01-01	1989-05-06
+d006	Quality Management	110765	Rutger Hofmeyr	1989-05-06	1991-09-12
+d006	Quality Management	110800	Sanjoy Quadeer	1991-09-12	1994-06-28
+d006	Quality Management	110854	Dung Pesch	1994-06-28	9999-01-01
+d007	Sales	111035	Przemyslawa Kaelbling	1985-01-01	1991-03-07
+d007	Sales	111133	Hauke Zhang	1991-03-07	9999-01-01
+d008	Research	111400	Arie Staelin	1985-01-01	1991-04-08
+d008	Research	111534	Hilary Kambil	1991-04-08	9999-01-01
+d009	Customer Service	111692	Tonny Butterworth	1985-01-01	1988-10-17
+d009	Customer Service	111784	Marjo Giarratana	1988-10-17	1992-09-08
+d009	Customer Service	111877	Xiaobin Spinelli	1992-09-08	1996-01-03
+d009	Customer Service	111939	Yuchang Weedman	1996-01-03	9999-01-01
+
+3. 查询每位雇员的编号(emp_no),姓名(first_name+last_name),及各个时间段(from_date,end_data)的工资额(salary),并按时间段先后显式；
+
+emp_no	emp_name	from_date	end_date	salary
+10001	Georgi Facello	1986-06-26	1987-06-26	60117
+10001	Georgi Facello	1987-06-26	1988-06-25	62102
+10001	Georgi Facello	1988-06-25	1989-06-25	66074
+10001	Georgi Facello	1989-06-25	1990-06-25	66596
+10001	Georgi Facello	1990-06-25	1991-06-25	66961
+10001	Georgi Facello	1991-06-25	1992-06-24	71046
+10001	Georgi Facello	1992-06-24	1993-06-24	74333
+10001	Georgi Facello	1993-06-24	1994-06-24	75286
+10001	Georgi Facello	1994-06-24	1995-06-24	75994
+10001	Georgi Facello	1995-06-24	1996-06-23	76884
+10001	Georgi Facello	1996-06-23	1997-06-23	80013
+10001	Georgi Facello	1997-06-23	1998-06-23	81025
+10001	Georgi Facello	1998-06-23	1999-06-23	81097
+10001	Georgi Facello	1999-06-23	2000-06-22	84917
+10001	Georgi Facello	2000-06-22	2001-06-22	85112
+10001	Georgi Facello	2001-06-22	2002-06-22	85097
+10001	Georgi Facello	2002-06-22	9999-01-01	88958
+10002	Bezalel Simmel	1996-08-03	1997-08-03	65828
+10002	Bezalel Simmel	1997-08-03	1998-08-03	65909
+10002	Bezalel Simmel	1998-08-03	1999-08-03	67534
+10002	Bezalel Simmel	1999-08-03	2000-08-02	69366
+10002	Bezalel Simmel	2000-08-02	2001-08-02	71963
+10002	Bezalel Simmel	2001-08-02	9999-01-01	72527
+10003	Parto Bamford	1995-12-03	1996-12-02	40006
+10003	Parto Bamford	1996-12-02	1997-12-02	43616
+10003	Parto Bamford	1997-12-02	1998-12-02	43466
+10003	Parto Bamford	1998-12-02	1999-12-02	43636
+10003	Parto Bamford	1999-12-02	2000-12-01	43478
+10003	Parto Bamford	2000-12-01	2001-12-01	43699
+10003	Parto Bamford	2001-12-01	9999-01-01	43311
+10004	Chirstian Koblick	1986-12-01	1987-12-01	40054
+10004	Chirstian Koblick	1987-12-01	1988-11-30	42283
+10004	Chirstian Koblick	1988-11-30	1989-11-30	42542
+10004	Chirstian Koblick	1989-11-30	1990-11-30	46065
+10004	Chirstian Koblick	1990-11-30	1991-11-30	48271
+10004	Chirstian Koblick	1991-11-30	1992-11-29	50594
+10004	Chirstian Koblick	1992-11-29	1993-11-29	52119
+10004	Chirstian Koblick	1993-11-29	1994-11-29	54693
+10004	Chirstian Koblick	1994-11-29	1995-11-29	58326
+10004	Chirstian Koblick	1995-11-29	1996-11-28	60770
+10004	Chirstian Koblick	1996-11-28	1997-11-28	62566
+10004	Chirstian Koblick	1997-11-28	1998-11-28	64340
+10004	Chirstian Koblick	1998-11-28	1999-11-28	67096
+10004	Chirstian Koblick	1999-11-28	2000-11-27	69722
+10004	Chirstian Koblick	2000-11-27	2001-11-27	70698
+10004	Chirstian Koblick	2001-11-27	9999-01-01	74057
+10005	Kyoichi Maliniak	1989-09-12	1990-09-12	78228
+10005	Kyoichi Maliniak	1990-09-12	1991-09-12	82621
+10005	Kyoichi Maliniak	1991-09-12	1992-09-11	83735
+10005	Kyoichi Maliniak	1992-09-11	1993-09-11	85572
+10005	Kyoichi Maliniak	1993-09-11	1994-09-11	85076
+10005	Kyoichi Maliniak	1994-09-11	1995-09-11	86050
+10005	Kyoichi Maliniak	1995-09-11	1996-09-10	88448
+10005	Kyoichi Maliniak	1996-09-10	1997-09-10	88063
+10005	Kyoichi Maliniak	1997-09-10	1998-09-10	89724
+10005	Kyoichi Maliniak	1998-09-10	1999-09-10	90392
+10005	Kyoichi Maliniak	1999-09-10	2000-09-09	90531
+10005	Kyoichi Maliniak	2000-09-09	2001-09-09	91453
+10005	Kyoichi Maliniak	2001-09-09	9999-01-01	94692
+10006	Anneke Preusig	1990-08-05	1991-08-05	40000
+10006	Anneke Preusig	1991-08-05	1992-08-04	42085
+10006	Anneke Preusig	1992-08-04	1993-08-04	42629
+10006	Anneke Preusig	1993-08-04	1994-08-04	45844
+10006	Anneke Preusig	1994-08-04	1995-08-04	47518
+10006	Anneke Preusig	1995-08-04	1996-08-03	47917
+10006	Anneke Preusig	1996-08-03	1997-08-03	52255
+10006	Anneke Preusig	1997-08-03	1998-08-03	53747
+10006	Anneke Preusig	1998-08-03	1999-08-03	56032
+10006	Anneke Preusig	1999-08-03	2000-08-02	58299
+10006	Anneke Preusig	2000-08-02	2001-08-02	60098
+10006	Anneke Preusig	2001-08-02	9999-01-01	59755
+10007	Tzvetan Zielinski	1989-02-10	1990-02-10	56724
+10007	Tzvetan Zielinski	1990-02-10	1991-02-10	60740
+10007	Tzvetan Zielinski	1991-02-10	1992-02-10	62745
+10007	Tzvetan Zielinski	1992-02-10	1993-02-09	63475
+10007	Tzvetan Zielinski	1993-02-09	1994-02-09	63208
+10007	Tzvetan Zielinski	1994-02-09	1995-02-09	64563
+10007	Tzvetan Zielinski	1995-02-09	1996-02-09	68833
+10007	Tzvetan Zielinski	1996-02-09	1997-02-08	70220
+10007	Tzvetan Zielinski	1997-02-08	1998-02-08	73362
+10007	Tzvetan Zielinski	1998-02-08	1999-02-08	75582
+10007	Tzvetan Zielinski	1999-02-08	2000-02-08	79513
+10007	Tzvetan Zielinski	2000-02-08	2001-02-07	80083
+10007	Tzvetan Zielinski	2001-02-07	2002-02-07	84456
+10007	Tzvetan Zielinski	2002-02-07	9999-01-01	88070
+10008	Saniya Kalloufi	1998-03-11	1999-03-11	46671
+10008	Saniya Kalloufi	1999-03-11	2000-03-10	48584
+10008	Saniya Kalloufi	2000-03-10	2000-07-31	52668
+10009	Sumant Peac	1985-02-18	1986-02-18	60929
+10009	Sumant Peac	1986-02-18	1987-02-18	64604
+10009	Sumant Peac	1987-02-18	1988-02-18	64780
+10009	Sumant Peac	1988-02-18	1989-02-17	66302
+10009	Sumant Peac	1989-02-17	1990-02-17	69042
+10009	Sumant Peac	1990-02-17	1991-02-17	70889
+10009	Sumant Peac	1991-02-17	1992-02-17	71434
+10009	Sumant Peac	1992-02-17	1993-02-16	74612
+10009	Sumant Peac	1993-02-16	1994-02-16	76518
+10009	Sumant Peac	1994-02-16	1995-02-16	78335
+10009	Sumant Peac	1995-02-16	1996-02-16	80944
+10009	Sumant Peac	1996-02-16	1997-02-15	82507
+
+4. 查询每位雇员的编号(emp_no),姓名(first_name+last_name),及各个时间段(from_date,end_data)的工作部门名称(dept_name),并按时间段先后显式；
+emp_no,emp_name,dept_count
+10001,"Georgi Facello",1
+10002,"Bezalel Simmel",1
+10003,"Parto Bamford",1
+10004,"Chirstian Koblick",1
+10005,"Kyoichi Maliniak",1
+10006,"Anneke Preusig",1
+10007,"Tzvetan Zielinski",1
+10008,"Saniya Kalloufi",1
+10009,"Sumant Peac",1
+10010,"Duangkaew Piveteau",2
+10011,"Mary Sluis",1
+10012,"Patricio Bridgland",1
+10013,"Eberhardt Terkki",1
+10014,"Berni Genin",1
+10015,"Guoxiang Nooteboom",1
+10016,"Kazuhito Cappelletti",1
+10017,"Cristinel Bouloucos",1
+10018,"Kazuhide Peha",2
+10019,"Lillian Haddadi",1
+10020,"Mayuko Warwick",1
+10021,"Ramzi Erde",1
+10022,"Shahaf Famili",1
+10023,"Bojan Montemayor",1
+10024,"Suzette Pettey",1
+10025,"Prasadram Heyers",1
+10026,"Yongqiao Berztiss",1
+10027,"Divier Reistad",1
+10028,"Domenick Tempesti",1
+10029,"Otmar Herbst",2
+10030,"Elvis Demeyer",1
+10031,"Karsten Joslin",1
+10032,"Jeong Reistad",1
+10033,"Arif Merlo",1
+10034,"Bader Swan",1
+10035,"Alain Chappelet",1
+10036,"Adamantios Portugali",1
+10037,"Pradeep Makrucki",1
+10038,"Huan Lortz",1
+10039,"Alejandro Brender",1
+10040,"Weiyi Meriste",2
+10041,"Uri Lenart",1
+10042,"Magy Stamatiou",1
+10043,"Yishay Tzvieli",1
+10044,"Mingsen Casley",1
+10045,"Moss Shanbhogue",1
+10046,"Lucien Rosenbaum",1
+10047,"Zvonko Nyanchama",1
+10048,"Florian Syrotiuk",1
+10049,"Basil Tramer",1
+10050,"Yinghua Dredge",2
+10051,"Hidefumi Caine",1
+10052,"Heping Nitsch",1
+10053,"Sanjiv Zschoche",1
+10054,"Mayumi Schueller",1
+10055,"Georgy Dredge",1
+10056,"Brendon Bernini",1
+10057,"Ebbe Callaway",1
+10058,"Berhard McFarlin",1
+10059,"Alejandro McAlpine",1
+10060,"Breannda Billingsley",2
+10061,"Tse Herber",1
+10062,"Anoosh Peyn",1
+10063,"Gino Leonhardt",1
+10064,"Udi Jansch",1
+10065,"Satosi Awdeh",1
+10066,"Kwee Schusler",1
+10067,"Claudi Stavenow",1
+10068,"Charlene Brattka",1
+10069,"Margareta Bierman",1
+10070,"Reuven Garigliano",2
+10071,"Hisao Lipner",1
+10072,"Hironoby Sidou",1
+10073,"Shir McClurg",1
+10074,"Mokhtar Bernatsky",1
+10075,"Gao Dolinsky",1
+10076,"Erez Ritzmann",1
+10077,"Mona Azuma",1
+10078,"Danel Mondadori",1
+10079,"Kshitij Gils",1
+10080,"Premal Baek",2
+10081,"Zhongwei Rosen",1
+10082,"Parviz Lortz",1
+10083,"Vishv Zockler",1
+10084,"Tuval Kalloufi",1
+10085,"Kenroku Malabarba",1
+10086,"Somnath Foote",1
+10087,"Xinglin Eugenio",1
+10088,"Jungsoon Syrzycki",2
+10089,"Sudharsan Flasterstein",1
+10090,"Kendra Hofting",1
+10091,"Amabile Gomatam",1
+10092,"Valdiodio Niizuma",1
+10093,"Sailaja Desikan",1
+10094,"Arumugam Ossenbruggen",1
+10095,"Hilari Morton",1
+10096,"Jayson Mandell",1
+10097,"Remzi Waschkowski",1
+10098,"Sreekrishna Servieres",2
+10099,"Valter Sullins",1
+10100,"Hironobu Haraldson",1
+
+
+5. 查询每位雇员的编号(emp_no),姓名(first_name+last_name),及任职过的部门数；
+emp_no,emp_name,dept_count
+10001,"Georgi Facello",1
+10002,"Bezalel Simmel",1
+10003,"Parto Bamford",1
+10004,"Chirstian Koblick",1
+10005,"Kyoichi Maliniak",1
+10006,"Anneke Preusig",1
+10007,"Tzvetan Zielinski",1
+10008,"Saniya Kalloufi",1
+10009,"Sumant Peac",1
+10010,"Duangkaew Piveteau",2
+10011,"Mary Sluis",1
+10012,"Patricio Bridgland",1
+10013,"Eberhardt Terkki",1
+10014,"Berni Genin",1
+10015,"Guoxiang Nooteboom",1
+10016,"Kazuhito Cappelletti",1
+10017,"Cristinel Bouloucos",1
+10018,"Kazuhide Peha",2
+10019,"Lillian Haddadi",1
+10020,"Mayuko Warwick",1
+10021,"Ramzi Erde",1
+10022,"Shahaf Famili",1
+10023,"Bojan Montemayor",1
+10024,"Suzette Pettey",1
+10025,"Prasadram Heyers",1
+10026,"Yongqiao Berztiss",1
+10027,"Divier Reistad",1
+10028,"Domenick Tempesti",1
+10029,"Otmar Herbst",2
+10030,"Elvis Demeyer",1
+10031,"Karsten Joslin",1
+10032,"Jeong Reistad",1
+10033,"Arif Merlo",1
+10034,"Bader Swan",1
+10035,"Alain Chappelet",1
+10036,"Adamantios Portugali",1
+10037,"Pradeep Makrucki",1
+10038,"Huan Lortz",1
+10039,"Alejandro Brender",1
+10040,"Weiyi Meriste",2
+10041,"Uri Lenart",1
+10042,"Magy Stamatiou",1
+10043,"Yishay Tzvieli",1
+10044,"Mingsen Casley",1
+10045,"Moss Shanbhogue",1
+10046,"Lucien Rosenbaum",1
+10047,"Zvonko Nyanchama",1
+10048,"Florian Syrotiuk",1
+10049,"Basil Tramer",1
+10050,"Yinghua Dredge",2
+10051,"Hidefumi Caine",1
+10052,"Heping Nitsch",1
+10053,"Sanjiv Zschoche",1
+10054,"Mayumi Schueller",1
+10055,"Georgy Dredge",1
+10056,"Brendon Bernini",1
+10057,"Ebbe Callaway",1
+10058,"Berhard McFarlin",1
+10059,"Alejandro McAlpine",1
+10060,"Breannda Billingsley",2
+10061,"Tse Herber",1
+10062,"Anoosh Peyn",1
+10063,"Gino Leonhardt",1
+10064,"Udi Jansch",1
+10065,"Satosi Awdeh",1
+10066,"Kwee Schusler",1
+10067,"Claudi Stavenow",1
+10068,"Charlene Brattka",1
+10069,"Margareta Bierman",1
+10070,"Reuven Garigliano",2
+10071,"Hisao Lipner",1
+10072,"Hironoby Sidou",1
+10073,"Shir McClurg",1
+10074,"Mokhtar Bernatsky",1
+10075,"Gao Dolinsky",1
+10076,"Erez Ritzmann",1
+10077,"Mona Azuma",1
+10078,"Danel Mondadori",1
+10079,"Kshitij Gils",1
+10080,"Premal Baek",2
+10081,"Zhongwei Rosen",1
+10082,"Parviz Lortz",1
+10083,"Vishv Zockler",1
+10084,"Tuval Kalloufi",1
+10085,"Kenroku Malabarba",1
+10086,"Somnath Foote",1
+10087,"Xinglin Eugenio",1
+10088,"Jungsoon Syrzycki",2
+10089,"Sudharsan Flasterstein",1
+10090,"Kendra Hofting",1
+10091,"Amabile Gomatam",1
+10092,"Valdiodio Niizuma",1
+10093,"Sailaja Desikan",1
+10094,"Arumugam Ossenbruggen",1
+10095,"Hilari Morton",1
+10096,"Jayson Mandell",1
+10097,"Remzi Waschkowski",1
+10098,"Sreekrishna Servieres",2
+10099,"Valter Sullins",1
+10100,"Hironobu Haraldson",1
+
+
+6. 查询每位雇员的编号(emp_no),姓名(first_name+last_name),及各个时间段(from_date,end_data)担任的职务(title),并按时间段先后显式；
+
+emp_no,emp_name,from_date,end_date,title
+10001,"Georgi Facello",1986-06-26,9999-01-01,"Senior Engineer"
+10002,"Bezalel Simmel",1996-08-03,9999-01-01,Staff
+10003,"Parto Bamford",1995-12-03,9999-01-01,"Senior Engineer"
+10004,"Chirstian Koblick",1986-12-01,1995-12-01,Engineer
+10004,"Chirstian Koblick",1995-12-01,9999-01-01,"Senior Engineer"
+10005,"Kyoichi Maliniak",1989-09-12,1996-09-12,Staff
+10005,"Kyoichi Maliniak",1996-09-12,9999-01-01,"Senior Staff"
+10006,"Anneke Preusig",1990-08-05,9999-01-01,"Senior Engineer"
+10007,"Tzvetan Zielinski",1989-02-10,1996-02-11,Staff
+10007,"Tzvetan Zielinski",1996-02-11,9999-01-01,"Senior Staff"
+10008,"Saniya Kalloufi",1998-03-11,2000-07-31,"Assistant Engineer"
+10009,"Sumant Peac",1985-02-18,1990-02-18,"Assistant Engineer"
+10009,"Sumant Peac",1990-02-18,1995-02-18,Engineer
+10009,"Sumant Peac",1995-02-18,9999-01-01,"Senior Engineer"
+10010,"Duangkaew Piveteau",1996-11-24,9999-01-01,Engineer
+10011,"Mary Sluis",1990-01-22,1996-11-09,Staff
+10012,"Patricio Bridgland",1992-12-18,2000-12-18,Engineer
+10012,"Patricio Bridgland",2000-12-18,9999-01-01,"Senior Engineer"
+10013,"Eberhardt Terkki",1985-10-20,9999-01-01,"Senior Staff"
+10014,"Berni Genin",1993-12-29,9999-01-01,Engineer
+10015,"Guoxiang Nooteboom",1992-09-19,1993-08-22,"Senior Staff"
+10016,"Kazuhito Cappelletti",1998-02-11,9999-01-01,Staff
+10017,"Cristinel Bouloucos",1993-08-03,2000-08-03,Staff
+10017,"Cristinel Bouloucos",2000-08-03,9999-01-01,"Senior Staff"
+10018,"Kazuhide Peha",1987-04-03,1995-04-03,Engineer
+10018,"Kazuhide Peha",1995-04-03,9999-01-01,"Senior Engineer"
+10019,"Lillian Haddadi",1999-04-30,9999-01-01,Staff
+10020,"Mayuko Warwick",1997-12-30,9999-01-01,Engineer
+10021,"Ramzi Erde",1988-02-10,2002-07-15,"Technique Leader"
+10022,"Shahaf Famili",1999-09-03,9999-01-01,Engineer
+10023,"Bojan Montemayor",1999-09-27,9999-01-01,Engineer
+10024,"Suzette Pettey",1998-06-14,9999-01-01,"Assistant Engineer"
+10025,"Prasadram Heyers",1987-08-17,1997-10-15,"Technique Leader"
+10026,"Yongqiao Berztiss",1995-03-20,2001-03-19,Engineer
+10026,"Yongqiao Berztiss",2001-03-19,9999-01-01,"Senior Engineer"
+10027,"Divier Reistad",1995-04-02,2001-04-01,Engineer
+10027,"Divier Reistad",2001-04-01,9999-01-01,"Senior Engineer"
+10028,"Domenick Tempesti",1991-10-22,1998-04-06,Engineer
+10029,"Otmar Herbst",1991-09-18,2000-09-17,Engineer
+10029,"Otmar Herbst",2000-09-17,9999-01-01,"Senior Engineer"
+10030,"Elvis Demeyer",1994-02-17,2001-02-17,Engineer
+10030,"Elvis Demeyer",2001-02-17,9999-01-01,"Senior Engineer"
+10031,"Karsten Joslin",1991-09-01,1998-09-01,Engineer
+10031,"Karsten Joslin",1998-09-01,9999-01-01,"Senior Engineer"
+10032,"Jeong Reistad",1990-06-20,1995-06-20,Engineer
+10032,"Jeong Reistad",1995-06-20,9999-01-01,"Senior Engineer"
+10033,"Arif Merlo",1987-03-18,1993-03-24,"Technique Leader"
+10034,"Bader Swan",1995-04-12,1999-10-31,Staff
+10035,"Alain Chappelet",1988-09-05,1996-09-05,Engineer
+10035,"Alain Chappelet",1996-09-05,9999-01-01,"Senior Engineer"
+10036,"Adamantios Portugali",1992-04-28,9999-01-01,"Senior Staff"
+10037,"Pradeep Makrucki",1990-12-05,1995-12-05,Engineer
+10037,"Pradeep Makrucki",1995-12-05,9999-01-01,"Senior Engineer"
+10038,"Huan Lortz",1989-09-20,1996-09-20,Staff
+10038,"Huan Lortz",1996-09-20,9999-01-01,"Senior Staff"
+10039,"Alejandro Brender",1988-01-19,1997-01-18,Staff
+10039,"Alejandro Brender",1997-01-18,9999-01-01,"Senior Staff"
+10040,"Weiyi Meriste",1993-02-14,1999-02-14,Engineer
+10040,"Weiyi Meriste",1999-02-14,9999-01-01,"Senior Engineer"
+10041,"Uri Lenart",1989-11-12,1998-11-12,Staff
+10041,"Uri Lenart",1998-11-12,9999-01-01,"Senior Staff"
+10042,"Magy Stamatiou",1993-03-21,2000-03-21,Staff
+10042,"Magy Stamatiou",2000-03-21,2000-08-10,"Senior Staff"
+10043,"Yishay Tzvieli",1990-10-20,1997-10-20,Engineer
+10043,"Yishay Tzvieli",1997-10-20,9999-01-01,"Senior Engineer"
+10044,"Mingsen Casley",1994-05-21,9999-01-01,"Technique Leader"
+10045,"Moss Shanbhogue",1996-11-16,9999-01-01,Engineer
+10046,"Lucien Rosenbaum",1992-06-20,2000-06-20,Staff
+10046,"Lucien Rosenbaum",2000-06-20,9999-01-01,"Senior Staff"
+10047,"Zvonko Nyanchama",1989-03-31,1998-03-31,Engineer
+10047,"Zvonko Nyanchama",1998-03-31,9999-01-01,"Senior Engineer"
+10048,"Florian Syrotiuk",1985-02-24,1987-01-27,Engineer
+10049,"Basil Tramer",1992-05-04,2000-05-04,Staff
+10049,"Basil Tramer",2000-05-04,9999-01-01,"Senior Staff"
+10050,"Yinghua Dredge",1990-12-25,1999-12-25,Staff
+10050,"Yinghua Dredge",1999-12-25,9999-01-01,"Senior Staff"
+10051,"Hidefumi Caine",1992-10-15,1998-10-15,Engineer
+10051,"Hidefumi Caine",1998-10-15,9999-01-01,"Senior Engineer"
+10052,"Heping Nitsch",1997-01-31,2002-01-31,Staff
+10052,"Heping Nitsch",2002-01-31,9999-01-01,"Senior Staff"
+10053,"Sanjiv Zschoche",1994-11-13,9999-01-01,"Senior Staff"
+10054,"Mayumi Schueller",1995-07-29,2000-07-28,Staff
+10054,"Mayumi Schueller",2000-07-28,9999-01-01,"Senior Staff"
+10055,"Georgy Dredge",1992-04-27,1995-07-22,Staff
+10056,"Brendon Bernini",1990-02-01,1999-02-01,Engineer
+10056,"Brendon Bernini",1999-02-01,9999-01-01,"Senior Engineer"
+10057,"Ebbe Callaway",1992-01-15,2000-01-15,Engineer
+10057,"Ebbe Callaway",2000-01-15,9999-01-01,"Senior Engineer"
+10058,"Berhard McFarlin",1988-04-25,9999-01-01,"Senior Staff"
+10059,"Alejandro McAlpine",1991-06-26,9999-01-01,"Senior Staff"
+10060,"Breannda Billingsley",1989-05-28,1996-05-28,Staff
+10060,"Breannda Billingsley",1996-05-28,9999-01-01,"Senior Staff"
+10061,"Tse Herber",1989-12-02,9999-01-01,"Senior Staff"
+10062,"Anoosh Peyn",1991-08-30,1999-08-30,Engineer
+10062,"Anoosh Peyn",1999-08-30,9999-01-01,"Senior Engineer"
+10063,"Gino Leonhardt",1989-04-08,9999-01-01,"Senior Engineer"
+10064,"Udi Jansch",1985-11-20,1992-03-02,Staff
+10065,"Satosi Awdeh",1998-05-24,9999-01-01,Engineer
+10066,"Kwee Schusler",1986-02-26,1992-02-26,"Assistant Engineer"
+10066,"Kwee Schusler",1992-02-26,1998-02-25,Engineer
+
+7. 查询担任每种职务(title)的雇员人数；
+
+title,emp_count
+"Assistant Engineer",15128
+Engineer,115003
+Manager,24
+"Senior Engineer",97750
+"Senior Staff",92853
+Staff,107391
+"Technique Leader",15157
+
+8. 查询每个部门中担任每种职务(title)的雇员人数；
+
+dept_name,title,emp_count
+"Customer Service","Assistant Engineer",298
+"Customer Service",Engineer,2362
+"Customer Service",Manager,4
+"Customer Service","Senior Engineer",2027
+"Customer Service","Senior Staff",13925
+"Customer Service",Staff,16150
+"Customer Service","Technique Leader",309
+Development,"Assistant Engineer",7769
+Development,Engineer,58135
+Development,Manager,2
+Development,"Senior Engineer",49326
+Development,"Senior Staff",1247
+Development,Staff,1424
+Development,"Technique Leader",7683
+Finance,Manager,2
+Finance,"Senior Staff",12139
+Finance,Staff,13929
+"Human Resources",Manager,2
+"Human Resources","Senior Staff",12274
+"Human Resources",Staff,14342
+Marketing,Manager,2
+Marketing,"Senior Staff",13940
+Marketing,Staff,16196
+Production,"Assistant Engineer",6445
+Production,Engineer,49649
+Production,Manager,4
+Production,"Senior Engineer",42205
+Production,"Senior Staff",1270
+Production,Staff,1478
+Production,"Technique Leader",6556
+"Quality Management","Assistant Engineer",1831
+"Quality Management",Engineer,13852
+"Quality Management",Manager,4
+"Quality Management","Senior Engineer",11864
+"Quality Management","Technique Leader",1794
+Research,"Assistant Engineer",378
+Research,Engineer,2986
+Research,Manager,2
+Research,"Senior Engineer",2570
+Research,"Senior Staff",11637
+Research,Staff,13495
+Research,"Technique Leader",393
+Sales,Manager,2
+Sales,"Senior Staff",36191
+Sales,Staff,41808
+
+9. 查询每位雇员的编号(emp_no),姓名(first_name+last_name),及工资额最高的时间段(from_date,end_data)及其工资额；
+emp_no,emp_name,from_date,end_date,salary
+10001,"Georgi Facello",2002-06-22,9999-01-01,88958
+10002,"Bezalel Simmel",2001-08-02,9999-01-01,72527
+10003,"Parto Bamford",2000-12-01,2001-12-01,43699
+10004,"Chirstian Koblick",2001-11-27,9999-01-01,74057
+10005,"Kyoichi Maliniak",2001-09-09,9999-01-01,94692
+10006,"Anneke Preusig",2000-08-02,2001-08-02,60098
+10007,"Tzvetan Zielinski",2002-02-07,9999-01-01,88070
+10008,"Saniya Kalloufi",2000-03-10,2000-07-31,52668
+10009,"Sumant Peac",2001-02-14,2002-02-14,94443
+10010,"Duangkaew Piveteau",2001-11-23,9999-01-01,80324
+10011,"Mary Sluis",1996-01-21,1996-11-09,56753
+10012,"Patricio Bridgland",2000-12-16,2001-12-16,54794
+10013,"Eberhardt Terkki",2001-10-16,9999-01-01,68901
+10014,"Berni Genin",2001-12-27,9999-01-01,60598
+10015,"Guoxiang Nooteboom",1992-09-19,1993-08-22,40000
+10016,"Kazuhito Cappelletti",2002-02-10,9999-01-01,77935
+10017,"Cristinel Bouloucos",2002-08-01,9999-01-01,99651
+10018,"Kazuhide Peha",2002-03-30,9999-01-01,84672
+10019,"Lillian Haddadi",2002-04-29,9999-01-01,50032
+10020,"Mayuko Warwick",2001-12-29,9999-01-01,47017
+10021,"Ramzi Erde",2002-02-06,2002-07-15,84169
+10022,"Shahaf Famili",2001-09-02,9999-01-01,41348
+10023,"Bojan Montemayor",2000-09-26,2001-09-26,50319
+10024,"Suzette Pettey",2002-06-13,9999-01-01,96646
+10025,"Prasadram Heyers",1995-08-15,1996-08-14,57585
+10026,"Yongqiao Berztiss",2002-03-18,9999-01-01,66313
+10027,"Divier Reistad",2002-03-31,9999-01-01,46145
+10028,"Domenick Tempesti",1997-10-20,1998-04-06,58502
+10029,"Otmar Herbst",2001-09-15,9999-01-01,77777
+10030,"Elvis Demeyer",2002-02-15,9999-01-01,88806
+10031,"Karsten Joslin",2001-08-29,9999-01-01,56689
+10032,"Jeong Reistad",2002-06-17,9999-01-01,69539
+10033,"Arif Merlo",1993-03-16,1993-03-24,60433
+10034,"Bader Swan",1999-04-11,1999-10-31,53164
+10035,"Alain Chappelet",2001-09-02,9999-01-01,68755
+10036,"Adamantios Portugali",2002-04-26,9999-01-01,63053
+10037,"Pradeep Makrucki",2000-12-02,2001-12-02,60992
+10038,"Huan Lortz",2001-09-17,9999-01-01,64254
+10039,"Alejandro Brender",2002-01-15,9999-01-01,63918
+10040,"Weiyi Meriste",2002-02-12,9999-01-01,72668
+10041,"Uri Lenart",2001-11-09,9999-01-01,81705
+10042,"Magy Stamatiou",1999-03-20,2000-03-19,95035
+10043,"Yishay Tzvieli",2001-10-17,9999-01-01,77659
+10044,"Mingsen Casley",2002-05-19,9999-01-01,58345
+10045,"Moss Shanbhogue",2000-11-15,2001-11-15,47984
+10046,"Lucien Rosenbaum",2002-06-18,9999-01-01,62218
+10047,"Zvonko Nyanchama",2002-03-28,9999-01-01,81037
+10048,"Florian Syrotiuk",1985-02-24,1986-02-24,40000
+10049,"Basil Tramer",2002-05-02,9999-01-01,51326
+10050,"Yinghua Dredge",2001-12-22,9999-01-01,97830
+10051,"Hidefumi Caine",2001-10-13,9999-01-01,64905
+10052,"Heping Nitsch",2002-01-30,9999-01-01,67156
+10053,"Sanjiv Zschoche",2001-11-11,9999-01-01,78478
+10054,"Mayumi Schueller",2002-07-27,9999-01-01,53906
+10055,"Georgy Dredge",1995-04-27,1995-07-22,90843
+10056,"Brendon Bernini",2002-01-29,9999-01-01,74722
+10057,"Ebbe Callaway",2002-01-12,9999-01-01,68061
+10058,"Berhard McFarlin",2002-04-22,9999-01-01,72542
+10059,"Alejandro McAlpine",2002-06-23,9999-01-01,94161
+10060,"Breannda Billingsley",2002-05-25,9999-01-01,93188
+10061,"Tse Herber",2001-11-29,9999-01-01,97338
+10062,"Anoosh Peyn",2000-08-27,2001-08-27,68784
+10063,"Gino Leonhardt",2002-04-04,9999-01-01,74841
+10064,"Udi Jansch",1991-11-19,1992-03-02,48454
+10065,"Satosi Awdeh",2002-05-23,9999-01-01,47437
+10066,"Kwee Schusler",2002-02-22,9999-01-01,103672
+10067,"Claudi Stavenow",2002-02-28,9999-01-01,83254
+10068,"Charlene Brattka",2001-08-03,9999-01-01,113229
+10069,"Margareta Bierman",2002-06-12,9999-01-01,86641
+10070,"Reuven Garigliano",2001-10-10,9999-01-01,96322
+10071,"Hisao Lipner",2001-08-03,9999-01-01,53315
+10072,"Hironoby Sidou",2001-05-18,2002-05-18,64726
+10073,"Shir McClurg",1998-02-02,1998-02-22,56473
+10074,"Mokhtar Bernatsky",2001-08-10,9999-01-01,80820
+10075,"Gao Dolinsky",2000-05-14,2001-01-15,67492
+10076,"Erez Ritzmann",2002-07-14,9999-01-01,62921
+10077,"Mona Azuma",2001-12-21,9999-01-01,54699
+10078,"Danel Mondadori",2001-09-27,9999-01-01,54652
+10079,"Kshitij Gils",2001-12-11,9999-01-01,67231
+10080,"Premal Baek",2001-09-26,9999-01-01,72729
+10081,"Zhongwei Rosen",2001-10-26,9999-01-01,79351
+10082,"Parviz Lortz",1990-01-03,1990-01-15,48935
+10083,"Vishv Zockler",2002-03-27,9999-01-01,77186
+10084,"Tuval Kalloufi",2001-12-13,9999-01-01,93621
+10085,"Kenroku Malabarba",2002-04-06,9999-01-01,60910
+10086,"Somnath Foote",2001-02-16,2002-02-16,96471
+10087,"Xinglin Eugenio",2000-05-07,2001-01-09,102651
+10088,"Jungsoon Syrzycki",2001-08-30,9999-01-01,98003
+10089,"Sudharsan Flasterstein",2002-01-07,9999-01-01,77955
+10090,"Kendra Hofting",1999-03-11,1999-05-07,75401
+10091,"Amabile Gomatam",2001-11-16,9999-01-01,60014
+10092,"Valdiodio Niizuma",2002-04-21,9999-01-01,66803
+10093,"Sailaja Desikan",2002-06-07,9999-01-01,82715
+10094,"Arumugam Ossenbruggen",1997-04-15,1997-11-08,85225
+10095,"Hilari Morton",2002-03-08,9999-01-01,80955
+10096,"Jayson Mandell",2002-01-22,9999-01-01,68612
+10097,"Remzi Waschkowski",2001-09-12,9999-01-01,70161
+10098,"Sreekrishna Servieres",1992-05-11,1992-12-11,56202
+10099,"Valter Sullins",2001-10-15,9999-01-01,98538
+10100,"Hironobu Haraldson",2001-09-17,9999-01-01,74957
+
+
+10. 查询所有曾经担任过部门经理(dept_manager)的雇员的编号(emp_no)和姓名(first_name+last_name);
+
+emp_no,emp_name
+110022,"Margareta Markovitch"
+110039,"Vishwani Minakawa"
+110085,"Ebru Alpin"
+110114,"Isamu Legleitner"
+110183,"Shirish Ossenbruggen"
+110228,"Karsten Sigstam"
+110303,"Krassimir Wegerle"
+110344,"Rosine Cools"
+110386,"Shem Kieras"
+110420,"Oscar Ghazalie"
+110511,"DeForest Hagimont"
+110567,"Leon DasSarma"
+110725,"Peternela Onuegbe"
+110765,"Rutger Hofmeyr"
+110800,"Sanjoy Quadeer"
+110854,"Dung Pesch"
+111035,"Przemyslawa Kaelbling"
+111133,"Hauke Zhang"
+111400,"Arie Staelin"
+111534,"Hilary Kambil"
+111692,"Tonny Butterworth"
+111784,"Marjo Giarratana"
+111877,"Xiaobin Spinelli"
+111939,"Yuchang Weedman"
+
+11. 按时间段(from_date,end_data)先后列出每个部门(departments)的编号(dept_no),名称(dept_name),及其经理的姓名(first_name+last_name)；
+
+dept_no,dept_name,manager_name,from_date,end_date
+d001,Marketing,"Margareta Markovitch",1985-01-01,1991-10-01
+d001,Marketing,"Vishwani Minakawa",1991-10-01,9999-01-01
+d002,Finance,"Ebru Alpin",1985-01-01,1989-12-17
+d002,Finance,"Isamu Legleitner",1989-12-17,9999-01-01
+d003,"Human Resources","Shirish Ossenbruggen",1985-01-01,1992-03-21
+d003,"Human Resources","Karsten Sigstam",1992-03-21,9999-01-01
+d004,Production,"Krassimir Wegerle",1985-01-01,1988-09-09
+d004,Production,"Rosine Cools",1988-09-09,1992-08-02
+d004,Production,"Shem Kieras",1992-08-02,1996-08-30
+d004,Production,"Oscar Ghazalie",1996-08-30,9999-01-01
+d005,Development,"DeForest Hagimont",1985-01-01,1992-04-25
+d005,Development,"Leon DasSarma",1992-04-25,9999-01-01
+d006,"Quality Management","Peternela Onuegbe",1985-01-01,1989-05-06
+d006,"Quality Management","Rutger Hofmeyr",1989-05-06,1991-09-12
+d006,"Quality Management","Sanjoy Quadeer",1991-09-12,1994-06-28
+d006,"Quality Management","Dung Pesch",1994-06-28,9999-01-01
+d007,Sales,"Przemyslawa Kaelbling",1985-01-01,1991-03-07
+d007,Sales,"Hauke Zhang",1991-03-07,9999-01-01
+d008,Research,"Arie Staelin",1985-01-01,1991-04-08
+d008,Research,"Hilary Kambil",1991-04-08,9999-01-01
+d009,"Customer Service","Tonny Butterworth",1985-01-01,1988-10-17
+d009,"Customer Service","Marjo Giarratana",1988-10-17,1992-09-08
+d009,"Customer Service","Xiaobin Spinelli",1992-09-08,1996-01-03
+d009,"Customer Service","Yuchang Weedman",1996-01-03,9999-01-01
+
+12. 查询所有曾经在‘Development’工作过雇员的编号(emp_no),姓名(first_name+last_name),及时间段(from_date,end_data)；
+emp_no,emp_name,from_date,end_date
+10001,"Georgi Facello",1986-06-26,9999-01-01
+10006,"Anneke Preusig",1990-08-05,9999-01-01
+10008,"Saniya Kalloufi",1998-03-11,2000-07-31
+10012,"Patricio Bridgland",1992-12-18,9999-01-01
+10014,"Berni Genin",1993-12-29,9999-01-01
+10018,"Kazuhide Peha",1987-04-03,1992-07-29
+10021,"Ramzi Erde",1988-02-10,2002-07-15
+10022,"Shahaf Famili",1999-09-03,9999-01-01
+10023,"Bojan Montemayor",1999-09-27,9999-01-01
+10025,"Prasadram Heyers",1987-08-17,1997-10-15
+10027,"Divier Reistad",1995-04-02,9999-01-01
+10028,"Domenick Tempesti",1991-10-22,1998-04-06
+10031,"Karsten Joslin",1991-09-01,9999-01-01
+10037,"Pradeep Makrucki",1990-12-05,9999-01-01
+10040,"Weiyi Meriste",1993-02-14,2002-01-22
+10043,"Yishay Tzvieli",1990-10-20,9999-01-01
+10048,"Florian Syrotiuk",1985-02-24,1987-01-27
+10056,"Brendon Bernini",1990-02-01,9999-01-01
+10057,"Ebbe Callaway",1992-01-15,9999-01-01
+10062,"Anoosh Peyn",1991-08-30,9999-01-01
+10065,"Satosi Awdeh",1998-05-24,9999-01-01
+10066,"Kwee Schusler",1986-02-26,9999-01-01
+10070,"Reuven Garigliano",1985-10-14,1995-10-18
+10072,"Hironoby Sidou",1989-05-21,9999-01-01
+10074,"Mokhtar Bernatsky",1990-08-13,9999-01-01
+10075,"Gao Dolinsky",1988-05-17,2001-01-15
+10076,"Erez Ritzmann",1996-07-15,9999-01-01
+10078,"Danel Mondadori",1994-09-29,9999-01-01
+10079,"Kshitij Gils",1995-12-13,9999-01-01
+10090,"Kendra Hofting",1986-03-14,1999-05-07
+10091,"Amabile Gomatam",1992-11-18,9999-01-01
+10092,"Valdiodio Niizuma",1996-04-22,9999-01-01
+10103,"Akemi Birch",1998-01-12,9999-01-01
+10116,"Dayanand Czap",1994-02-27,1995-12-03
+10118,"Zhonghui Zyda",1992-02-02,9999-01-01
+10121,"Guoxiang Ramsay",1989-05-03,9999-01-01
+10122,"Ohad Esposito",1998-08-06,9999-01-01
+10127,"Subir Baja",1991-05-17,9999-01-01
+10129,"Armond Peir",1996-01-16,9999-01-01
+10134,"Diederik Siprelle",1987-12-12,1993-12-02
+10139,"Ewing Foong",1998-03-15,9999-01-01
+10142,"Tzvetan Hettesheimer",1993-10-28,9999-01-01
+10143,"Sakthirel Bakhtari",1988-09-30,9999-01-01
+10145,"Akemi Esposito",1999-11-03,9999-01-01
+10150,"Zhenbing Perng",1986-11-16,9999-01-01
+10153,"Heekeun Majewski",2000-01-08,9999-01-01
+10157,"Nigel Aloisi",1997-12-10,9999-01-01
+10166,"Samphel Siegrist",1996-09-02,9999-01-01
+10169,"Sampalli Snedden",1998-06-28,9999-01-01
+10172,"Shigeu Matzen",1998-02-04,1998-10-01
+10179,"Deniz Duclos",2000-01-25,9999-01-01
+10181,"Sibyl Nooteboom",1988-06-22,9999-01-01
+10182,"Moriyoshi Merey",1990-09-02,1999-01-05
+10189,"Khalid Erva",1992-09-13,1993-06-29
+10191,"Zdislav Nastansky",1986-04-10,9999-01-01
+10193,"Masaru Cheshire",1996-09-21,9999-01-01
+10197,"Kasidit Krzyzanowski",1994-06-28,9999-01-01
+10198,"Pranav Furedi",1985-08-31,9999-01-01
+10201,"Idoia Kavraki",1992-11-10,9999-01-01
+10202,"Greger Lichtner",1991-10-06,9999-01-01
+10204,"Nevio Ritcey",1998-12-18,1999-03-08
+10206,"Alassane Iwayama",1988-04-19,9999-01-01
+10207,"Girolamo Anandan",1992-10-11,9999-01-01
+10211,"Vishu Strehl",1991-11-22,9999-01-01
+10212,"Divier Esteva",1996-01-28,9999-01-01
+10219,"Genta Kolvik",1994-10-23,9999-01-01
+10223,"Carrsten Schmiedel",1998-04-01,9999-01-01
+10227,"Anneli Kaiser",1994-11-01,9999-01-01
+10238,"Mototsugu Gire",1995-03-31,1996-05-25
+10244,"Foong Flasterstein",1999-09-16,9999-01-01
+10249,"Marie Boreale",1991-12-08,1998-04-13
+10258,"Basil Ishibashi",1985-05-17,9999-01-01
+10261,"Mang Erie",1996-09-11,1999-02-23
+10264,"Nalini Kawashimo",1997-07-16,9999-01-01
+10268,"Nishit Siochi",1986-12-17,1988-04-15
+10271,"Sham Eastman",1986-05-23,9999-01-01
+10274,"Dmitri Pearson",1997-02-02,9999-01-01
+10275,"Marek Luck",1987-09-08,9999-01-01
+10276,"Xuejun Hempstead",1986-10-19,2000-02-04
+10278,"Lubomir Nitsch",1993-07-02,1997-02-14
+10283,"Kauko Birjandi",1988-05-25,9999-01-01
+10287,"Marie Pietracaprina",1997-09-05,9999-01-01
+10289,"Shay Poulakidas",1993-03-12,2002-01-31
+10290,"Yongmao Pleszkun",1991-09-18,9999-01-01
+10294,"Rutger Miara",1999-01-30,1999-05-04
+10305,"Hirochika Piancastelli",1988-10-31,1992-06-02
+10309,"Prodip Schusler",1997-05-02,9999-01-01
+10311,"Hsiangchu Molenkamp",1998-11-04,9999-01-01
+10315,"Maris Angelopoulos",1987-08-28,9999-01-01
+10318,"Mototsugu Beilner",1987-03-23,9999-01-01
+10322,"Isamu Dahlbom",1990-01-29,9999-01-01
+10324,"Bernardo Rouquie",1999-07-19,9999-01-01
+10327,"Roded Facello",1987-09-18,1988-05-10
+10328,"Serenella Kawashima",1998-07-17,9999-01-01
+10333,"Snehasis Dymetman",1993-01-16,9999-01-01
+10342,"Stella Hiroyama",1987-07-25,9999-01-01
+10345,"Arra Ratnakar",1993-11-08,9999-01-01
+10352,"Erzsebet Ohori",1998-12-16,9999-01-01
+10358,"Qunsheng Tagansky",1991-02-19,9999-01-01
+10359,"Heekeun Sambasivam",1998-07-20,9999-01-01
+
+
+13. 查询曾经在所有部门都工作过的雇员的编号(emp_no),姓名(first_name+last_name)；
+emp_no,emp_name
+
+
+14. 在dept_emp表中插入适当数据使得至少3个以上雇员满足上一题的查询要求。
+
+emp_no,emp_name
+10001,"Georgi Facello"
